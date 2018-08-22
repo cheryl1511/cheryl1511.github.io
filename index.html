@@ -54,6 +54,7 @@
                                    
        var iosBtn = document.getElementById('ios')
        iosBtn.onclick = function(e) {
+	  alert(0)
           e.preventDefault()
           log('JS calling handler "call settings"')
           bridge.callHandler('showSettings', {}, function(response) {
@@ -65,5 +66,5 @@
 	</script>
 	<div id='buttons'></div>
     <div id='log'></div>
-    <button id='ios' type="button"  onClick="">Click Me!</button>
+    <button id='ios' type="button"  onClick="">Click Me! A</button>
 </body></html>
