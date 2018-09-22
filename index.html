@@ -1,70 +1,14 @@
-<!doctype html>
-<html><head>
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
-	<style type='text/css'>
-		html { font-family:Helvetica; color:#222; }
-        h1 { color:#FE8FBD; font-size:24px; margin-top:24px; }
-		button { margin:0 3px 10px; font-size:14px; border: 2px solid #000000; }
-        .logLine_Native { border-bottom:1px solid #FFA67C; padding:4px 2px; font-family:courier; font-size:12px; }
-        .logLine_JS { border-bottom:1px solid #D867D8; padding:4px 2px; font-family:courier; font-size:12px; }
-	</style>
-</head><body>
-	<h1>Demo</h1>
-	<script>
-	window.onerror = function(err) {
-		log('window.onerror: ' + err)
-	}
-
-    function setupWKWebViewJavascriptBridge(callback) {
-        if (window.WKWebViewJavascriptBridge) { return callback(WKWebViewJavascriptBridge); }
-        if (window.WKWVJBCallbacks) { return window.WKWVJBCallbacks.push(callback); }
-        window.WKWVJBCallbacks = [callback];
-        window.webkit.messageHandlers.iOS_Native_InjectJavascript.postMessage(null)
-    }
-
-    setupWKWebViewJavascriptBridge(function(bridge) {
-		var uniqueId = 1
-		function log(message, data, type) {
-			var log = document.getElementById('log')
-			var el = document.createElement('div')
-            el.className = type == 'native' ? 'logLine_Native' : 'logLine_JS'
-			el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
-			if (log.children.length) { log.insertBefore(el, log.children[0]) }
-			else { log.appendChild(el) }
-		}
-
-		bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {
-			log('iOS called testJavascriptHandler with', data, 'native')
-			var responseData = { 'Javascript Says':'Right back atcha!' }
-			log('JS responding with', responseData, 'native')
-			responseCallback(responseData)
-		})
-
-		document.body.appendChild(document.createElement('br'))
-
-		var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'))
-		callbackButton.innerHTML = 'Fire testiOSCallback'
-		callbackButton.onclick = function(e) {
-			e.preventDefault()
-			log('JS calling handler "testiOSCallback"')
-			bridge.callHandler('testiOSCallback', {'foo': 'bar'}, function(response) {
-				log('JS got response', response, 'js')
-			})
-		}
-                                   
-       var iosBtn = document.getElementById('ios')
-       iosBtn.onclick = function(e) {
-	  alert(0)
-          e.preventDefault()
-          log('JS calling handler "call settings"')
-          bridge.callHandler('showSettings', {}, function(response) {
-        })
-       }
-
-       
-	})
-	</script>
-	<div id='buttons'></div>
-    <div id='log'></div>
-    <button id='ios' type="button"  onClick="">Click Me! A</button>
-</body></html>
+<!DOCTYPE html><html> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width"> <title>Privacy Policy</title> <style>body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; padding:1em;}</style></head> <body><h2>Privacy Policy</h2> <p> <strong>Code And Play Vn</strong> built the <strong>Grid Maker</strong> app as a Free app. This SERVICE is provided by <strong>Code And Play Vn</strong> at no cost and is intended for use as is.
+                  </p> <p>This page is used to inform visitors regarding my policies with the collection, use, and
+                    disclosure of Personal Information if anyone decided to use my Service.
+                  </p> <p>If you choose to use my Service, then you agree to the collection and use of information in relation
+                    to this policy. The Personal Information that I collect is used for providing and improving the
+                    Service. I will not use or share your information with anyone except as described
+                    in this Privacy Policy.
+                  </p> <p>The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible
+                    at <strong>Grid Maker</strong> unless otherwise defined in this Privacy Policy.
+                  </p> <p><strong>Information Collection and Use</strong></p> <p>For a better experience, while using our Service, I may require you to provide us with certain
+                    personally identifiable information, including but not limited to Android advertising identifier. The information that I request will be retained on your device and is not collected by me in any way.
+                  </p> </div>  <p><strong>Contact Us</strong></p> <p>If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact
+                    me.
+                  </p> </body></html>
