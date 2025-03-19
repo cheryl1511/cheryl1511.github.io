@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Social Like Counter</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="./all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./simple-line-icons.css">
+    <link href="./css" rel="stylesheet">
+    <link href="./css(1)" rel="stylesheet">
+    <link href="./css(2)" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="./device-mockups.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="./new-age.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Who Deleted Me</a>
+            <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#video">Video</a> <!-- Added video section link -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-7 my-auto">
+                    <div class="header-content mx-auto">
+                        <h1 class="mb-5">Who Deleted Me is an app to Tell Who Deleted You On Facebook.</h1>
+                        <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 my-auto">
+                    <img src="./1024.png" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Video Section -->
+    <section class="video-section bg-light text-center" id="video">
+      <div class="container">
+          <h2 class="section-heading">Watch Our Video</h2>
+          <p class="text-muted">Check out this awesome video about our app!</p>
+          <div class="row justify-content-center">
+              <div class="col-lg-8">
+                  <!-- Video element to display local video -->
+                  <video controls width="50%" height="auto">
+                      <source src="./prnew.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <section class="download bg-primary text-center" id="download">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <h2 class="section-heading">Discover what all the buzz is about!</h2>
+                    <p>Our app is available on Ios and Android! Download now to get started!</p>
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            <div class="badges">
+                                <a class="badge-link" target="_blank" href="https://play.google.com/store/apps/details?id=unfriend.friendstrackerfree.vn">
+                                    <img src="./google-play-badge.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="badges">
+                                <a class="badge-link" target="_blank" href="https://apps.apple.com/vn/app/who-unfriends-me/id6743155210">
+                                    <img src="./app-store-badge.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container-fluid text-center text-md-left" id="contact">
+            <div class="row">
+                <div class="col-md-8 mt-md-0 mt-3">
+                    <h5 class="text-uppercase">Contact</h5>
+                    <p>CodeAndPlayVn <br>code.and.play.vn@gmail.com <br>+84 (0) 978334156<br></p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <p>© CodeAndPlayVn 2024. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./jquery.min.js"></script>
+    <script src="./bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="./jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="./new-age.min.js"></script>
+
+    <script>
+        // Smooth scroll trigger
+        $('.js-scroll-trigger').click(function() {
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                location.hostname == this.hostname
+            ) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 50
+                    }, 1000, 'easeInOutExpo');
+                    return false;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
