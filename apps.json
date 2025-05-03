@@ -1,14 +1,39 @@
 [
   {
-    "name": "Sinh nhật+",
-    "description": "Ứng dụng nhắc sinh nhật, lễ cưới...",
-    "icon": "https://yourdomain.github.io/app-promotion-data/sinhnhat_icon.png",
-    "store_url": "https://apps.apple.com/app/id123456789"
+    "name": "Birthday Exporter",
+    "description": "Facebook Birthday Exporter, Reminder",
+    "icon": "https://cheryl1511.github.io/birthday.png",
+    "store_url": "https://apps.apple.com/vn/app/birthday-exporter/id6744843307"
   },
   {
-    "name": "Chi tiêu thông minh",
-    "description": "Theo dõi chi tiêu hàng ngày",
-    "icon": "https://yourdomain.github.io/app-promotion-data/chitieu_icon.png",
-    "store_url": "https://apps.apple.com/app/id987654321"
+    "name": "Delete Messages on Messenger",
+    "description": "Delete and Download Messenger Messages",
+    "icon": "https://cheryl1511.github.io/del_msg.png",
+    "store_url": "https://apps.apple.com/vn/app/delete-messages-on-messenger/id6743963451"
+  },
+  {
+    "name": "Friend Ranking & Removal",
+    "description": "Unfriend non interactive Facebook friends",
+    "icon": "https://cheryl1511.github.io/fr_ranking.png",
+    "store_url": "https://apps.apple.com/vn/app/friend-ranking-removal/id6744241935"
+  },
+  {
+    "name": "Clean My Feed",
+    "description": "Bulk Leave Groups & Unlike Pages Fast",
+    "icon": "https://cheryl1511.github.io/social_clean.png",
+    "store_url": "https://apps.apple.com/vn/app/friend-ranking-removal/id6744241935"
+  },
+  {
+    "name": "Who Deleted Me",
+    "description": "Find Who Unfriended Me on Facebook",
+    "icon": "https://cheryl1511.github.io/unfriend_finder.png",
+    "store_url": "https://apps.apple.com/vn/app/who-delete-me/id6743155210"
+  },
+  {
+    "name": "Video Saver",
+    "description": "Download Facebook Video",
+    "icon": "https://cheryl1511.github.io/video_saver.png",
+    "store_url": "https://apps.apple.com/vn/app/fvideo-saver/id6744525684"
   }
+  
 ]
