@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Sinh nhật+",
+    "description": "Ứng dụng nhắc sinh nhật, lễ cưới...",
+    "icon": "https://yourdomain.github.io/app-promotion-data/sinhnhat_icon.png",
+    "store_url": "https://apps.apple.com/app/id123456789"
+  },
+  {
+    "name": "Chi tiêu thông minh",
+    "description": "Theo dõi chi tiêu hàng ngày",
+    "icon": "https://yourdomain.github.io/app-promotion-data/chitieu_icon.png",
+    "store_url": "https://apps.apple.com/app/id987654321"
+  }
+]
