@@ -18,7 +18,7 @@
     "store_url": "https://apps.apple.com/vn/app/friend-ranking-removal/id6744241935"
   },
   {
-    "name": "Facebook Toolkit - Auto Group Poster",
+    "name": "Facebook Toolkit",
     "description": "An app provides you with a powerful set of tools to help you experience and manage Facebook in the best way.",
     "icon": "https://cheryl1511.github.io/social_clean.png",
     "store_url": "https://apps.apple.com/app/clean-my-feed/id6745401921"
@@ -34,6 +34,18 @@
     "description": "Download Facebook Video",
     "icon": "https://cheryl1511.github.io/video_saver.png",
     "store_url": "https://apps.apple.com/vn/app/fvideo-saver/id6744525684"
+  },
+  {
+    "name": "Save My Pic",
+    "description": "One-click Facebook photo/video downloader for pages, profiles",
+    "icon": "https://cheryl1511.github.io/savepic.png",
+    "store_url": "https://apps.apple.com/vn/app/savemypic/id6753611918"
+  },
+  {
+    "name": "Auto Group Poster",
+    "description": "Automate posts to all your Facebook groups",
+    "icon": "https://cheryl1511.github.io/poster.png",
+    "store_url": "https://apps.apple.com/vn/app/auto-group-poster/id6753643170"
   }
   
 ]
