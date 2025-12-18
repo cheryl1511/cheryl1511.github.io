@@ -1,5 +1,17 @@
 [
   {
+    "name": "Search By Image",
+    "description": "Reverse image search",
+    "icon": "https://cheryl1511.github.io/search_by_img.png",
+    "store_url": "https://apps.apple.com/vn/app/reverse-image-search-ris/id6756606607"
+  },
+  {
+    "name": "Image Downloader",
+    "description": "Search and download images",
+    "icon": "https://cheryl1511.github.io/img_downloader.png",
+    "store_url": "https://apps.apple.com/vn/app/image-search-image-saver/id6756299277"
+  },
+  {
     "name": "Birthday Exporter",
     "description": "Facebook Birthday Exporter, Reminder",
     "icon": "https://cheryl1511.github.io/birthday.png",
