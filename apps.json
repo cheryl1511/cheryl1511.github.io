@@ -1,4 +1,16 @@
 [
+    {
+    "name": "Dual Cam front & back",
+    "description": "Record videos with both 2 cameras",
+    "icon": "https://cheryl1511.github.io/dual_cam.png",
+    "store_url": "https://apps.apple.com/vn/app/dual-cam-front-back/id6757098667"
+  },
+    {
+    "name": "Dual Space - Multi Accounts",
+    "description": "App Cloner",
+    "icon": "https://cheryl1511.github.io/dual_space.png",
+    "store_url": "https://apps.apple.com/vn/app/dual-space-multi-accounts/id6756809042"
+  },
   {
     "name": "Search By Image",
     "description": "Reverse image search",
