@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - PiP Float</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .highlight-box h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .highlight-box p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
+        }
+
+        .section p {
+            color: #555;
+            font-size: 1.05em;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .info-card {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .info-card h3 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .info-card p {
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e9ecff 100%);
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+            border: 2px solid #667eea;
+        }
+
+        .contact-box h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border: none;
+            padding: 0;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            margin-top: 10px;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .contact-link::before {
+            content: "✉";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            background: #f8f9ff;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 40px 25px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 25px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .highlight-box h2 {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Privacy Policy</h1>
+            <p>PiP Float - Split Screen Multi</p>
+        </div>
+
+        <div class="content">
+            <div class="highlight-box">
+                <h2>WE DO NOT COLLECT ANY DATA</h2>
+                <p>Your privacy is our top priority. We believe in complete transparency.</p>
+            </div>
+
+            <div class="section">
+                <h2>Our Commitment to Your Privacy</h2>
+                <p>PiP Float is designed with privacy at its core. We believe that your personal information should stay personal, and we have built our app to reflect this principle.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🔒 No Data Collection</h3>
+                <p>We do not collect, store, or transmit any personal data, usage statistics, or analytics from your device. Everything you do in the app stays on your device.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>📱 Local Storage Only</h3>
+                <p>All settings, preferences, and content you access through PiP Float are stored locally on your device. We never have access to this information.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🗑️ Complete Data Control</h3>
+                <p>All data stored by the app will be automatically deleted when you uninstall PiP Float from your device. You have complete control over your information.</p>
+            </div>
+
+            <div class="info-card">
+                <h3>🌐 Browser Content</h3>
+                <p>When you use the floating browser feature, you are subject to the privacy policies and terms of service of the websites you visit. PiP Float does not monitor, modify, or collect any information about your browsing activity.</p>
+            </div>
+
+            <div class="section">
+                <h2>What Information Do We NOT Collect?</h2>
+                <p>To be completely clear, here are examples of information we do NOT collect:</p>
+                <ul style="margin-left: 20px; color: #555; font-size: 1.05em; line-height: 1.8;">
+                    <li>Personal identification information (name, email, phone number, etc.)</li>
+                    <li>Device information or identifiers</li>
+                    <li>Location data</li>
+                    <li>Usage statistics or analytics</li>
+                    <li>Browsing history or website data</li>
+                    <li>Documents or files you view</li>
+                    <li>Any other personal or sensitive information</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Third-Party Services</h2>
+                <p>PiP Float does not integrate with any third-party analytics services, advertising networks, or data collection tools. The app functions entirely offline and does not communicate with any external servers.</p>
+            </div>
+
+            <div class="section">
+                <h2>Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. We encourage you to review this Privacy Policy periodically.</p>
+                <p><strong>Last Updated:</strong> December 31, 2025</p>
+            </div>
+
+            <div class="contact-box">
+                <h2>Questions or Concerns?</h2>
+                <p style="margin-bottom: 20px; color: #666;">If you have any questions about this Privacy Policy or our privacy practices, please don't hesitate to contact us.</p>
+                <a href="mailto:code.and.play.vn@gmail.com" class="contact-link">code.and.play.vn@gmail.com</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>PiP Float - Split Screen Multi</strong></p>
+            <p>© 2025 PiP Float. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Built with privacy in mind 🔒</p>
+        </div>
+    </div>
+</body>
+</html>
