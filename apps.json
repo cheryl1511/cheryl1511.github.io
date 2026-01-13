@@ -1,5 +1,17 @@
 [
     {
+    "name": "PiP Float",
+    "description": "Floating browser & multitask",
+    "icon": "https://cheryl1511.github.io/pip.png",
+    "store_url": "https://apps.apple.com/vn/app/pip-float-split-screen-multi/id6757326641"
+  },
+  {
+    "name": "Split Screen",
+    "description": "Multitasking & web browser",
+    "icon": "https://cheryl1511.github.io/split.png",
+    "store_url": "https://apps.apple.com/vn/app/multiwindow-dual-browser/id6757452082"
+  },
+    {
     "name": "Dual Cam front & back",
     "description": "Record videos with both 2 cameras",
     "icon": "https://cheryl1511.github.io/dual_cam.png",
