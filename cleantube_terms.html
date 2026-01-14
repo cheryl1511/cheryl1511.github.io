@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - CleanTube</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            color: white;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        h2 {
+            color: #f5576c;
+            font-size: 28px;
+            font-weight: 600;
+            margin: 40px 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #f5576c;
+            position: relative;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #f093fb;
+        }
+
+        h3 {
+            color: #555;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+        }
+
+        p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        ul {
+            margin: 16px 0 24px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 12px;
+            padding-left: 32px;
+            position: relative;
+            line-height: 1.8;
+            transition: transform 0.2s ease;
+        }
+
+        li:hover {
+            transform: translateX(5px);
+        }
+
+        li::before {
+            content: '•';
+            position: absolute;
+            left: 8px;
+            color: #f5576c;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe8ed 100%);
+            border-left: 4px solid #f5576c;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(245, 87, 108, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .price-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.15);
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(245, 87, 108, 0.1);
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .price-label {
+            font-weight: 600;
+            color: #f5576c;
+        }
+
+        .price-value {
+            font-weight: 700;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe8ed 100%);
+            border-left: 4px solid #f5576c;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(245, 87, 108, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.15);
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #f093fb;
+            transition: width 0.3s ease;
+        }
+
+        a:hover {
+            color: #f093fb;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-top: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 32px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(245, 87, 108, 0.3);
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+        }
+
+        .nav-link::after {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .footer {
+                padding: 20px;
+            }
+
+            .price-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">📜</div>
+            <h1>Terms of Service</h1>
+            <p class="subtitle">Last updated: January 13, 2026</p>
+        </div>
+
+        <div class="content">
+            <h2>Agreement</h2>
+            <p>By using CleanTube, you agree to these terms. Please read them carefully before using our service.</p>
+
+            <h2>Service Description</h2>
+            <p>CleanTube is a Safari extension that enhances your YouTube video playback experience with advanced controls and features.</p>
+
+            <h2>Subscription Terms</h2>
+
+            <h3>Free Trial</h3>
+            <div class="highlight-box">
+                <ul style="margin: 0;">
+                    <li>Duration: 3 days</li>
+                    <li>Full access to all features</li>
+                    <li>No payment required to start</li>
+                    <li>Cancel anytime during trial</li>
+                </ul>
+            </div>
+
+            <h3>Subscription Plans</h3>
+            <div class="price-box">
+                <div class="price-item">
+                    <span class="price-label">Annual Plan</span>
+                    <span class="price-value">99,000 VND/year</span>
+                </div>
+            </div>
+
+            <p><strong>Important:</strong> Subscriptions auto-renew unless cancelled. Manage your subscription in iOS Settings → Subscriptions.</p>
+
+            <h3>Cancellation</h3>
+            <ul>
+                <li>Cancel anytime through iOS Settings</li>
+                <li>Access continues until the end of your billing period</li>
+                <li>No refund for unused time in the current period</li>
+            </ul>
+
+            <h3>Refunds</h3>
+            <p>Refunds are managed by Apple and subject to Apple's refund policy. To request a refund, please contact Apple through the App Store.</p>
+
+            <h2>Acceptable Use</h2>
+            <p>You agree to use CleanTube for:</p>
+            <ul>
+                <li>Personal, non-commercial use only</li>
+                <li>Compliance with YouTube's Terms of Service</li>
+                <li>Lawful purposes only</li>
+            </ul>
+
+            <p>You agree NOT to:</p>
+            <ul>
+                <li>Reverse engineer or modify the extension</li>
+                <li>Use the service for commercial purposes without permission</li>
+                <li>Violate any applicable laws or regulations</li>
+            </ul>
+
+            <h2>Disclaimer</h2>
+            <div class="highlight-box">
+                <p><strong>No Warranties:</strong> CleanTube is provided "as is" without warranties of any kind, either express or implied. We do not guarantee that the service will be uninterrupted or error-free.</p>
+            </div>
+
+            <h2>Third-Party Content</h2>
+            <p>CleanTube enhances YouTube but is not affiliated with, endorsed by, or sponsored by YouTube or Google LLC. All YouTube content remains subject to YouTube's Terms of Service.</p>
+
+            <h2>Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, CleanTube shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the service.</p>
+
+            <h2>Changes to Terms</h2>
+            <p>We may update these terms from time to time. Continued use of CleanTube after changes constitutes acceptance of the updated terms. We will notify users of significant changes.</p>
+
+            <h2>Contact</h2>
+            <p>For questions or concerns about these Terms of Service, please contact us:</p>
+            <p><strong>Email:</strong> <a href="mailto:dtb4121988@gmail.com">dtb4121988@gmail.com</a></p>
+
+            <h2>Governing Law</h2>
+            <p>These terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law provisions.</p>
+        </div>
+
+        <div class="footer">
+            <a href="privacy.html" class="nav-link">View Privacy Policy →</a>
+            <p style="margin-top: 24px;">© 2026 CleanTube. All rights reserved.</p>
+            <div class="contact-email">
+                <span>📧</span>
+                <a href="mailto:dtb4121988@gmail.com">dtb4121988@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
