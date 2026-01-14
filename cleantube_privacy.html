@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - CleanTube</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 60px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        animation: pulse 4s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.5;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+      }
+
+      .logo {
+        font-size: 48px;
+        margin-bottom: 12px;
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        color: white;
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 16px;
+        font-weight: 400;
+        position: relative;
+        z-index: 1;
+      }
+
+      .content {
+        padding: 50px 40px;
+      }
+
+      h2 {
+        color: #667eea;
+        font-size: 28px;
+        font-weight: 600;
+        margin: 40px 0 20px 0;
+        padding-bottom: 12px;
+        border-bottom: 3px solid #667eea;
+        position: relative;
+      }
+
+      h2:first-child {
+        margin-top: 0;
+      }
+
+      h2::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: #764ba2;
+      }
+
+      h3 {
+        color: #555;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 30px 0 15px 0;
+      }
+
+      p {
+        color: #555;
+        font-size: 16px;
+        margin-bottom: 16px;
+        line-height: 1.8;
+      }
+
+      ul {
+        margin: 16px 0 24px 0;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      li {
+        color: #555;
+        font-size: 16px;
+        margin-bottom: 12px;
+        padding-left: 32px;
+        position: relative;
+        line-height: 1.8;
+        transition: transform 0.2s ease;
+      }
+
+      li:hover {
+        transform: translateX(5px);
+      }
+
+      li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #667eea;
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, #f5f7ff 0%, #e8ebff 100%);
+        border-left: 4px solid #667eea;
+        padding: 24px;
+        margin: 24px 0;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .highlight-box:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
+      }
+
+      .highlight-box p {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #764ba2;
+        transition: width 0.3s ease;
+      }
+
+      a:hover {
+        color: #764ba2;
+      }
+
+      a:hover::after {
+        width: 100%;
+      }
+
+      .footer {
+        background: #f8f9fa;
+        padding: 30px 40px;
+        text-align: center;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .footer p {
+        color: #777;
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+
+      .contact-email {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        margin-top: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .contact-email:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .nav-link {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 32px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      }
+
+      .nav-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      .nav-link::after {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 20px 10px;
+        }
+
+        .header {
+          padding: 40px 20px;
+        }
+
+        h1 {
+          font-size: 32px;
+        }
+
+        .content {
+          padding: 30px 20px;
+        }
+
+        h2 {
+          font-size: 24px;
+        }
+
+        .footer {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">🎬</div>
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">Last updated: January 13, 2026</p>
+      </div>
+
+      <div class="content">
+        <h2>Overview</h2>
+        <p>
+          CleanTube respects your privacy. This policy explains our data
+          practices and how we handle your information.
+        </p>
+
+        <h2>Data Collection</h2>
+        <p>CleanTube collects minimal data necessary to provide our service:</p>
+        <ul>
+          <li>Anonymous device identifier (for subscription management)</li>
+          <li>Purchase history (to verify subscription status)</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p>
+            <strong>Third-Party Service:</strong> We use RevenueCat to manage
+            subscriptions. RevenueCat collects subscription status, transaction
+            data, and device information to enable cross-device subscription
+            sync.
+          </p>
+        </div>
+
+        <h2>Data We DON'T Collect</h2>
+        <p>Your privacy is paramount. We explicitly do NOT collect:</p>
+        <ul>
+          <li>Personal information</li>
+          <li>Browsing history</li>
+          <li>Video watch history</li>
+          <li>Location data</li>
+          <li>Usage analytics</li>
+          <li>Tracking data</li>
+        </ul>
+
+        <h2>How We Use Data</h2>
+        <p>The minimal data we collect is used exclusively for:</p>
+        <ul>
+          <li>Managing subscription status</li>
+          <li>Preventing fraud</li>
+          <li>Syncing subscription across your devices</li>
+          <li>Providing customer support</li>
+        </ul>
+
+        <h2>Video Features</h2>
+        <div class="highlight-box">
+          <p>
+            <strong>Complete Privacy:</strong> All video control features work
+            locally on your device. No data about what you watch is collected,
+            transmitted, or stored.
+          </p>
+        </div>
+
+        <h2>Third-Party Services</h2>
+        <p>
+          We use RevenueCat for subscription management. You can review their
+          privacy practices:
+        </p>
+        <p>
+          <a href="https://www.revenuecat.com/privacy" target="_blank"
+            >RevenueCat Privacy Policy</a
+          >
+        </p>
+
+        <h2>Your Rights</h2>
+        <p>You have complete control over your data:</p>
+        <ul>
+          <li>Cancel your subscription anytime</li>
+          <li>Request data deletion</li>
+          <li>Contact us with questions or concerns</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>For privacy-related questions or requests, please contact us:</p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:dtb4121988@gmail.com">dtb4121988@gmail.com</a>
+        </p>
+
+        <h2>Changes to This Policy</h2>
+        <p>
+          We may update this privacy policy from time to time. Please check this
+          page periodically for updates. Continued use of CleanTube after
+          changes constitutes acceptance of the updated policy.
+        </p>
+      </div>
+
+      <div class="footer">
+        <a href="terms.html" class="nav-link">View Terms of Service →</a>
+        <p style="margin-top: 24px">© 2026 CleanTube. All rights reserved.</p>
+        <div class="contact-email">
+          <span>📧</span>
+          <a href="mailto:dtb4121988@gmail.com">dtb4121988@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
