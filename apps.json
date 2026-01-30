@@ -1,4 +1,16 @@
 [
+     {
+    "name": "Youtube Cleaner",
+    "description": "Hide ad, PiP, custom speed for Youtube",
+    "icon": "https://cheryl1511.github.io/tubecleaner.png",
+    "store_url": "https://apps.apple.com/vn/app/clean-tube/id6757726426"
+  },
+   {
+    "name": "Tube Control",
+    "description": "PiP, custom speed for Vimeo, TED..",
+    "icon": "https://cheryl1511.github.io/tubecontrol.png",
+    "store_url": "https://apps.apple.com/vn/app/tube-control-for-safari/id6757946219"
+  },
     {
     "name": "PiP Float",
     "description": "Floating browser & multitask",
