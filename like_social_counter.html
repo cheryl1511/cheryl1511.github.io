@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – Like Social Counter</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0c10;
+      --surface: #12151c;
+      --card: #181c26;
+      --border: #232840;
+      --accent: #4f8cff;
+      --accent2: #7c4dff;
+      --text: #e8eaf0;
+      --muted: #7a80a0;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Animated mesh background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 10%, rgba(79,140,255,0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 10% 80%, rgba(124,77,255,0.09) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 8px 20px 8px 10px;
+      margin-bottom: 28px;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .app-badge .dot {
+      width: 8px; height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #4ade80;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    h1 em {
+      font-style: italic;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .meta-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 14px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* Section cards */
+    .section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 36px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+
+    .section:hover {
+      border-color: rgba(79,140,255,0.35);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .section-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .icon-blue  { background: rgba(79,140,255,0.15); }
+    .icon-purple{ background: rgba(124,77,255,0.15); }
+    .icon-green { background: rgba(74,222,128,0.12); }
+    .icon-orange{ background: rgba(251,146,60,0.12); }
+    .icon-red   { background: rgba(248,113,113,0.12); }
+    .icon-teal  { background: rgba(45,212,191,0.12); }
+    .icon-yellow{ background: rgba(250,204,21,0.12); }
+    .icon-pink  { background: rgba(244,114,182,0.12); }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    p { color: #b0b5cc; margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+
+    ul li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #b0b5cc;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 14.5px;
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '→';
+      color: var(--accent);
+      font-size: 13px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .highlight-box {
+      background: rgba(79,140,255,0.07);
+      border: 1px solid rgba(79,140,255,0.2);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: #a0aec5;
+    }
+
+    .highlight-box strong { color: var(--accent); }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(79,140,255,0.3);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    a:hover { color: #80aaff; border-bottom-color: #80aaff; }
+
+    /* Contact card */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(79,140,255,0.12), rgba(124,77,255,0.12));
+      border: 1px solid rgba(79,140,255,0.25);
+      border-radius: 16px;
+      padding: 32px 36px;
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .contact-card h2 {
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .contact-card p { color: var(--muted); font-size: 14px; }
+
+    .contact-email {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--accent);
+      color: #fff !important;
+      border: none !important;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .contact-email:hover { background: #3a7be0; transform: translateY(-1px); }
+
+    footer {
+      text-align: center;
+      margin-top: 56px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    @media (max-width: 600px) {
+      .section { padding: 24px 20px; }
+      .wrapper { padding: 40px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <header>
+    <div class="app-badge">
+      <span class="dot"></span>
+      Live · Real-time Social Counter
+    </div>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="subtitle">We take your privacy seriously. Here's exactly what we do — and don't do — with your data.</p>
+    <div class="meta-row">
+      <span class="meta-chip">Effective: January 1, 2025</span>
+      <span class="meta-chip">Last updated: January 1, 2025</span>
+      <span class="meta-chip">App: Social Counter Live</span>
+    </div>
+  </header>
+
+  <hr class="divider"/>
+
+  <!-- 1. Overview -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-blue">📋</div>
+      <h2>1. Overview</h2>
+    </div>
+    <p>
+      <strong style="color:var(--white)">Like Social Counter</strong> ("the App") is a real-time display application for iOS/iPadOS that shows your social media follower counts, likes, and engagement metrics. The App is operated by <strong style="color:var(--white)">Vigo Global</strong> ("we", "us", "our").
+    </p>
+    <p>
+      This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information. By using the App, you agree to this policy.
+    </p>
+  </div>
+
+  <!-- 2. Information We Collect -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-purple">🗂️</div>
+      <h2>2. Information We Collect</h2>
+    </div>
+    <p>We collect the following types of information:</p>
+    <ul>
+      <li><strong style="color:var(--white)">Social media public data</strong> — follower counts, likes, and public metrics fetched via official platform APIs (Facebook, TikTok, Instagram, YouTube, etc.). We only access publicly available data.</li>
+      <li><strong style="color:var(--white)">Device information</strong> — device model, OS version, and unique device identifiers (collected by AdMob for ad targeting).</li>
+      <li><strong style="color:var(--white)">Advertising identifiers</strong> — IDFA (Identifier for Advertisers) if you consent to ad tracking via Apple's App Tracking Transparency prompt.</li>
+    </ul>
+    <div class="highlight-box">
+      <strong>We do NOT collect:</strong> passwords, private messages, financial information, or any personally identifiable information beyond what is described above.
+    </div>
+  </div>
+
+  <!-- 3. How We Use Information -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-green">⚙️</div>
+      <h2>3. How We Use Your Information</h2>
+    </div>
+    <ul>
+      <li>To display real-time social media statistics on your device screen.</li>
+      <li>To refresh follower/like counts automatically every 5 seconds.</li>
+      <li>To serve relevant advertisements through <strong style="color:var(--white)">Google AdMob</strong>.</li>
+      <li>To comply with applicable laws and platform API terms of service.</li>
+    </ul>
+  </div>
+
+  <!-- 4. Advertising (AdMob) -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-orange">📢</div>
+      <h2>4. Advertising — Google AdMob</h2>
+    </div>
+    <p>
+      This App uses <strong style="color:var(--white)">Google AdMob</strong> to display advertisements. AdMob may collect and use data to serve personalized or non-personalized ads, depending on your consent preferences.
+    </p>
+    <ul>
+      <li>AdMob may use cookies, device IDs, and similar technologies to deliver ads.</li>
+      <li>On first launch, the App will display Apple's <strong style="color:var(--white)">App Tracking Transparency (ATT)</strong> prompt. If you decline, only non-personalized ads will be shown.</li>
+      <li>AdMob's data practices are governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</li>
+      <li>You can opt out of personalized advertising at any time in <em>Settings → Privacy → Tracking</em> on your iOS device.</li>
+    </ul>
+    <div class="highlight-box">
+      To learn more about how Google uses data from apps: <a href="https://policies.google.com/technologies/partner-sites" target="_blank">google.com/policies/privacy/partners</a>
+    </div>
+  </div>
+
+  <!-- 5. Third-Party Services -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-teal">🔗</div>
+      <h2>5. Third-Party Services & APIs</h2>
+    </div>
+    <p>The App connects to official social media APIs to retrieve public data. Each platform's own privacy policy governs how they handle data:</p>
+    <ul>
+      <li><a href="https://www.facebook.com/policy.php" target="_blank">Facebook / Meta Privacy Policy</a></li>
+      <li><a href="https://www.tiktok.com/legal/privacy-policy" target="_blank">TikTok Privacy Policy</a></li>
+    </ul>
+    <p style="margin-top:12px">We do not share your data with any third parties beyond what is necessary to operate these integrations and serve ads.</p>
+  </div>
+
+  <!-- 6. Data Retention -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-yellow">🗑️</div>
+      <h2>6. Data Retention & Storage</h2>
+    </div>
+    <p>
+      Social media metrics displayed in the App are fetched in real-time and <strong style="color:var(--white)">not stored on our servers</strong>. All data remains on your device and is not transmitted to us.
+    </p>
+    <p>
+      Anonymous analytics data is retained for up to <strong style="color:var(--white)">24 months</strong> and then automatically deleted. Advertising identifiers are managed by Google AdMob per their data retention policies.
+    </p>
+  </div>
+
+  <!-- 7. Children's Privacy -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-pink">👶</div>
+      <h2>7. Children's Privacy</h2>
+    </div>
+    <p>
+      This App is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will promptly delete it.
+    </p>
+  </div>
+
+  <!-- 8. Your Rights -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-blue">⚖️</div>
+      <h2>8. Your Rights</h2>
+    </div>
+    <p>Depending on your location, you may have the following rights:</p>
+    <ul>
+      <li><strong style="color:var(--white)">Access</strong> — request a copy of any personal data we hold about you.</li>
+      <li><strong style="color:var(--white)">Deletion</strong> — request deletion of your personal data.</li>
+      <li><strong style="color:var(--white)">Opt-out of tracking</strong> — disable ad tracking via iOS Settings → Privacy → Tracking.</li>
+      <li><strong style="color:var(--white)">GDPR / CCPA rights</strong> — EU and California residents have additional rights. Contact us to exercise them.</li>
+    </ul>
+  </div>
+
+  <!-- 9. Security -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-red">🔒</div>
+      <h2>9. Security</h2>
+    </div>
+    <p>
+      We implement industry-standard security measures to protect information within the App. All API calls to social media platforms use HTTPS/TLS encryption. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
+    </p>
+  </div>
+
+  <!-- 10. Changes -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon icon-teal">🔄</div>
+      <h2>10. Changes to This Policy</h2>
+    </div>
+    <p>
+      We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the "Last updated" date at the top of this page and, where appropriate, through an in-app notification.
+    </p>
+    <p>Your continued use of the App after any changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <h2>Questions or Concerns?</h2>
+    <p>If you have any questions about this Privacy Policy or our data practices,<br/>please don't hesitate to reach out.</p>
+    <a href="mailto:your@email.com" class="contact-email">📧 Contact Us: dtb4121988@gmail.com</a>
+  </div>
+
+  <footer>
+    <p>© 2026 VigoGlobal · Likes Social Counter · All rights reserved.</p>
+    <p style="margin-top:6px">This app is not affiliated with Facebook, TikTok.</p>
+  </footer>
+
+</div>
+</body>
+</html>
