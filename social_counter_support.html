@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Like Social Counter – Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink: #ff3cac;
+      --purple: #784ba0;
+      --blue: #2b86c5;
+      --dark: #0d0d14;
+      --card: #13131f;
+      --border: rgba(255,255,255,0.08);
+      --text: #e8e8f0;
+      --muted: #8888aa;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* BACKGROUND */
+    .bg-orb {
+      position: fixed; pointer-events: none; z-index: 0;
+      border-radius: 50%; filter: blur(120px); opacity: 0.18;
+    }
+    .bg-orb-1 { width: 600px; height: 600px; background: var(--pink); top: -200px; right: -100px; }
+    .bg-orb-2 { width: 500px; height: 500px; background: var(--blue); bottom: -150px; left: -100px; }
+    .bg-orb-3 { width: 300px; height: 300px; background: var(--purple); top: 50%; left: 50%; transform: translate(-50%,-50%); }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      padding: 18px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(13,13,20,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--pink), var(--blue));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .nav-logo-text { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--text); }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* HERO */
+    .hero {
+      position: relative; z-index: 1;
+      text-align: center;
+      padding: 100px 24px 80px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,60,172,0.1); border: 1px solid rgba(255,60,172,0.25);
+      border-radius: 100px; padding: 6px 16px; margin-bottom: 28px;
+      font-size: 12px; font-weight: 500; color: var(--pink);
+      animation: fadeDown .6s ease both;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif; font-size: clamp(40px, 7vw, 72px);
+      font-weight: 800; line-height: 1.05; margin-bottom: 20px;
+      background: linear-gradient(135deg, #fff 30%, var(--pink) 70%, var(--blue));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      animation: fadeDown .6s .1s ease both;
+    }
+    .hero p {
+      font-size: 18px; color: var(--muted); max-width: 520px; margin: 0 auto 40px;
+      line-height: 1.6; animation: fadeDown .6s .2s ease both;
+    }
+    .hero-btns {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+      animation: fadeDown .6s .3s ease both;
+    }
+    .btn {
+      padding: 13px 28px; border-radius: 100px; font-size: 15px; font-weight: 500;
+      text-decoration: none; transition: all .2s; cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--pink), var(--blue));
+      color: #fff;
+    }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.05); }
+
+    /* FEATURES STRIP */
+    .features-strip {
+      position: relative; z-index: 1;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+      padding: 0 24px 80px;
+      animation: fadeUp .6s .4s ease both;
+    }
+    .feature-pill {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 100px; padding: 8px 18px; font-size: 14px; color: var(--muted);
+    }
+    .feature-pill span.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); flex-shrink: 0; }
+
+    /* SECTION */
+    section { position: relative; z-index: 1; padding: 80px 24px; max-width: 860px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--pink); margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif; font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700; margin-bottom: 48px; color: #fff;
+    }
+
+    /* HOW IT WORKS */
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: flex; gap: 24px; padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: 'Syne', sans-serif; font-size: 48px; font-weight: 800;
+      line-height: 1; color: transparent;
+      -webkit-text-stroke: 1px rgba(255,60,172,0.3);
+      flex-shrink: 0; width: 60px;
+    }
+    .step-content h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .step-content p { color: var(--muted); line-height: 1.6; font-size: 15px; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      transition: border-color .2s;
+    }
+    .faq-item:hover { border-color: rgba(255,60,172,0.3); }
+    .faq-q {
+      width: 100%; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center;
+      background: none; border: none; color: var(--text); font-family: 'DM Sans', sans-serif;
+      font-size: 15px; font-weight: 500; text-align: left; cursor: pointer; gap: 16px;
+    }
+    .faq-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; font-size: 14px; transition: transform .3s, background .2s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(255,60,172,0.2); }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease;
+      color: var(--muted); font-size: 14px; line-height: 1.7; padding: 0 24px;
+    }
+    .faq-item.open .faq-a { max-height: 200px; padding: 0 24px 20px; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .contact-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px 24px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: border-color .2s, transform .2s;
+    }
+    .contact-card:hover { border-color: rgba(255,60,172,0.35); transform: translateY(-3px); }
+    .contact-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255,60,172,0.2), rgba(43,134,197,0.2));
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .contact-card h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; }
+    .contact-card a {
+      color: var(--pink); text-decoration: none; font-size: 14px; font-weight: 500;
+      word-break: break-all;
+    }
+    .contact-card a:hover { text-decoration: underline; }
+    .contact-card p { color: var(--muted); font-size: 13px; }
+
+    /* PRIVACY */
+    .privacy-box {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 36px;
+    }
+    .privacy-box h3 { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+    .privacy-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .privacy-list li { display: flex; gap: 12px; font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .privacy-list li::before { content: "✓"; color: var(--pink); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* FOOTER */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: gap;
+      gap: 16px;
+    }
+    footer p { color: var(--muted); font-size: 13px; }
+    footer a { color: var(--muted); text-decoration: none; font-size: 13px; }
+    footer a:hover { color: var(--pink); }
+
+    /* ANIMATIONS */
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeUp   { from { opacity: 0; transform: translateY(16px);  } to { opacity: 1; transform: translateY(0); } }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 20px; }
+      .hero { padding: 70px 20px 50px; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#">
+      <div class="nav-logo-icon">❤️</div>
+      <span class="nav-logo-text">Like Social Counter</span>
+    </a>
+    <div class="nav-links">
+      <a href="#how">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="#privacy">Privacy</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">💬 Support Center</div>
+    <h1>We're here<br/>to help you grow</h1>
+    <p>Get answers, learn how the app works, and reach us anytime. Your success is our priority.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-primary">Contact Support</a>
+      <a href="#faq" class="btn btn-outline">Browse FAQ</a>
+    </div>
+  </div>
+
+  <!-- FEATURES STRIP -->
+  <div class="features-strip">
+    <div class="feature-pill"><span class="dot"></span>Refreshes every 5 seconds</div>
+    <div class="feature-pill"><span class="dot"></span>Facebook & TikTok</div>
+    <div class="feature-pill"><span class="dot"></span>iPhone · iPad · iPod Touch</div>
+    <div class="feature-pill"><span class="dot"></span>No account required</div>
+    <div class="feature-pill"><span class="dot"></span>Real-time display</div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="section-label">Getting Started</div>
+    <div class="section-title">How It Works</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Connect your account</h3>
+          <p>Open the app and connect your Facebook Page or TikTok account. We only request read-only access to your public page statistics.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Place your device</h3>
+          <p>Position your iPhone, iPad, or iPod Touch where customers, fans, or your team can see it — on a counter, shelf, or display stand.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Watch your numbers grow</h3>
+          <p>The counter refreshes automatically every 5 seconds and plays a beautiful "Thank You" animation with every new like or follower.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="section-label">FAQ</div>
+    <div class="section-title">Frequently Asked Questions</div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Which platforms are supported?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Like Social Counter currently supports Facebook Page likes and TikTok followers. More platforms may be added in future updates.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How often does the counter update?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">The counter refreshes automatically every 5 seconds — no manual action needed.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Does the app store my personal data?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">No. We do not create a separate account, and we do not collect your name or email address. We only access read-only public statistics for your page.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I connect my Facebook account?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Tap the "Connect Facebook" button in the app, then authorize read-only access to your Page statistics. No password is stored by the app.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I disconnect my account?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Go to Settings inside the app and tap Logout. You can also revoke access directly from your Facebook or TikTok security settings at any time.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          The counter is not updating. What should I do?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Please check your internet connection and make sure the app has permission to access your account. Try disconnecting and reconnecting your account. If the issue persists, contact us at dtb4121988@gmail.com.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Which devices are supported?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">The app works on iPhone, iPad, and iPod Touch running iOS 14 or later. It's a great way to give an old device a brand-new purpose!</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <div class="section-title">Get in Touch</div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <h3>Email Support</h3>
+        <a href="mailto:dtb4121988@gmail.com">dtb4121988@gmail.com</a>
+        <p>We typically respond within 1–2 business days.</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <h3>Phone / WhatsApp</h3>
+        <a href="tel:+84978334156">+84 978 334 156</a>
+        <p>Available during business hours (GMT+7).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section id="privacy">
+    <div class="section-label">Privacy Policy</div>
+    <div class="section-title">Your data is safe with us</div>
+    <div class="privacy-box">
+      <h3>Last updated: March 2026</h3>
+      <br/>
+      <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:20px;">
+        Like Social Counter is committed to protecting your privacy. Here's exactly what we do and don't do:
+      </p>
+      <ul class="privacy-list">
+        <li>We do not create user accounts within the app</li>
+        <li>We do not collect your name or email address</li>
+        <li>We do not use your data for advertising purposes</li>
+        <li>Facebook and TikTok connections are used solely to read public page statistics (likes/followers)</li>
+        <li>We do not share your data with any third parties</li>
+        <li>You can revoke access at any time via app Settings or your social media account's security settings</li>
+      </ul>
+      <br/>
+      <p style="color:var(--muted);font-size:13px;">For privacy questions, contact: <a href="mailto:dtb4121988@gmail.com" style="color:var(--pink);">dtb4121988@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Like Social Counter. All rights reserved.</p>
+    <div style="display:flex;gap:24px;">
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>
