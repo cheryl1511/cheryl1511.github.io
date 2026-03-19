@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support – HighlightAnywhere</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a18;
+    --ink-muted: #6b6b60;
+    --ink-faint: #a8a89c;
+    --paper: #faf9f6;
+    --paper-warm: #f3f1eb;
+    --accent: #2d5a3d;
+    --accent-light: #e8f0ea;
+    --border: #e2e0d8;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* Header */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+  }
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .logo span { color: var(--accent); font-style: italic; }
+  nav a {
+    font-size: 13px;
+    color: var(--ink-muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 400;
+    transition: color .2s;
+  }
+  nav a:hover { color: var(--accent); }
+  nav a.active { color: var(--accent); font-weight: 500; }
+
+  /* Hero */
+  .hero {
+    background: var(--ink);
+    color: #fff;
+    padding: 3.5rem 2rem 3rem;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,.1);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: .5rem;
+  }
+  .hero h1 em { font-style: italic; opacity: .5; }
+  .hero-sub { font-size: 14px; opacity: .5; font-weight: 300; }
+
+  /* Main */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  /* Quick start */
+  .quick-start {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+  .qs-card {
+    background: var(--paper-warm);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color .2s, transform .2s;
+  }
+  .qs-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .qs-icon {
+    font-size: 24px;
+    margin-bottom: .75rem;
+    display: block;
+  }
+  .qs-card h3 { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: .4rem; }
+  .qs-card p { font-size: 13px; color: var(--ink-muted); line-height: 1.55; margin: 0; font-weight: 300; }
+
+  /* Section headings */
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: .75rem;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  /* FAQ */
+  .faq-section { margin-bottom: 4rem; }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    gap: 1rem;
+  }
+  .faq-q:hover { color: var(--accent); }
+  .faq-chevron {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    font-size: 12px;
+    color: var(--ink-faint);
+    transition: transform .25s, background .2s, border-color .2s;
+  }
+  .faq-item.open .faq-chevron {
+    transform: rotate(45deg);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease, padding .25s;
+  }
+  .faq-item.open .faq-a { max-height: 400px; padding-bottom: 1.2rem; }
+  .faq-a p { font-size: 14px; color: var(--ink-muted); line-height: 1.7; margin-bottom: .6rem; font-weight: 300; }
+  .faq-a p:last-child { margin-bottom: 0; }
+  .faq-a code {
+    font-family: monospace;
+    font-size: 12px;
+    background: var(--paper-warm);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--accent);
+  }
+
+  /* Steps */
+  .steps { margin: 1.5rem 0; }
+  .step {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: flex-start;
+  }
+  .step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-body h4 { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: .2rem; }
+  .step-body p { font-size: 13px; color: var(--ink-muted); margin: 0; font-weight: 300; }
+
+  /* Contact section */
+  .contact-section {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 2.5rem;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 4rem;
+  }
+  .contact-section h2 {
+    color: #fff;
+    margin-bottom: .5rem;
+    font-size: 1.4rem;
+  }
+  .contact-section p { color: rgba(255,255,255,.55); font-size: 14px; margin: 0; font-weight: 300; }
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: #fff;
+    color: var(--ink);
+    text-decoration: none;
+    padding: .75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background .2s, transform .15s;
+  }
+  .contact-btn:hover { background: var(--accent-light); transform: translateY(-1px); }
+
+  /* Info boxes */
+  .info-box {
+    background: var(--accent-light);
+    border: 1px solid #c8dbc9;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+  }
+  .info-box p { color: var(--accent); font-size: 13px; margin: 0; font-weight: 400; }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,.4);
+    text-align: center;
+    padding: 2rem;
+    font-size: 13px;
+    font-weight: 300;
+  }
+  footer a { color: rgba(255,255,255,.6); text-decoration: none; margin: 0 .75rem; }
+  footer a:hover { color: #fff; }
+
+  @media (max-width: 600px) {
+    .contact-section { grid-template-columns: 1fr; }
+    .contact-btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">Highlight<span>Anywhere</span></a>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html" class="active">Support</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">Support</div>
+  <h1>How can we <em>&</em><br>help you?</h1>
+  <p class="hero-sub">Find answers below or reach out directly.</p>
+</div>
+
+<main>
+
+  <!-- Quick start cards -->
+  <div class="quick-start">
+    <div class="qs-card">
+      <span class="qs-icon">🖊</span>
+      <h3>Highlight text</h3>
+      <p>Select any text on a webpage and tap a color from the popup to highlight it instantly.</p>
+    </div>
+    <div class="qs-card">
+      <span class="qs-icon">📋</span>
+      <h3>Enable copy</h3>
+      <p>Can't copy text on a site? Activate the extension — copy-paste will be unlocked automatically.</p>
+    </div>
+    <div class="qs-card">
+      <span class="qs-icon">📤</span>
+      <h3>Export highlights</h3>
+      <p>Tap Export in the popup to save all highlights as Markdown, HTML, or a shareable image.</p>
+    </div>
+    <div class="qs-card">
+      <span class="qs-icon">🗑</span>
+      <h3>Clear highlights</h3>
+      <p>Remove a single highlight by tapping it, or clear all highlights for the page at once.</p>
+    </div>
+  </div>
+
+  <!-- Getting started -->
+  <div class="faq-section">
+    <div class="section-label">Getting started</div>
+    <h2>Setting Up the Extension</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Open Safari Settings</h4>
+          <p>Go to Settings → Safari → Extensions on your iPhone or iPad.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Enable HighlightAnywhere</h4>
+          <p>Toggle HighlightAnywhere on and grant permission to "All Websites" for the best experience.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Open any webpage in Safari</h4>
+          <p>Tap the extension icon (puzzle piece) in the Safari toolbar, then tap HighlightAnywhere to activate.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>Select text to begin</h4>
+          <p>Long-press any text to select it. A color picker popup will appear — choose a color to highlight.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p>💡 Tip: Grant "Allow" permission for "All Websites" so the extension works on every page without asking each time.</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="section-label">FAQ</div>
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        Why can't I see the extension icon in Safari?
+        <span class="faq-chevron">+</span>
+      </button>
+      <div class="faq-a">
+        <p>The extension icon appears in the Safari toolbar (address bar area). If you don't see it, tap the <code>AA</code> or page settings icon in the address bar — the extension may be listed there. Make sure the extension is enabled in <strong>Settings → Safari → Extensions</strong>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        The extension doesn't work on a specific website. Why?
+        <span class="faq-chevron">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Some websites use aggressive content security policies that can prevent extensions from running. This is a Safari/website limitation, not a bug in HighlightAnywhere. Most standard websites work without issues.</p>
+        <p>If the issue persists, try refreshing the page after activating the extension.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        Will my highlights be saved if I close the tab?
+        <span class="faq-chevron">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Yes. Highlights are saved locally on your device and will be restored automatically when you revisit the same page. All data is stored on-device — nothing is sent to any server.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        How do I remove a specific highlight?
+        <span class="faq-chevron">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Tap on any highlighted text to select it and reveal the popup. Then tap the <strong>clear</strong> or eraser option to remove that individual highlight. To clear all highlights on a page at once, use the "Clear All" option in the extension popup.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        What selection modes are available?
+        <span class="faq-chevron">+</span>
+      </button>
+      <div class="faq-a">
+        <p>HighlightAnywhere supports three quick selection modes:</p>
+        <p><strong>Word</strong> — double-tap to select a single word.<br>
+        <strong>Sentence</strong> — selects the full sentence containing the tapped word.<br>
+        <strong>Paragraph</strong> — selects the entire paragraph with one tap.</p>
+        <p>You can also manually drag to select any custom range of text.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        What highlight styles are available?
+        <span class="faq-chevron">+</span>
+      </button>
+      <div class="faq-a">
+        <p>You can choose from three visual styles:</p>
+        <p><strong>Full highlight</strong> — colored background behind the text.<br>
+        <strong>Underline</strong> — colored line beneath the text, less intrusive.<br>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        How do I export my highlights?
+        <span class="faq-chevron">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Tap the export icon in the extension popup. You can export in three formats:</p>
+        <p><strong>Markdown (.md)</strong> — great for note-taking apps like Obsidian or Notion.<br>
+        <strong>HTML (.html)</strong> — preserves styling, open in any browser.<br>
+        <strong>Image (.png)</strong> — a visual snapshot of your highlights, easy to share.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        Does the app collect any of my data?
+        <span class="faq-chevron">+</span>
+      </button>
+      <div class="faq-a">
+        <p>No. HighlightAnywhere collects absolutely no personal data. All highlights and preferences are stored locally on your device and never transmitted anywhere. See our <a href="privacy.html" style="color:var(--accent)">Privacy Policy</a> for full details.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        How do I delete all my saved data?
+        <span class="faq-chevron">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Simply delete the app from your device. All locally stored highlights and preferences will be permanently removed. Alternatively, you can clear highlights per-page using the "Clear All" function within the extension.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        Is HighlightAnywhere available on Mac?
+        <span class="faq-chevron">+</span>
+      </button>
+      <div class="faq-a">
+        <p>Currently, HighlightAnywhere is available for iOS and iPadOS. Mac support may be added in a future update.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-section">
+    <div>
+      <h2>Still need help?</h2>
+      <p>Can't find what you're looking for? Send us an email and we'll get back to you as soon as possible.</p>
+    </div>
+    <a class="contact-btn" href="mailto:dtb4121988@gmail.com">
+      ✉ Email Support
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div>© 2025 HighlightAnywhere &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> <a href="support.html">Support</a></div>
+</footer>
+
+<script>
+function toggle(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>
