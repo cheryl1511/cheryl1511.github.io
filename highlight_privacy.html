@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy – HighlightAnywhere</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a18;
+    --ink-muted: #6b6b60;
+    --ink-faint: #a8a89c;
+    --paper: #faf9f6;
+    --paper-warm: #f3f1eb;
+    --accent: #2d5a3d;
+    --accent-light: #e8f0ea;
+    --border: #e2e0d8;
+    --serif: 'Instrument Serif', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* Header */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+  }
+  .header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .logo span { color: var(--accent); font-style: italic; }
+  nav a {
+    font-size: 13px;
+    color: var(--ink-muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 400;
+    transition: color .2s;
+  }
+  nav a:hover { color: var(--accent); }
+  nav a.active { color: var(--accent); font-weight: 500; }
+
+  /* Hero strip */
+  .hero {
+    background: var(--accent);
+    color: #fff;
+    padding: 3.5rem 2rem 3rem;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,.15);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: .6rem;
+  }
+  .hero h1 em { font-style: italic; opacity: .75; }
+  .hero-sub {
+    font-size: 14px;
+    opacity: .7;
+    font-weight: 300;
+    margin-top: .4rem;
+  }
+
+  /* Zero collect badge */
+  .zero-bar {
+    background: var(--accent-light);
+    border-bottom: 1px solid #c8dbc9;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  .zero-bar p {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .zero-bar p::before { content: "✦ "; }
+
+  /* Main layout */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  /* Sections */
+  section { margin-bottom: 3.5rem; }
+
+  .section-num {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: .5rem;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  p { color: var(--ink-muted); margin-bottom: .9rem; font-weight: 300; }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--ink); font-weight: 500; }
+
+  /* Highlight box */
+  .highlight-box {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .highlight-box p { color: var(--accent); font-weight: 400; margin: 0; }
+
+  /* Checklist */
+  .checklist { list-style: none; margin: 1rem 0; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: .75rem;
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--ink-muted);
+    font-weight: 300;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: "✓";
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: .05rem;
+  }
+
+  /* Contact card */
+  .contact-card {
+    background: var(--paper-warm);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 18px;
+  }
+  .contact-card h3 { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: .25rem; }
+  .contact-card a { color: var(--accent); font-size: 14px; text-decoration: none; font-weight: 400; }
+  .contact-card a:hover { text-decoration: underline; }
+
+  /* Updated date */
+  .updated {
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,.4);
+    text-align: center;
+    padding: 2rem;
+    font-size: 13px;
+    font-weight: 300;
+  }
+  footer a { color: rgba(255,255,255,.6); text-decoration: none; margin: 0 .75rem; }
+  footer a:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">Highlight<span>Anywhere</span></a>
+    <nav>
+      <a href="privacy.html" class="active">Privacy</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">Legal</div>
+  <h1>Privacy Policy <em>&</em><br>Data Practices</h1>
+  <p class="hero-sub">Plain language. No surprises.</p>
+</div>
+
+<div class="zero-bar">
+  <p>HighlightAnywhere collects zero personal data. Everything stays on your device.</p>
+</div>
+
+<main>
+
+  <section>
+    <div class="section-num">01</div>
+    <h2>Overview</h2>
+    <p>HighlightAnywhere is a Safari Extension that lets you highlight text, enable copy-paste, and annotate any webpage. We built it with a simple principle: <strong>your reading is your own business.</strong></p>
+    <div class="highlight-box">
+      <p>We do not collect, store, transmit, or share any personal information, browsing data, or usage statistics. Not now, not ever.</p>
+    </div>
+    <p>This Privacy Policy explains how the app handles your data — and why the answer is mostly "it doesn't."</p>
+  </section>
+
+  <section>
+    <div class="section-num">02</div>
+    <h2>What We Do Not Collect</h2>
+    <p>Here is a complete list of data we do <strong>not</strong> collect:</p>
+    <ul class="checklist">
+      <li>Personal information (name, email, account details)</li>
+      <li>Browsing history or the pages you visit</li>
+      <li>Text you highlight or annotate</li>
+      <li>Notes or annotations you write</li>
+      <li>Device identifiers or IP addresses</li>
+      <li>Usage analytics or crash reports</li>
+      <li>Location data</li>
+      <li>Any data transmitted to external servers</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-num">03</div>
+    <h2>How Your Data Is Stored</h2>
+    <p>All highlights, notes, and preferences are stored <strong>locally on your device</strong> using Apple's standard storage mechanisms (UserDefaults and local storage). This data:</p>
+    <ul class="checklist">
+      <li>Never leaves your device</li>
+      <li>Is never sent to any server</li>
+      <li>Is only accessible by the app itself</li>
+      <li>Can be deleted at any time by removing the app</li>
+    </ul>
+    <p>If you delete the app, all locally stored data is permanently removed.</p>
+  </section>
+
+  <section>
+    <div class="section-num">04</div>
+    <h2>Safari Extension Permissions</h2>
+    <p>HighlightAnywhere requests permission to read and modify webpage content in Safari. This permission is required to:</p>
+    <ul class="checklist">
+      <li>Highlight and mark text on the current page</li>
+      <li>Enable copy-paste where it is blocked</li>
+      <li>Restore your highlights when you revisit a page</li>
+      <li>Export your highlights as Markdown, HTML, or image</li>
+    </ul>
+    <p>This permission is used <strong>only on the active page</strong> while the extension is enabled. We do not read or process any page content for any other purpose.</p>
+  </section>
+
+  <section>
+    <div class="section-num">05</div>
+    <h2>Third-Party Services</h2>
+    <p>HighlightAnywhere does <strong>not</strong> integrate with any third-party analytics, advertising, tracking, or data-sharing services. There are no SDKs embedded in the app that collect data on our behalf.</p>
+  </section>
+
+  <section>
+    <div class="section-num">06</div>
+    <h2>Children's Privacy</h2>
+    <p>HighlightAnywhere does not collect any data from any users, including children under the age of 13. The app is safe for all ages.</p>
+  </section>
+
+  <section>
+    <div class="section-num">07</div>
+    <h2>Changes to This Policy</h2>
+    <p>If we ever update this Privacy Policy, we will update the date at the bottom of this page. Since we collect no data, meaningful changes to this policy are unlikely — but we will always be transparent if they occur.</p>
+  </section>
+
+  <section>
+    <div class="section-num">08</div>
+    <h2>Contact</h2>
+    <p>Questions about this policy? We're happy to answer.</p>
+    <div class="contact-card">
+      <div class="contact-icon">✉</div>
+      <div>
+        <h3>Get in touch</h3>
+        <a href="mailto:dtb4121988@gmail.com">dtb4121988@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <p class="updated">Last updated: June 2025 &nbsp;·&nbsp; Effective date: June 2025</p>
+
+</main>
+
+<footer>
+  <div>© 2025 HighlightAnywhere &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> <a href="support.html">Support</a></div>
+</footer>
+
+</body>
+</html>
