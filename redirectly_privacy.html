@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – Redirectly: URL Cleaner</title>
+    <meta name="description"
+        content="Redirectly privacy policy. We collect zero data. All processing happens on-device. Your browsing stays 100% private.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #4F7FFF;
+            --primary-dark: #3562e3;
+            --primary-light: #EEF3FF;
+            --text: #1a1a2e;
+            --text-secondary: #6b7280;
+            --bg: #f8f9ff;
+            --card: #ffffff;
+            --border: #e5e7eb;
+            --green: #10b981;
+            --green-light: #ecfdf5;
+            --gradient-hero: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --shadow-md: 0 4px 20px rgba(79, 127, 255, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+            --radius: 20px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: var(--gradient-hero);
+            padding: 80px 24px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(79, 127, 255, 0.2) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: #6ee7b7;
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 60px);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: var(--bg);
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+
+        /* ── PLEDGE BANNER ── */
+        .pledge {
+            max-width: 840px;
+            margin: -30px auto 0;
+            padding: 0 24px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .pledge-card {
+            background: var(--green);
+            border-radius: 20px;
+            padding: 28px 36px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 12px 40px rgba(16, 185, 129, 0.35);
+            color: #fff;
+        }
+
+        .pledge-icon {
+            font-size: 40px;
+            flex-shrink: 0;
+        }
+
+        .pledge-card h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .pledge-card p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* ── MAIN ── */
+        .main {
+            max-width: 840px;
+            margin: 0 auto;
+            padding: 64px 24px 100px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 14px;
+        }
+
+        /* ── TOC ── */
+        .toc {
+            background: var(--card);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            margin-bottom: 56px;
+        }
+
+        .toc h2 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .toc ol {
+            padding-left: 20px;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── POLICY SECTIONS ── */
+        .policy-section {
+            margin-bottom: 52px;
+            scroll-margin-top: 24px;
+        }
+
+        .policy-section h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .policy-section h2 .num {
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .policy-section p {
+            font-size: 15px;
+            color: #374151;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        /* ── PRINCIPLE CARDS ── */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .principle-card {
+            background: var(--card);
+            border: 1.5px solid var(--border);
+            border-radius: 16px;
+            padding: 22px;
+            transition: all 0.2s;
+        }
+
+        .principle-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .principle-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .principle-card h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .principle-card p {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* ── HIGHLIGHT BOXES ── */
+        .highlight-box {
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .highlight-box.green {
+            background: var(--green-light);
+            border-left: 4px solid var(--green);
+            color: #065f46;
+        }
+
+        .highlight-box.blue {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            color: #1e3a8a;
+        }
+
+        ul.styled {
+            padding-left: 0;
+            list-style: none;
+            margin: 16px 0;
+        }
+
+        ul.styled li {
+            padding: 10px 16px 10px 48px;
+            position: relative;
+            font-size: 14px;
+            color: #374151;
+            border-radius: 10px;
+            margin-bottom: 6px;
+            transition: background 0.2s;
+        }
+
+        ul.styled li:hover {
+            background: #f9fafb;
+        }
+
+        ul.styled li::before {
+            content: '✓';
+            position: absolute;
+            left: 16px;
+            width: 22px;
+            height: 22px;
+            background: var(--green-light);
+            color: var(--green);
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* ── CONTACT ── */
+        .contact-section {
+            background: var(--gradient-hero);
+            border-radius: 28px;
+            padding: 50px 40px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .contact-section h2 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            font-size: 15px;
+            opacity: 0.75;
+            margin-bottom: 28px;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: var(--primary-dark);
+            padding: 14px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+            padding-bottom: 40px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .pledge-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .principles-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-badge">🛡️ Zero Data Collection</div>
+        <h1>Privacy Policy</h1>
+        <p>We built Redirectly with privacy as a foundation — not an afterthought.</p>
+        <div class="hero-wave"></div>
+    </header>
+
+    <!-- PLEDGE -->
+    <div class="pledge">
+        <div class="pledge-card">
+            <span class="pledge-icon">🔒</span>
+            <div>
+                <h2>Our Core Commitment</h2>
+                <p>Redirectly does not collect, store, or transmit any personal information or browsing data. Everything
+                    stays on your device, always.</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="main">
+
+        <p style="font-size:14px; color:var(--text-secondary); margin-bottom:40px; margin-top:12px;">
+            Last Updated: <strong>March 29, 2026</strong> &nbsp;·&nbsp; Effective immediately
+        </p>
+
+        <!-- TOC -->
+        <div class="toc">
+            <h2>On This Page</h2>
+            <ol>
+                <li><a href="#s1">Information We Do Not Collect</a></li>
+                <li><a href="#s2">Local Processing</a></li>
+                <li><a href="#s3">iCloud Sync</a></li>
+                <li><a href="#s4">Third-Party Websites</a></li>
+                <li><a href="#s5">Children's Privacy</a></li>
+                <li><a href="#s6">Changes to This Policy</a></li>
+                <li><a href="#s7">Contact Us</a></li>
+            </ol>
+        </div>
+
+        <!-- Intro -->
+        <p style="font-size:16px; color:#374151; margin-bottom:48px; line-height:1.85;">
+            At Redirectly, we believe that privacy is a fundamental right. This policy describes how Redirectly ("the
+            App", "we", "us", or "our") handles — or more accurately, <em>does not handle</em> — your data. The short
+            version: <strong>we collect nothing.</strong>
+        </p>
+
+        <!-- S1 -->
+        <section class="policy-section" id="s1">
+            <h2><span class="num">1</span>Information We Do Not Collect</h2>
+            <p>Redirectly was architected from day one to operate with zero data collection. Here is what we explicitly
+                do not collect:</p>
+
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <span class="principle-icon">🚫</span>
+                    <h3>No Personal Data</h3>
+                    <p>No names, email addresses, phone numbers, or any identifiable information.</p>
+                </div>
+                <div class="principle-card">
+                    <span class="principle-icon">🌐</span>
+                    <h3>No Browsing History</h3>
+                    <p>We never track, record, or upload any URLs you visit or redirect.</p>
+                </div>
+                <div class="principle-card">
+                    <span class="principle-icon">📊</span>
+                    <h3>No Analytics</h3>
+                    <p>Zero third-party analytics, tracking pixels, or advertising SDKs inside the app.</p>
+                </div>
+                <div class="principle-card">
+                    <span class="principle-icon">📍</span>
+                    <h3>No Location Data</h3>
+                    <p>We never request or access your device's location.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box green">
+                <strong>✓ Your redirect rules, settings, and preferences never leave your device.</strong>
+                Everything is processed locally using Safari's extension API on your iPhone, iPad, or Mac.
+            </div>
+        </section>
+
+        <!-- S2 -->
+        <section class="policy-section" id="s2">
+            <h2><span class="num">2</span>Local Processing Only</h2>
+            <p>All URL matching, redirection logic, and rule evaluation happens entirely on-device. When Safari
+                navigates to a page:</p>
+            <ul class="styled">
+                <li>Redirectly checks your local rule set using the Safari Web Extension API</li>
+                <li>If a rule matches, the redirect is executed entirely within Safari's process</li>
+                <li>No URL data is sent to any server — ours or anyone else's</li>
+                <li>No log of the redirect is stored anywhere outside your device</li>
+            </ul>
+            <div class="highlight-box blue">
+                <strong>Technical note:</strong> Redirectly uses Apple's Safari Web Extension APIs, which run in a
+                sandboxed environment. The extension cannot make network requests to external servers without explicit
+                permission — which we never request.
+            </div>
+        </section>
+
+        <!-- S3 -->
+        <section class="policy-section" id="s3">
+            <h2><span class="num">3</span>iCloud Sync (Optional)</h2>
+            <p>If you choose to sync your rules across devices, Redirectly uses <strong>Apple's iCloud</strong>
+                infrastructure. Any data stored in iCloud is:</p>
+            <ul class="styled">
+                <li>Encrypted in transit and at rest by Apple</li>
+                <li>Accessible only to you, via your Apple ID</li>
+                <li>Governed by Apple's own Privacy Policy at <a href="https://www.apple.com/privacy/" target="_blank"
+                        rel="noopener">apple.com/privacy</a></li>
+                <li>Invisible and inaccessible to us at all times</li>
+            </ul>
+            <p>iCloud sync is entirely optional. The app works fully offline without it.</p>
+        </section>
+
+        <!-- S4 -->
+        <section class="policy-section" id="s4">
+            <h2><span class="num">4</span>Third-Party Websites</h2>
+            <p>Redirectly's purpose is to redirect you to third-party websites. We have no control over those
+                destinations. Each third-party site operates under its own privacy policy, and we are not responsible
+                for their data practices.</p>
+            <p>We encourage you to review the privacy policies of any website you visit, especially when sharing
+                personal information with them. Redirectly itself never mediates or sees the content of those sites.</p>
+        </section>
+
+        <!-- S5 -->
+        <section class="policy-section" id="s5">
+            <h2><span class="num">5</span>Children's Privacy</h2>
+            <p>Redirectly is not directed at children under the age of 13. We do not knowingly collect any personal
+                information from children. If you believe a child has provided us information, please contact us
+                immediately and we will take appropriate action.</p>
+        </section>
+
+        <!-- S6 -->
+        <section class="policy-section" id="s6">
+            <h2><span class="num">6</span>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date
+                at the top of this page. We recommend reviewing this page periodically. We will never adopt practices
+                that compromise your privacy without clear notice.</p>
+            <div class="highlight-box green">
+                Our commitment is simple: if our data practices ever change, we will tell you clearly and prominently
+                before any change takes effect.
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <div class="contact-section" id="s7">
+            <h2>Questions About Privacy?</h2>
+            <p>We're transparent and happy to answer any questions you have about how Redirectly handles your data.</p>
+            <a href="mailto:dtb4121988@gmail.com" class="contact-btn">✉️ &nbsp; dtb4121988@gmail.com</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Redirectly. All rights reserved. &nbsp;·&nbsp; <a href="redirectly_support.html">Support</a>
+            </p>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
