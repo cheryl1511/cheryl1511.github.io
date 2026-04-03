@@ -3,311 +3,312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>More Useful Extensions</title>
+<title>Safari Extensions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #080c14;
-    --card: #0e1521;
-    --card-hover: #131d2e;
-    --border: rgba(99,179,255,0.12);
-    --accent: #3b9eff;
-    --accent2: #7c5cfc;
-    --glow: rgba(59,158,255,0.18);
-    --text: #e8f0fe;
-    --muted: #7a92b0;
-  }
+:root {
+  --bg: #080c14;
+  --card: #0e1521;
+  --card-hover: #131d2e;
+  --border: rgba(99,179,255,0.12);
+  --accent: #3b9eff;
+  --accent2: #7c5cfc;
+  --glow: rgba(59,158,255,0.18);
+  --text: #e8f0fe;
+  --muted: #7a92b0;
+}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    background: var(--bg);
-    font-family: 'Sora', sans-serif;
-    color: var(--text);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+body {
+  background: var(--bg);
+  font-family: 'Sora', sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-  /* Background mesh */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(59,158,255,0.12) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(124,92,252,0.10) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
-  }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(59,158,255,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(124,92,252,0.10) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
 
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 480px;
-    margin: 0 auto;
-    padding: 40px 20px 60px;
-  }
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
 
-  /* Header */
-  .header {
-    text-align: center;
-    margin-bottom: 44px;
-    animation: fadeUp 0.6s ease both;
-  }
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 44px;
+  animation: fadeUp 0.6s ease both;
+}
 
-  .safari-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    background: rgba(59,158,255,0.1);
-    border: 1px solid rgba(59,158,255,0.25);
-    border-radius: 100px;
-    padding: 6px 14px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
+.safari-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(59,158,255,0.1);
+  border: 1px solid rgba(59,158,255,0.25);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
 
-  .safari-badge svg {
-    width: 14px; height: 14px;
-  }
+.safari-badge svg { width: 14px; height: 14px; }
 
-  h1 {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.25;
-    background: linear-gradient(135deg, #e8f0fe 0%, #7ab8ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 10px;
-  }
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  background: linear-gradient(135deg, #e8f0fe 0%, #7ab8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+}
 
-  .subtitle {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
+.subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
 
-  /* Cards */
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+/* Cards */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    animation: fadeUp 0.6s ease both;
-  }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  animation: fadeUp 0.6s ease both;
+}
 
-  .card:nth-child(1) { animation-delay: 0.1s; }
-  .card:nth-child(2) { animation-delay: 0.2s; }
-  .card:nth-child(3) { animation-delay: 0.3s; }
-  .card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.10s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.20s; }
+.card:nth-child(5) { animation-delay: 0.25s; }
+.card:nth-child(6) { animation-delay: 0.30s; }
+.card:nth-child(7) { animation-delay: 0.35s; }
+.card:nth-child(8) { animation-delay: 0.40s; }
 
-  .card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, var(--card-glow, rgba(59,158,255,0.04)), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(59,158,255,0.04), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-  .card:active {
-    transform: scale(0.98);
-    background: var(--card-hover);
-    border-color: rgba(99,179,255,0.28);
-  }
+.card:active {
+  transform: scale(0.98);
+  background: var(--card-hover);
+  border-color: rgba(99,179,255,0.28);
+}
 
-  .card:active::before { opacity: 1; }
+.card:active::before { opacity: 1; }
 
-  /* App icon */
-  .icon-wrap {
-    flex-shrink: 0;
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    position: relative;
-    overflow: hidden;
-  }
+/* Shimmer */
+.card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 30%;
+  height: 200%;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,0.04), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
 
-  .icon-wrap::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
-  }
+.card:hover::after { left: 160%; }
 
-  .card-1 .icon-wrap { background: linear-gradient(135deg, #1a7fd4, #0d4fa0); }
-  .card-2 .icon-wrap { background: linear-gradient(135deg, #d43030, #8b1515); }
-  .card-3 .icon-wrap { background: linear-gradient(135deg, #1a9e6b, #0d6644); }
-  .card-4 .icon-wrap { background: linear-gradient(135deg, #9c34d4, #5c0d8b); }
-  .card-5 .icon-wrap { background: linear-gradient(135deg, #f59e0b, #b45309); }
+/* App icon */
+.icon-wrap {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+}
 
-  /* Info */
-  .card-info {
-    flex: 1;
-    min-width: 0;
-  }
+.icon-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
 
-  .card-name {
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+.icon-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), inset 0 0 0 1px rgba(255,255,255,0.06);
+  pointer-events: none;
+}
 
-  .card-desc {
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 1.5;
-  }
+/* Info */
+.card-info {
+  flex: 1;
+  min-width: 0;
+}
 
-  .stars {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    margin-top: 6px;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: #f5a623;
-  }
+.card-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  .stars span { color: var(--muted); margin-left: 2px; }
+.card-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
 
-  /* Install button */
-  .install-btn {
-    flex-shrink: 0;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    border-radius: 100px;
-    padding: 8px 16px;
-    font-family: 'Sora', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s, transform 0.15s;
-    text-decoration: none;
-    display: inline-block;
-    white-space: nowrap;
-  }
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
 
-  .card-2 .install-btn { background: #e03030; }
-  .card-3 .install-btn { background: #1a9e6b; }
-  .card-4 .install-btn { background: #9c34d4; }
-  .card-5 .install-btn { background: #d97706; }
+.price-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: rgba(59,158,255,0.12);
+  color: var(--accent);
+  border: 1px solid rgba(59,158,255,0.2);
+}
 
-  .install-btn:active {
-    transform: scale(0.95);
-    filter: brightness(0.9);
-  }
+.price-tag.paid {
+  background: rgba(255,165,0,0.12);
+  color: #f5a623;
+  border-color: rgba(255,165,0,0.2);
+}
 
-  /* Divider line detail */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 32px 0 28px;
-    animation: fadeUp 0.6s 0.5s ease both;
-  }
+/* Install button */
+.install-btn {
+  flex-shrink: 0;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+}
 
-  .divider-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border), transparent);
-  }
+.install-btn:active {
+  transform: scale(0.95);
+  filter: brightness(0.9);
+}
 
-  .divider-text {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 32px 0 28px;
+  animation: fadeUp 0.6s 0.5s ease both;
+}
 
-  /* Footer */
-  .footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 12px;
-    color: var(--muted);
-    animation: fadeUp 0.6s 0.6s ease both;
-    line-height: 1.7;
-  }
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
 
-  .footer a {
-    color: var(--accent);
-    text-decoration: none;
-  }
+.divider-text {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
 
-  /* Tap ripple */
-  .ripple {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    transform: scale(0);
-    animation: ripple 0.5s ease-out;
-    pointer-events: none;
-  }
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--muted);
+  animation: fadeUp 0.6s 0.6s ease both;
+  line-height: 1.7;
+}
 
-  @keyframes ripple {
-    to { transform: scale(4); opacity: 0; }
-  }
+.footer a { color: var(--accent); text-decoration: none; }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+/* Ripple */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  transform: scale(0);
+  animation: ripple 0.5s ease-out;
+  pointer-events: none;
+}
 
-  /* Shimmer on cards */
-  .card::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 30%;
-    height: 200%;
-    background: linear-gradient(105deg, transparent, rgba(255,255,255,0.04), transparent);
-    transform: skewX(-20deg);
-    transition: left 0.6s ease;
-    pointer-events: none;
-  }
+@keyframes ripple { to { transform: scale(4); opacity: 0; } }
 
-  .card:hover::after {
-    left: 160%;
-  }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 </style>
 </head>
 <body>
-
 <div class="container">
-
   <div class="header">
     <div class="safari-badge">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -320,92 +321,156 @@
     <p class="subtitle">Hand-picked extensions to make<br>Safari faster, cleaner, and smarter.</p>
   </div>
 
-  <div class="cards">
+  <div class="cards" id="cards-container">
 
-    <!-- MapChoice -->
-    <div class="card card-1" onclick="openApp('https://apps.apple.com/vn/app/mapchoice-for-safari/id6758934735', this)">
-      <div class="icon-wrap">🗺️</div>
-      <div class="card-info">
-        <div class="card-name">MapChoice for Safari</div>
-        <div class="card-desc">Open map links in your preferred maps app automatically.</div>
-        <div class="stars">★★★★★ <span>Free</span></div>
+    <!-- Redirectly -->
+    <div class="card" onclick="openApp('https://apps.apple.com/vn/app/redirectly-url-cleaner/id6761324271', this)">
+      <div class="icon-wrap">
+        <img src="" data-appid="6761324271" alt="Redirectly" onerror="this.parentNode.textContent='🔗'">
       </div>
-      <a class="install-btn" href="https://apps.apple.com/vn/app/mapchoice-for-safari/id6758934735" onclick="event.stopPropagation()">Install</a>
+      <div class="card-info">
+        <div class="card-name">Redirectly: URL Cleaner</div>
+        <div class="card-desc">Auto-redirect links, strip trackers & open TikTok/Instagram freely.</div>
+        <div class="meta"><span class="price-tag paid">99.000đ</span></div>
+      </div>
+      <a class="install-btn" href="https://apps.apple.com/vn/app/redirectly-url-cleaner/id6761324271" onclick="event.stopPropagation()">Get</a>
     </div>
 
-    <!-- CleanTube -->
-    <div class="card card-2" onclick="openApp('https://apps.apple.com/vn/app/clean-tube/id6757726426', this)">
-      <div class="icon-wrap">🧹</div>
-      <div class="card-info">
-        <div class="card-name">Clean Tube</div>
-        <div class="card-desc">Block ads & distractions on YouTube. Advanced video player.</div>
-        <div class="stars">★★★★★ <span>Free</span></div>
+    <!-- ImageGrab -->
+    <div class="card" onclick="openApp('https://apps.apple.com/vn/app/imagegrab-for-safari/id6760608169', this)">
+      <div class="icon-wrap">
+        <img src="" data-appid="6760608169" alt="ImageGrab" onerror="this.parentNode.textContent='🖼️'">
       </div>
-      <a class="install-btn" href="https://apps.apple.com/vn/app/clean-tube/id6757726426" onclick="event.stopPropagation()">Install</a>
+      <div class="card-info">
+        <div class="card-name">ImageGrab for Safari</div>
+        <div class="card-desc">Bulk download images, extract emails &amp; phone numbers from any site.</div>
+        <div class="meta"><span class="price-tag paid">29.000đ</span></div>
+      </div>
+      <a class="install-btn" href="https://apps.apple.com/vn/app/imagegrab-for-safari/id6760608169" onclick="event.stopPropagation()">Get</a>
+    </div>
+
+    <!-- RefreshMate -->
+    <div class="card" onclick="openApp('https://apps.apple.com/vn/app/refreshmate/id6758886610', this)">
+      <div class="icon-wrap">
+        <img src="" data-appid="6758886610" alt="RefreshMate" onerror="this.parentNode.textContent='🔄'">
+      </div>
+      <div class="card-info">
+        <div class="card-name">RefreshMate</div>
+        <div class="card-desc">Auto refresh pages on a schedule. Monitor page changes in real-time.</div>
+        <div class="meta"><span class="price-tag">Free</span></div>
+      </div>
+      <a class="install-btn" href="https://apps.apple.com/vn/app/refreshmate/id6758886610" onclick="event.stopPropagation()">Get</a>
+    </div>
+
+    <!-- MapChoice -->
+    <div class="card" onclick="openApp('https://apps.apple.com/vn/app/mapchoice-for-safari/id6758934735', this)">
+      <div class="icon-wrap">
+        <img src="" data-appid="6758934735" alt="MapChoice" onerror="this.parentNode.textContent='🗺️'">
+      </div>
+      <div class="card-info">
+        <div class="card-name">MapChoice for Safari</div>
+        <div class="card-desc">Open map links automatically in your preferred maps app.</div>
+        <div class="meta"><span class="price-tag">Free</span></div>
+      </div>
+      <a class="install-btn" href="https://apps.apple.com/vn/app/mapchoice-for-safari/id6758934735" onclick="event.stopPropagation()">Get</a>
+    </div>
+
+    <!-- HighlightAnywhere -->
+    <div class="card" onclick="openApp('https://apps.apple.com/vn/app/highlightanywhere-copy-web/id6760869969', this)">
+      <div class="icon-wrap">
+        <img src="" data-appid="6760869969" alt="HighlightAnywhere" onerror="this.parentNode.textContent='✏️'">
+      </div>
+      <div class="card-info">
+        <div class="card-name">HighlightAnywhere</div>
+        <div class="card-desc">Highlight & copy text on any website, even protected content.</div>
+        <div class="meta"><span class="price-tag">Free</span></div>
+      </div>
+      <a class="install-btn" href="https://apps.apple.com/vn/app/highlightanywhere-copy-web/id6760869969" onclick="event.stopPropagation()">Get</a>
+    </div>
+
+    <!-- TabUndo -->
+    <div class="card" onclick="openApp('https://apps.apple.com/vn/app/tabundo-private-restore/id6759417446', this)">
+      <div class="icon-wrap">
+        <img src="" data-appid="6759417446" alt="TabUndo" onerror="this.parentNode.textContent='🔁'">
+      </div>
+      <div class="card-info">
+        <div class="card-name">TabUndo: Private &amp; Restore</div>
+        <div class="card-desc">Restore closed tabs instantly. Open any tab in Private mode.</div>
+        <div class="meta"><span class="price-tag">Free</span></div>
+      </div>
+      <a class="install-btn" href="https://apps.apple.com/vn/app/tabundo-private-restore/id6759417446" onclick="event.stopPropagation()">Get</a>
     </div>
 
     <!-- QuickScroll -->
-    <div class="card card-3" onclick="openApp('https://apps.apple.com/vn/app/quickscroll-for-safari/id6759132470', this)">
-      <div class="icon-wrap">⚡</div>
+    <div class="card" onclick="openApp('https://apps.apple.com/vn/app/quickscroll-for-safari/id6759132470', this)">
+      <div class="icon-wrap">
+        <img src="" data-appid="6759132470" alt="QuickScroll" onerror="this.parentNode.textContent='⚡'">
+      </div>
       <div class="card-info">
         <div class="card-name">QuickScroll for Safari</div>
-        <div class="card-desc">Fast read and autoscroll with 2 modes: smooth and page scroll mode.</div>
-        <div class="stars">★★★★★ <span>Free</span></div>
+        <div class="card-desc">Fast autoscroll with smooth &amp; page-by-page modes.</div>
+        <div class="meta"><span class="price-tag">Free</span></div>
       </div>
-      <a class="install-btn" href="https://apps.apple.com/vn/app/quickscroll-for-safari/id6759132470" onclick="event.stopPropagation()">Install</a>
+      <a class="install-btn" href="https://apps.apple.com/vn/app/quickscroll-for-safari/id6759132470" onclick="event.stopPropagation()">Get</a>
     </div>
 
-    <!-- Tube Control -->
-    <div class="card card-4" onclick="openApp('https://apps.apple.com/vn/app/tube-control-for-safari/id6757946219', this)">
-      <div class="icon-wrap">🎮</div>
-      <div class="card-info">
-        <div class="card-name">Tube Control for Safari</div>
-        <div class="card-desc">Advanced video playback controls & speed. (works on Vimeo, TED..)</div>
-        <div class="stars">★★★★★ <span>Free</span></div>
+    <!-- Video Control -->
+    <div class="card" onclick="openApp('https://apps.apple.com/vn/app/video-control-for-safari/id6757946219', this)">
+      <div class="icon-wrap">
+        <img src="" data-appid="6757946219" alt="Video Control" onerror="this.parentNode.textContent='🎬'">
       </div>
-      <a class="install-btn" href="https://apps.apple.com/vn/app/tube-control-for-safari/id6757946219" onclick="event.stopPropagation()">Install</a>
-    </div>
-
-    <!-- Tab Undo -->
-    <div class="card card-5" onclick="openApp('https://apps.apple.com/vn/app/tabundo-private-restore/id6759417446', this)">
-      <div class="icon-wrap">🔁</div>
       <div class="card-info">
-        <div class="card-name">TabUndo: Private & Restore</div>
-        <div class="card-desc">Restore closed tabs with ease.</div>
-        <div class="card-desc">Open Tab in private mode</div>
-        <div class="stars">★★★★★ <span>Free</span></div>
+        <div class="card-name">Video Control for Safari</div>
+        <div class="card-desc">Advanced video playback controls &amp; speed on YouTube, Vimeo &amp; more.</div>
+        <div class="meta"><span class="price-tag">Free</span></div>
       </div>
-      <a class="install-btn" href="https://apps.apple.com/vn/app/tabundo-private-restore/id6759417446" onclick="event.stopPropagation()">Install</a>
+      <a class="install-btn" href="https://apps.apple.com/vn/app/video-control-for-safari/id6757946219" onclick="event.stopPropagation()">Get</a>
     </div>
 
   </div>
 
   <div class="divider">
     <div class="divider-line"></div>
-    <div class="divider-text">All extensions are free</div>
+    <div class="divider-text">All extensions · iPhone &amp; iPad</div>
     <div class="divider-line"></div>
   </div>
 
   <div class="footer">
-    Tap <strong style="color:var(--text)">Install</strong> to open the App Store.<br>
+    Tap <strong style="color:var(--text)">Get</strong> to open the App Store.<br>
     Compatible with iPhone &amp; iPad · Safari 15+
   </div>
-
 </div>
 
 <script>
-  function openApp(url, el) {
-    // Ripple
-    const ripple = document.createElement('div');
-    ripple.classList.add('ripple');
-    const rect = el.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    ripple.style.cssText = `width:${size}px;height:${size}px;left:${event.clientX-rect.left-size/2}px;top:${event.clientY-rect.top-size/2}px`;
-    el.appendChild(ripple);
-    ripple.addEventListener('animationend', () => ripple.remove());
-    setTimeout(() => window.open(url, '_blank'), 120);
+// Load icons from iTunes API
+(async function() {
+  const ids = [6761324271, 6760608169, 6758886610, 6758934735, 6760869969, 6759417446, 6759132470, 6757946219];
+  try {
+    const res = await fetch(`https://itunes.apple.com/lookup?id=${ids.join(',')}&country=vn`);
+    const data = await res.json();
+    data.results.forEach(app => {
+      const img = document.querySelector(`img[data-appid="${app.trackId}"]`);
+      if (img && app.artworkUrl100) {
+        // Use 512 quality by replacing 100x100bb with 512x512bb
+        img.src = app.artworkUrl100.replace('100x100bb', '230x230bb');
+      }
+    });
+  } catch(e) {
+    // Fallback: emoji icons already shown via onerror
+    console.warn('Could not load app icons:', e);
   }
-</script>
+})();
 
+function openApp(url, el) {
+  const ripple = document.createElement('div');
+  ripple.classList.add('ripple');
+  const rect = el.getBoundingClientRect();
+  const size = Math.max(rect.width, rect.height);
+  ripple.style.cssText = `width:${size}px;height:${size}px;left:${event.clientX - rect.left - size/2}px;top:${event.clientY - rect.top - size/2}px`;
+  el.appendChild(ripple);
+  ripple.addEventListener('animationend', () => ripple.remove());
+  setTimeout(() => window.open(url, '_blank'), 120);
+}
+</script>
 </body>
 </html>
