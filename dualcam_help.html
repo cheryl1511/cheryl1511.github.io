@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support | DualCam Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFD60A;
+            --background: #000000;
+            --card-bg: #111111;
+            --text-main: #FFFFFF;
+            --text-secondary: #888888;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo-box {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), #FFC300);
+            color: black;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .section {
+            background-color: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            transition: transform 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            background: rgba(255, 214, 10, 0.1);
+            color: var(--primary);
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .feature-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .feature-text p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-box {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(180deg, rgba(255, 214, 10, 0.05) 0%, transparent 100%);
+            border-radius: 24px;
+            border: 1px dashed var(--border);
+        }
+
+        .email {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+
+        .email:hover {
+            border-bottom: 2px solid var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .section { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-box">DUALCAM PRO</div>
+            <h1>Help & Support</h1>
+            <p class="subtitle">Everything you need to master dual-camera recording.</p>
+        </header>
+
+        <div class="section">
+            <h2>Core Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="icon">📷</div>
+                    <div class="feature-text">
+                        <h3>Simultaneous Dual Capture</h3>
+                        <p>Record both wide and ultra-wide perspectives at the same time. The app produces two perfectly synced files in one take.</p>
+                    </div>
+                </div>
+                <div class="icon-item feature-item">
+                    <div class="icon">🔒</div>
+                    <div class="feature-text">
+                        <h3>AE/AF Lock & Focus</h3>
+                        <p>Tap to focus anywhere. Long press to lock exposure and focus exactly like a pro cine camera.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">☀️</div>
+                    <div class="feature-text">
+                        <h3>Manual Exposure Slider</h3>
+                        <p>Fine-tune the brightness of your shot in real-time with our intuitive sun slider.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📊</div>
+                    <div class="feature-text">
+                        <h3>Professional Bitrate Control</h3>
+                        <p>Choose between Standard, High, or Maximum bitrate to balance quality and storage needs.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📽️</div>
+                    <div class="feature-text">
+                        <h3>4K & High Frame Rates</h3>
+                        <p>Capture cinema-quality 4K footage at 24, 30, or 60 fps with HDR support enabled.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Fast Tutorials</h2>
+            <div class="feature-grid">
+                <div class="feature-text" style="padding-left: 20px;">
+                    <p><strong>• How to Resize PiP:</strong> Tap the "Dual Lens" mode, then drag the arrow icon at the bottom-right corner of the small preview window.</p>
+                    <p style="margin-top: 15px;"><strong>• Exporting:</strong> All files are saved directly to your "Recent" album in the Photos app. No export step required.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <h3>Need further assistance?</h3>
+            <p>Our team is ready to help with any technical issues or feature requests.</p>
+            <a href="mailto:dtb4121988@gmail.com" class="email">dtb4121988@gmail.com</a>
+        </div>
+
+        <footer>
+            &copy; 2026 DualCam Pro. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
