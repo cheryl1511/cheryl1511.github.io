@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — Keyword Search</title>
+    <meta name="description"
+        content="Privacy Policy for Keyword Search - Custom Engine Safari extension. We collect no data." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0a0a0f;
+            --surface: #13131a;
+            --border: #1e1e2e;
+            --accent: #6366f1;
+            --accent-2: #818cf8;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --green: #10b981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* ── Nav ──────────────────────────────────── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, .85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+        }
+
+        .nav-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-size: .95rem;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -.01em;
+        }
+
+        .nav-brand span {
+            color: var(--accent-2);
+        }
+
+        .nav-link {
+            font-size: .85rem;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+        }
+
+        /* ── Hero ─────────────────────────────────── */
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 72px 2rem 48px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, .15);
+            border: 1px solid rgba(99, 102, 241, .3);
+            color: var(--accent-2);
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: .3rem .75rem;
+            border-radius: 99px;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+            letter-spacing: -.03em;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        h1 span {
+            color: var(--accent-2);
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 540px;
+            margin-bottom: 1.75rem;
+        }
+
+        .updated {
+            font-size: .8rem;
+            color: var(--muted);
+            opacity: .7;
+        }
+
+        /* ── Summary cards ────────────────────────── */
+        .summary-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: border-color .2s, transform .2s;
+        }
+
+        .card:hover {
+            border-color: rgba(99, 102, 241, .4);
+            transform: translateY(-2px);
+        }
+
+        .card-label {
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: .6rem;
+        }
+
+        .card-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        /* ── Content ──────────────────────────────── */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem 100px;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -.02em;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        h2 .num {
+            color: var(--accent-2);
+            margin-right: .5rem;
+            font-size: 1rem;
+        }
+
+        p {
+            color: var(--muted);
+            margin-bottom: .85rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            margin-bottom: .85rem;
+        }
+
+        ul li {
+            color: var(--muted);
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: .65em;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        a {
+            color: var(--accent-2);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Footer ───────────────────────────────── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            font-size: .8rem;
+            color: var(--muted);
+        }
+
+        footer a {
+            color: var(--accent-2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">Keyword Search <span>·</span> Custom Engine</a>
+            <a href="search_support.html" class="nav-link">Support</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="badge">Legal</div>
+        <h1>Privacy <span>Policy</span></h1>
+        <p class="subtitle">We built Keyword Search with a simple principle: your searches are your business, not ours.
+        </p>
+        <p class="updated">Last updated: April 18, 2025</p>
+    </header>
+
+    <div class="summary-grid">
+        <div class="card">
+            <div class="card-label">Data Collected</div>
+            <div class="card-value">None</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Analytics</div>
+            <div class="card-value">None</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Account Required</div>
+            <div class="card-value">No</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Third-Party SDKs</div>
+            <div class="card-value">None</div>
+        </div>
+    </div>
+
+    <main class="content">
+
+        <div class="section">
+            <h2><span class="num">01</span>Overview</h2>
+            <p>Keyword Search - Custom Engine is a Safari extension that lets you search any website using short custom
+                keywords directly from Safari's address bar.</p>
+            <p>This Privacy Policy describes how we handle your information. The short version: we do not collect,
+                store, or transmit any personal data.</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">02</span>Safari Permissions Justification</h2>
+            <p>On modern versions of iOS and macOS, Safari extensions may request permission to "view browsing history"
+                to function as intended. Keyword Search requests this permission for one reason only: to identify the
+                current search query in your address bar so it can perform the redirect to your custom engine.</p>
+            <p><strong>We only access the current session's URL</strong> at the moment you perform a search. We do not
+                read, store, or transmit your overall browsing history. All logic is performed locally on your device.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">03</span>Information We Do Not Collect</h2>
+            <p>Outside of the functional requirement above, we do not collect any of the following:</p>
+            <ul>
+                <li>Search queries you type in Safari or in the extension popup</li>
+                <li>Browsing history, visited URLs, or page content</li>
+                <li>Personal identifiers such as your name, email, or device ID</li>
+                <li>Usage data, crash logs, or analytics of any kind</li>
+                <li>Location data</li>
+                <li>Payment information</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">03</span>Local Data Storage</h2>
+            <p>Your custom keywords and settings are stored locally on your device. This data never leaves your device
+                and we have no access to it at any time.</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">05</span>Third-Party Services</h2>
+            <p>Keyword Search does not integrate any third-party analytics, advertising, or tracking SDKs. When you
+                perform a search, you are redirected to the search engine you configured (e.g., Google, YouTube). That
+                search engine's own privacy policy applies to those requests.</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">06</span>Children's Privacy</h2>
+            <p>Keyword Search does not knowingly collect any information from children under 13. The app does not
+                collect information from any user, regardless of age.</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">07</span>Changes to This Policy</h2>
+            <p>If we ever update this Privacy Policy, we will update the "Last updated" date at the top of this page. We
+                encourage you to review this page periodically. Continued use of the app after changes constitutes
+                acceptance of the updated policy.</p>
+        </div>
+
+        <div class="section">
+            <h2><span class="num">08</span>Contact</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us:</p>
+            <p><a href="mailto:dtb4121988@gmail.com">dtb4121988@gmail.com</a></p>
+            <p>You can also visit our <a href="search_support.html">Support page</a> for additional help.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Keyword Search - Custom Engine &nbsp;&middot;&nbsp; <a href="search_support.html">Support</a></p>
+    </footer>
+
+</body>
+
+</html>

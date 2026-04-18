@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support — Keyword Search</title>
+    <meta name="description" content="Get help and support for Keyword Search - Custom Engine Safari extension." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0a0a0f;
+            --surface: #13131a;
+            --border: #1e1e2e;
+            --accent: #6366f1;
+            --accent-2: #818cf8;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --green: #10b981;
+            --amber: #f59e0b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* ── Nav ──────────────────────────────────── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, .85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+        }
+
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-size: .95rem;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -.01em;
+        }
+
+        .nav-brand span {
+            color: var(--accent-2);
+        }
+
+        .nav-link {
+            font-size: .85rem;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+        }
+
+        /* ── Hero ─────────────────────────────────── */
+        .hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 72px 2rem 56px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, .15);
+            border: 1px solid rgba(99, 102, 241, .3);
+            color: var(--accent-2);
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: .3rem .75rem;
+            border-radius: 99px;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 2.75rem);
+            font-weight: 700;
+            letter-spacing: -.03em;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        h1 span {
+            color: var(--accent-2);
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 540px;
+        }
+
+        /* ── FAQ ──────────────────────────────────── */
+        .faq-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 60px;
+        }
+
+        .section-label {
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--accent-2);
+            margin-bottom: 1.5rem;
+        }
+
+        .faq {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        details {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        details:last-child {
+            border-bottom: none;
+        }
+
+        summary {
+            cursor: pointer;
+            padding: 1.25rem 1.5rem;
+            font-weight: 600;
+            font-size: .95rem;
+            color: var(--text);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background .15s;
+            user-select: none;
+        }
+
+        summary:hover {
+            background: rgba(255, 255, 255, .03);
+        }
+
+        summary::after {
+            content: '+';
+            color: var(--accent-2);
+            font-size: 1.25rem;
+            font-weight: 300;
+            flex-shrink: 0;
+            margin-left: 1rem;
+            transition: transform .2s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-body {
+            padding: 0 1.5rem 1.25rem;
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        .faq-body p {
+            margin-bottom: .5rem;
+        }
+
+        .faq-body code {
+            background: rgba(99, 102, 241, .12);
+            border: 1px solid rgba(99, 102, 241, .2);
+            color: var(--accent-2);
+            padding: .15rem .45rem;
+            border-radius: 5px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: .82em;
+        }
+
+        .faq-body ol {
+            padding-left: 1.25rem;
+            color: var(--muted);
+            display: flex;
+            flex-direction: column;
+            gap: .35rem;
+            font-size: .9rem;
+            margin-top: .5rem;
+        }
+
+        /* ── URL Scheme table ─────────────────────── */
+        .table-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 60px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            font-size: .88rem;
+        }
+
+        thead tr {
+            background: rgba(99, 102, 241, .08);
+        }
+
+        th {
+            text-align: left;
+            padding: .85rem 1.25rem;
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            color: var(--accent-2);
+        }
+
+        td {
+            padding: .85rem 1.25rem;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+        }
+
+        td code {
+            background: rgba(99, 102, 241, .1);
+            color: var(--accent-2);
+            padding: .15rem .4rem;
+            border-radius: 5px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: .82em;
+        }
+
+        tbody tr:hover td {
+            background: rgba(255, 255, 255, .025);
+        }
+
+        /* ── Contact card ─────────────────────────── */
+        .contact-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 100px;
+        }
+
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        @media (min-width: 600px) {
+            .contact-card {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        .contact-text h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -.02em;
+            margin-bottom: .5rem;
+        }
+
+        .contact-text p {
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--accent);
+            color: #fff;
+            font-size: .9rem;
+            font-weight: 600;
+            padding: .75rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background .2s, transform .15s;
+            flex-shrink: 0;
+        }
+
+        .btn:hover {
+            background: var(--accent-2);
+            transform: translateY(-1px);
+        }
+
+        /* ── Footer ───────────────────────────────── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            font-size: .8rem;
+            color: var(--muted);
+        }
+
+        footer a {
+            color: var(--accent-2);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">Keyword Search <span>·</span> Custom Engine</a>
+            <a href="search_privacy.html" class="nav-link">Privacy Policy</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="badge">Help Center</div>
+        <h1>How can we <span>help?</span></h1>
+        <p class="subtitle">Find answers to common questions about Keyword Search, or get in touch directly.</p>
+    </header>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-label">Frequently Asked Questions</div>
+        <div class="faq">
+
+            <details open>
+                <summary>How do I use keyword search in Safari?</summary>
+                <div class="faq-body">
+                    <p>Enable the Keyword Search extension in Safari Settings, then type a keyword followed by your
+                        search term in the address bar.</p>
+                    <p>For example, type <code>g swift closures</code> to search Google, or <code>yt lofi music</code>
+                        for YouTube.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I add a custom search engine?</summary>
+                <div class="faq-body">
+                    <p>Open the Safari extension popup and go to Settings. Tap the "+" button to add a new keyword.</p>
+                    <p>Enter:</p>
+                    <ol>
+                        <li>A short keyword (e.g. <code>gh</code>)</li>
+                        <li>A display name (e.g. <code>GitHub</code>)</li>
+                        <li>The search URL with <code>@@@</code> as the placeholder (e.g.
+                            <code>https://github.com/search?q=@@@</code>)
+                        </li>
+                    </ol>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I search multiple engines at once?</summary>
+                <div class="faq-body">
+                    <p>You can combine multiple keywords in a single query. The extension will open all matching search
+                        engines for that query simultaneously.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I back up my keywords?</summary>
+                <div class="faq-body">
+                    <p>In the app, go to Settings and tap "Export". Your keyword list will be saved as a JSON file that
+                        you can store in Files, share via email, or import on another device.</p>
+                    <p>To restore, tap "Import" and select your saved JSON file.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>My keywords disappeared after updating Safari. What do I do?</summary>
+                <div class="faq-body">
+                    <p>This is a known Safari bug on macOS. To fix it:</p>
+                    <ol>
+                        <li>Quit Safari completely.</li>
+                        <li>Open Terminal and run:
+                            <code>/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f -R /Applications/Safari.app</code>
+                        </li>
+                        <li>Relaunch Safari.</li>
+                        <li>Go to Safari Settings &gt; Extensions and re-enable Keyword Search.</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details>
+                <summary>Why does the extension ask for "view browsing history" permission?</summary>
+                <div class="faq-body">
+                    <p>On modern versions of iOS and macOS, Safari requires this permission for the extension to
+                        identify the current search query in your address bar.</p>
+                    <p><strong>Keyword Search only accesses the current session's URL</strong> at the moment you perform
+                        a search to perform its routing. It does not read, store, or transmit your overall browsing
+                        history. All processing is done locally on your device.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Can I trigger searches from other apps?</summary>
+                <div class="faq-body">
+                    <p>Yes. Keyword Search supports a URL scheme to open the native app and perform a search:</p>
+                    <p><code>keywordsearch://search?q=g+swift</code> — opens the native app and automatically triggers a
+                        search with your keyword.</p>
+                    <p><code>keywordsearch://add?keyword=gh&amp;name=GitHub&amp;url=https://github.com/search?q=@@@</code>
+                        — adds a new keyword via URL.</p>
+                    <p>You can use these from the Shortcuts app, automation tools, or any app that supports URL actions
+                        to launch the search interface.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do Bangs (!) work?</summary>
+                <div class="faq-body">
+                    <p>Bangs allow you to trigger a specific search engine regardless of your current search mode or
+                        location. You can use them as a prefix or suffix:</p>
+                    <p><code>!g iphone</code> or <code>iphone g!</code> — searches Google for 'iphone' even if Google is
+                        not your default.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>What is the "!l" shortcut?</summary>
+                <div class="faq-body">
+                    <p>The <code>!l</code> shortcut (Last Search) automatically replaces itself with your most recent
+                        search phrase.</p>
+                    <p>If you just searched for "best mechanic", you can then type <code>!l apple maps</code> to
+                        instantly find them on Maps without re-typing.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>Can I use Siri to search?</summary>
+                <div class="faq-body">
+                    <p>Yes. Say "Quick Search with Keyword Search" to Siri, or use the Shortcuts app to create custom
+                        Siri phrases that trigger a keyword search.</p>
+                </div>
+            </details>
+
+        </div>
+    </section>
+
+    <!-- URL Scheme Reference -->
+    <section class="table-wrap">
+        <div class="section-label">URL Scheme Reference</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>URL Pattern</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Search</td>
+                    <td><code>keywordsearch://search?q=QUERY</code></td>
+                    <td>Open the native app and automatically perform a keyword search (e.g., g swift).</td>
+                </tr>
+                <tr>
+                    <td>Add keyword</td>
+                    <td><code>keywordsearch://add?keyword=KW&amp;name=NAME&amp;url=URL</code></td>
+                    <td>Add a new custom keyword. Use <code>@@@</code> as the search placeholder in the URL.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section">
+        <div class="section-label">Contact</div>
+        <div class="contact-card">
+            <div class="contact-text">
+                <h2>Still need help?</h2>
+                <p>Send us an email and we will get back to you as soon as possible. Please include your iOS or macOS
+                    version and a description of the issue.</p>
+            </div>
+            <a href="mailto:dtb4121988@gmail.com" class="btn">Email Support</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Keyword Search - Custom Engine &nbsp;&middot;&nbsp; <a href="search_privacy.html">Privacy
+                Policy</a></p>
+    </footer>
+
+</body>
+
+</html>
