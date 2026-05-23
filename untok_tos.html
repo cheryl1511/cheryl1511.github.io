@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UnTok — Terms of Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #1a1a1a;
+    --border: #222222;
+    --pink: #fe2c55;
+    --pink-dim: rgba(254,44,85,0.12);
+    --cyan: #25f4ee;
+    --cyan-dim: rgba(37,244,238,0.08);
+    --white: #f0f0f0;
+    --muted: #888;
+    --text: #d4d4d4;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(37,244,238,0.1) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 clamp(1rem, 5vw, 4rem);
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 2px;
+  }
+  .logo span:first-child { color: var(--white); }
+  .logo span:last-child { color: var(--pink); }
+
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  main {
+    position: relative; z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 2rem);
+  }
+
+  .page-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--cyan-dim);
+    border: 1px solid rgba(37,244,238,0.2);
+    color: var(--cyan);
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .updated {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .updated strong { color: var(--pink); }
+
+  .summary-box {
+    background: var(--pink-dim);
+    border: 1px solid rgba(254,44,85,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+    color: var(--white);
+  }
+
+  section { margin-bottom: 2.5rem; }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  h2::before {
+    content: '';
+    display: block;
+    width: 3px; height: 18px;
+    background: var(--cyan);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0.75rem 0;
+  }
+  ul li {
+    padding: 0.35rem 0 0.35rem 1.4rem;
+    position: relative;
+    font-size: 0.95rem;
+  }
+  ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+  }
+
+  .highlight-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--pink);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    display: flex; align-items: center; gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .contact-box .icon {
+    width: 44px; height: 44px;
+    background: var(--cyan-dim);
+    border: 1px solid rgba(37,244,238,0.25);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .contact-box .info { flex: 1; }
+  .contact-box .info p { margin: 0; font-size: 0.85rem; color: var(--muted); }
+  .contact-box .info a { font-weight: 500; font-size: 0.95rem; }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 2rem clamp(1.25rem, 5vw, 4rem);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer p { font-size: 0.8rem; color: var(--muted); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.8rem; color: var(--muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--white); }
+
+  @media (max-width: 600px) {
+    .nav-links { gap: 1rem; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#"><span>Un</span><span>Tok</span></a>
+  <div class="nav-links">
+    <a href="untok_privacy.html">Privacy</a>
+    <a href="untok_tos.html">Terms</a>
+    <a href="untok_faq.html">FAQ</a>
+    <a href="mailto:code.and.play.vn@gmail.com">Contact</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-label">Legal</div>
+  <h1>Terms of Service</h1>
+  <p class="updated">Last updated <strong>May 23, 2026</strong></p>
+
+  <div class="summary-box">
+    By downloading or using UnTok, you agree to these terms. Please read them carefully before using the app.
+  </div>
+
+  <section>
+    <h2>Acceptance of Terms</h2>
+    <p>By downloading or using UnTok, these terms automatically apply to you. You should read them carefully before using the app. If you do not agree to these terms, do not download or use UnTok.</p>
+  </section>
+
+  <section>
+    <h2>Intellectual Property</h2>
+    <p>You are not allowed to:</p>
+    <ul>
+      <li>Copy, modify, or distribute the app or any part of it</li>
+      <li>Use our trademarks or branding without written permission</li>
+      <li>Attempt to extract the source code of the app</li>
+      <li>Translate the app into other languages or create derivative versions</li>
+    </ul>
+    <p>The app itself, and all trademarks, copyright, database rights, and other intellectual property rights related to it, belong to UnTok.</p>
+  </section>
+
+  <section>
+    <h2>Use of the App</h2>
+    <p>UnTok stores and processes data you provide in order to deliver its service. This data is stored only on your device. See our <a href="untok_privacy.html">Privacy Policy</a> for full details.</p>
+    <p>You are responsible for keeping your device and access to the app secure. We recommend you do not jailbreak or root your device, as this may compromise your device's security features and cause the app to malfunction or stop working entirely.</p>
+  </section>
+
+  <section>
+    <h2>Internet Connection</h2>
+    <p>Certain features of UnTok require an active internet connection. UnTok cannot be held responsible for the app not working if you do not have access to Wi-Fi or mobile data.</p>
+    <p>If you use the app outside of a Wi-Fi area, your mobile network provider's terms still apply. You may be charged for data usage, including roaming charges if you use the app outside your home country. If you are not the bill payer for your device, we assume you have permission from the bill payer.</p>
+  </section>
+
+  <section>
+    <h2>Limitation of Liability</h2>
+    <p>UnTok endeavors to ensure the app is updated and accurate at all times. However, we accept no liability for any loss — direct or indirect — resulting from relying on the app's functionality.</p>
+    <div class="highlight-box">
+      UnTok automates actions on your TikTok account. While we take precautions to protect your account, we cannot guarantee that TikTok will not apply restrictions as a result of repost removal activity. Use the app responsibly.
+    </div>
+  </section>
+
+  <section>
+    <h2>Updates and Discontinuation</h2>
+    <p>We may update UnTok at any time. The app is currently available on iOS. System requirements may change, and you may need to download updates to continue using the app.</p>
+    <p>We do not promise to always update the app to remain compatible with the iOS version on your device. We may also stop providing the app and terminate its use at any time without notice. Upon termination, all rights and licenses granted to you will end and you must stop using and delete the app from your device.</p>
+  </section>
+
+  <section>
+    <h2>Payments and Subscriptions</h2>
+    <p>Payment is charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours prior to the end of the current period.</p>
+    <p>You can manage and cancel your subscription at any time in your Apple ID account settings.</p>
+    <div class="highlight-box">
+      Refunds will not be provided if you have used any portion of your subscription to remove reposts. Any unused portion of a free trial will be forfeited when a subscription is purchased.
+    </div>
+  </section>
+
+  <section>
+    <h2>Changes to These Terms</h2>
+    <p>We may update these Terms of Service from time to time. We will notify you of any changes by updating the "Last updated" date at the top of this page. Continued use of UnTok after changes constitutes acceptance of the new terms.</p>
+  </section>
+
+  <div class="contact-box">
+    <div class="icon">✉</div>
+    <div class="info">
+      <p>Questions about these Terms of Service?</p>
+      <a href="mailto:code.and.play.vn@gmail.com">code.and.play.vn@gmail.com</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 UnTok. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="untok_privacy.html">Privacy</a>
+    <a href="untok_tos.html">Terms</a>
+    <a href="untok_faq.html">FAQ</a>
+  </div>
+</footer>
+
+</body>
+</html>

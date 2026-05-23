@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UnTok — Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #1a1a1a;
+    --border: #222222;
+    --pink: #fe2c55;
+    --pink-dim: rgba(254,44,85,0.12);
+    --cyan: #25f4ee;
+    --cyan-dim: rgba(37,244,238,0.08);
+    --white: #f0f0f0;
+    --muted: #888;
+    --text: #d4d4d4;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* noise overlay */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0;
+  }
+
+  /* glow accent top */
+  body::after {
+    content: '';
+    position: fixed; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(254,44,85,0.15) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 clamp(1rem, 5vw, 4rem);
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 2px;
+  }
+  .logo span:first-child { color: var(--white); }
+  .logo span:last-child { color: var(--pink); }
+
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  main {
+    position: relative; z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 2rem);
+  }
+
+  .page-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--pink-dim);
+    border: 1px solid rgba(254,44,85,0.25);
+    color: var(--pink);
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .page-label::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--pink);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .updated {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .updated strong { color: var(--cyan); }
+
+  .summary-box {
+    background: var(--cyan-dim);
+    border: 1px solid rgba(37,244,238,0.2);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 3rem;
+    font-size: 0.95rem;
+    color: var(--white);
+  }
+
+  section { margin-bottom: 2.5rem; }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  h2::before {
+    content: '';
+    display: block;
+    width: 3px; height: 18px;
+    background: var(--pink);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0.75rem 0;
+  }
+  ul li {
+    padding: 0.35rem 0 0.35rem 1.4rem;
+    position: relative;
+    font-size: 0.95rem;
+  }
+  ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--pink);
+  }
+
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    display: flex; align-items: center; gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .contact-box .icon {
+    width: 44px; height: 44px;
+    background: var(--pink-dim);
+    border: 1px solid rgba(254,44,85,0.3);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .contact-box .info { flex: 1; }
+  .contact-box .info p { margin: 0; font-size: 0.85rem; color: var(--muted); }
+  .contact-box .info a { font-weight: 500; font-size: 0.95rem; }
+
+  footer {
+    position: relative; z-index: 1;
+    border-top: 1px solid var(--border);
+    padding: 2rem clamp(1.25rem, 5vw, 4rem);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer p { font-size: 0.8rem; color: var(--muted); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.8rem; color: var(--muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--white); }
+
+  @media (max-width: 600px) {
+    .nav-links { gap: 1rem; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#"><span>Un</span><span>Tok</span></a>
+  <div class="nav-links">
+    <a href="untok_privacy.html">Privacy</a>
+    <a href="untok_tos.html">Terms</a>
+    <a href="untok_faq.html">FAQ</a>
+    <a href="mailto:code.and.play.vn@gmail.com">Contact</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-label">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated <strong>May 23, 2026</strong></p>
+
+  <div class="summary-box">
+    UnTok does not collect, store, or sell your personal data. Everything stays on your device. We believe privacy is a right, not a feature.
+  </div>
+
+  <section>
+    <h2>What We Collect</h2>
+    <p>UnTok collects only the minimum data required to function:</p>
+    <ul>
+      <li>In-app purchase status (whether you have an active subscription)</li>
+      <li>Anonymous debug information (app version, number of launches, crash logs)</li>
+    </ul>
+    <p>No personally identifiable information is ever collected by us or any third party we use.</p>
+  </section>
+
+  <section>
+    <h2>Your TikTok Account</h2>
+    <p>When you log in with your TikTok account, UnTok stores your session credentials locally on your device only. This information is stored securely using your device's built-in secure storage and cannot be accessed or read by us.</p>
+    <p>UnTok only uses your TikTok session to fetch and remove reposted videos — nothing else.</p>
+  </section>
+
+  <section>
+    <h2>Data We Do Not Collect</h2>
+    <ul>
+      <li>Your TikTok username, email, or password</li>
+      <li>Your TikTok video content or repost history</li>
+      <li>Your location or device identifiers</li>
+      <li>Any personal information that could identify you</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Third-Party Services</h2>
+    <p>UnTok may use the following third-party services for analytics and crash reporting. These services receive only anonymous, non-identifiable data:</p>
+    <ul>
+      <li>Apple App Store (for payment processing)</li>
+      <li>Anonymous crash reporting (app stability only)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>UnTok is not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us immediately.</p>
+  </section>
+
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by updating the "Last updated" date at the top of this page. Continued use of UnTok after any changes constitutes your acceptance of the new Privacy Policy.</p>
+  </section>
+
+  <div class="contact-box">
+    <div class="icon">✉</div>
+    <div class="info">
+      <p>Questions about this Privacy Policy?</p>
+      <a href="mailto:code.and.play.vn@gmail.com">code.and.play.vn@gmail.com</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 UnTok. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="untok_privacy.html">Privacy</a>
+    <a href="untok_tos.html">Terms</a>
+    <a href="untok_faq.html">FAQ</a>
+  </div>
+</footer>
+
+</body>
+</html>
