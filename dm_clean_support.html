@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMClear - Support</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ig-gradient: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --border: #dbdbdb;
+    --text-primary: #262626;
+    --text-secondary: #737373;
+    --text-muted: #a8a8a8;
+    --accent: #0095f6;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+
+  .header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--ig-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 56px 24px 48px;
+    text-align: center;
+  }
+
+  .hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f0f7ff;
+    border: 1px solid #c9e2ff;
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .hero-pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* Contact card */
+  .contact-section {
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 0 24px;
+  }
+
+  .contact-card {
+    background: var(--ig-gradient);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    text-align: center;
+    color: white;
+  }
+
+  .contact-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .contact-card p {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 24px;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-card p { margin-bottom: 24px; }
+
+  .email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+
+  .email-btn:hover { opacity: 0.88; }
+
+  .email-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--text-primary);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .response-note {
+    margin-top: 14px;
+    font-size: 12px;
+    opacity: 0.75;
+  }
+
+  /* FAQ */
+  .content {
+    max-width: 800px;
+    margin: 48px auto 80px;
+    padding: 0 24px;
+  }
+
+  .faq-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  .faq-item:first-child { border-radius: var(--radius) var(--radius) var(--radius) var(--radius); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .faq-item:nth-child(1) { animation-delay: 0.05s; }
+  .faq-item:nth-child(2) { animation-delay: 0.09s; }
+  .faq-item:nth-child(3) { animation-delay: 0.13s; }
+  .faq-item:nth-child(4) { animation-delay: 0.17s; }
+  .faq-item:nth-child(5) { animation-delay: 0.21s; }
+  .faq-item:nth-child(6) { animation-delay: 0.25s; }
+  .faq-item:nth-child(7) { animation-delay: 0.29s; }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 24px;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    transition: background 0.15s;
+  }
+
+  .faq-question:hover { background: #fafafa; }
+
+  .faq-arrow {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    stroke: var(--text-muted);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.25s ease;
+  }
+
+  .faq-item.open .faq-arrow {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.2s ease;
+    padding: 0 24px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    border-top: 0px solid var(--border);
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 300px;
+    padding: 16px 24px 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .faq-answer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  /* Features strip */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--ig-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .feature-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .feature-text h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+  }
+
+  .feature-text p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    margin-top: 40px;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 8px;
+  }
+
+  footer a:hover { color: var(--text-secondary); }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 28px; }
+    .features { grid-template-columns: 1fr; }
+    .contact-card { padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <span class="logo-text">DMClear</span>
+    </a>
+    <span class="badge">Support</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-pill">
+    <span class="hero-pill-dot"></span>
+    We are here to help
+  </div>
+  <h1>Support Center</h1>
+  <p class="hero-sub">Find answers to common questions or reach out to us directly — we usually respond within 24 hours.</p>
+</section>
+
+<div class="contact-section">
+  <div class="contact-card">
+    <h2>Contact Us</h2>
+    <p>Can't find your answer below? Send us an email and we'll get back to you as soon as possible.</p>
+    <a href="mailto:dtb4121988@gmail.com" class="email-btn">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      dtb4121988@gmail.com
+    </a>
+    <p class="response-note">Typical response time: within 24 hours</p>
+  </div>
+</div>
+
+<main class="content">
+
+  <p class="section-label">What DMClear does</p>
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>
+      </div>
+      <div class="feature-text">
+        <h4>Unsend Messages</h4>
+        <p>Remove all your sent messages from any conversation in one tap.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <div class="feature-text">
+        <h4>Delete Conversations</h4>
+        <p>Clear multiple chats from your inbox all at once.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+      <div class="feature-text">
+        <h4>Export Chats</h4>
+        <p>Save any conversation as an HTML or text file on your device.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="feature-text">
+        <h4>Bulk Unfollow</h4>
+        <p>Unfollow multiple accounts from your following list at once.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="section-label">Frequently Asked Questions</p>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Does DMClear store my Instagram password or messages?
+        <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        No. DMClear never stores, reads, or transmits your Instagram credentials or message content. Your login goes directly to Instagram's own interface on your device. Nothing is sent to any external server. For full details, see our <a href="dm_clean_privacy.html">Privacy Policy</a>.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Can my Instagram account get banned for using DMClear?
+        <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        DMClear only automates actions that already exist in Instagram's own interface — unsending, deleting, unfollowing. However, performing any action in very high volume or at unusual speed may be detected by Instagram. We recommend using DMClear at a moderate pace. The developer is not responsible for any account restrictions imposed by Instagram.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Unsend is not working — what should I do?
+        <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        Instagram occasionally updates its interface, which can temporarily affect DMClear's automation. Please make sure you have the latest version of DMClear installed. If the issue persists after updating, contact us at dtb4121988@gmail.com and we will investigate as quickly as possible.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Where are my exported chat files saved?
+        <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        Exported files are saved directly to your device's local storage — typically in the Files app under DMClear's folder. They are never uploaded to any server. You can share or move them freely from there.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Does DMClear work with Instagram's latest version?
+        <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        We monitor Instagram's interface changes and push updates to DMClear whenever compatibility is affected. Always keep DMClear updated to the latest version from the App Store for the best experience.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Can I recover messages I unsent using DMClear?
+        <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        No. Unsending a message on Instagram is permanent and cannot be undone — this is Instagram's own behavior, not specific to DMClear. We strongly recommend exporting a conversation before unsending if you want to keep a record of it.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        Is DMClear affiliated with Instagram or Meta?
+        <svg class="faq-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer">
+        No. DMClear is an independent utility app and is not affiliated with, endorsed by, or connected to Instagram or Meta Platforms, Inc. in any way.
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  <span>© 2026 DMClear. All rights reserved.</span><br style="margin-bottom:6px">
+  <a href="dm_clean_tos.html">Terms of Service</a>
+  <a href="dm_clean_privacy.html">Privacy Policy</a>
+  <a href="dm_clean_support.html">Support</a>
+</footer>
+
+<script>
+  function toggle(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+</body>
+</html>
