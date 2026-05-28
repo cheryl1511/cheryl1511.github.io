@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMClear - Terms of Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ig-gradient: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --border: #dbdbdb;
+    --text-primary: #262626;
+    --text-secondary: #737373;
+    --text-muted: #a8a8a8;
+    --accent: #0095f6;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+
+  .header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--ig-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 56px 24px 48px;
+    text-align: center;
+  }
+
+  .hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff8f0;
+    border: 1px solid #ffd9b3;
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #e6683c;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #e6683c;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 440px;
+    margin: 0 auto 24px;
+  }
+
+  .hero-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* Summary strip */
+  .summary-strip {
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .strip-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .strip-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .strip-card h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .strip-card p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Content */
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .section {
+    margin-bottom: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section:nth-child(1)  { animation-delay: 0.05s; }
+  .section:nth-child(2)  { animation-delay: 0.08s; }
+  .section:nth-child(3)  { animation-delay: 0.11s; }
+  .section:nth-child(4)  { animation-delay: 0.14s; }
+  .section:nth-child(5)  { animation-delay: 0.17s; }
+  .section:nth-child(6)  { animation-delay: 0.20s; }
+  .section:nth-child(7)  { animation-delay: 0.23s; }
+  .section:nth-child(8)  { animation-delay: 0.26s; }
+  .section:nth-child(9)  { animation-delay: 0.29s; }
+  .section:nth-child(10) { animation-delay: 0.32s; }
+
+  .section-header {
+    padding: 18px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fdfdfd;
+  }
+
+  .section-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .section-header h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .section-body {
+    padding: 22px 28px;
+  }
+
+  .section-body p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
+
+  .section-body p:last-child { margin-bottom: 0; }
+
+  .section-body strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .item-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .item-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .item-list li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #dc2743;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+
+  /* Warning box */
+  .warn-box {
+    background: #fffbf0;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 13.5px;
+    color: #92400e;
+    line-height: 1.6;
+    margin-top: 12px;
+  }
+
+  .warn-box strong {
+    color: #78350f;
+    font-weight: 600;
+  }
+
+  /* Contact */
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  .contact-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .contact-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+
+  .contact-link {
+    display: inline-block;
+    background: var(--text-primary);
+    color: white;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+
+  .contact-link:hover { opacity: 0.8; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 8px;
+  }
+
+  footer a:hover { color: var(--text-secondary); }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 28px; }
+    .summary-strip { grid-template-columns: 1fr; }
+    .section-header { padding: 14px 18px; }
+    .section-body { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <span class="logo-text">DMClear</span>
+    </a>
+    <span class="badge">Terms of Service</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-pill">
+    <span class="hero-pill-dot"></span>
+    Plain language, no surprises
+  </div>
+  <h1>Terms of Service</h1>
+  <p class="hero-sub">By using DMClear, you agree to these terms. We kept them as clear and concise as possible.</p>
+  <span class="hero-date">Last updated: May 28, 2026</span>
+</section>
+
+<div class="summary-strip">
+  <div class="strip-card">
+    <span class="strip-icon">🔒</span>
+    <h4>Your data is yours</h4>
+    <p>We collect nothing. Everything stays on your device.</p>
+  </div>
+  <div class="strip-card">
+    <span class="strip-icon">📱</span>
+    <h4>Your responsibility</h4>
+    <p>Use the app in accordance with Instagram's own rules.</p>
+  </div>
+  <div class="strip-card">
+    <span class="strip-icon">⚖️</span>
+    <h4>No warranties</h4>
+    <p>The app is provided as-is. We are not liable for account issues.</p>
+  </div>
+</div>
+
+<main class="content">
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Acceptance of Terms</h2>
+    </div>
+    <div class="section-body">
+      <p>By downloading, installing, or using DMClear ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+      <p>These Terms apply to all users of the App regardless of their location.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Description of the App</h2>
+    </div>
+    <div class="section-body">
+      <p>DMClear is a personal productivity utility that helps you manage your Instagram direct messages on your own device. Features include:</p>
+      <ul class="item-list">
+        <li>Unsending messages using Instagram's own built-in Unsend feature</li>
+        <li>Deleting conversations from your inbox</li>
+        <li>Exporting chat history to local HTML or text files</li>
+        <li>Unfollowing accounts from your following list</li>
+      </ul>
+      <p style="margin-top:14px">All actions are performed locally on your device and use Instagram's own existing features. <strong>DMClear is not affiliated with, endorsed by, or connected to Instagram or Meta Platforms, Inc.</strong></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>User Responsibilities</h2>
+    </div>
+    <div class="section-body">
+      <p>You agree to use DMClear only for lawful purposes and in a manner consistent with Instagram's own Terms of Use. You are solely responsible for:</p>
+      <ul class="item-list">
+        <li>Your use of the App and any actions taken on your Instagram account</li>
+        <li>Ensuring your use complies with Instagram's Terms of Use and Community Guidelines</li>
+        <li>Any consequences resulting from your use of the App, including account warnings, restrictions, or suspension by Instagram</li>
+        <li>Maintaining the security of your Instagram credentials on your device</li>
+      </ul>
+      <div class="warn-box">
+        <strong>Important:</strong> DMClear automates actions that are available within Instagram's own interface. However, excessive or unusual use of any automation may be detected by Instagram and could result in restrictions on your account. You use DMClear at your own discretion.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>No Data Collection</h2>
+    </div>
+    <div class="section-body">
+      <p>DMClear does not collect, store, or transmit any personal data, Instagram credentials, message content, or account information. All processing occurs entirely on your device. For full details, please review our <a href="dm_clean_privacy.html" style="color:var(--accent);text-decoration:none;font-weight:500">Privacy Policy</a>.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Intellectual Property</h2>
+    </div>
+    <div class="section-body">
+      <p>DMClear and all associated designs, code, and content are the property of the developer and are protected by applicable intellectual property laws. You may not copy, modify, distribute, or reverse-engineer the App without prior written permission.</p>
+      <p>Instagram, Meta, and related marks are trademarks of Meta Platforms, Inc. DMClear is not affiliated with or endorsed by Meta Platforms, Inc.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>Disclaimer of Warranties</h2>
+    </div>
+    <div class="section-body">
+      <p>DMClear is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, either express or implied. The developer does not warrant that:</p>
+      <ul class="item-list">
+        <li>The App will function without interruption or be error-free at all times</li>
+        <li>The App will remain compatible with future versions of Instagram's interface</li>
+        <li>The App's features will produce any particular outcome on your Instagram account</li>
+      </ul>
+      <p style="margin-top:14px">Instagram may change its interface or policies at any time, which may affect the App's functionality. The developer will make reasonable efforts to update the App but cannot guarantee uninterrupted service.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>Limitation of Liability</h2>
+    </div>
+    <div class="section-body">
+      <p>To the maximum extent permitted by applicable law, the developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+      <ul class="item-list">
+        <li>Loss of data, messages, or content resulting from use of the App</li>
+        <li>Suspension, restriction, or termination of your Instagram account</li>
+        <li>Any damages arising from your reliance on the App</li>
+      </ul>
+      <p style="margin-top:14px">The developer's total liability for any claim arising from these Terms shall not exceed the amount you paid for the App in the twelve months preceding the claim.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <h2>Prohibited Uses</h2>
+    </div>
+    <div class="section-body">
+      <p>You agree not to use DMClear to:</p>
+      <ul class="item-list">
+        <li>Harass, threaten, or harm other users</li>
+        <li>Violate any applicable laws or regulations</li>
+        <li>Attempt to reverse-engineer, decompile, or extract the App's source code</li>
+        <li>Use the App on behalf of or to manage another person's account without their explicit consent</li>
+        <li>Resell or commercially redistribute the App or its functionality</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <h2>Changes to Terms</h2>
+    </div>
+    <div class="section-body">
+      <p>The developer reserves the right to modify these Terms at any time. Updated Terms will be published at this URL with a revised effective date. Continued use of the App after changes are posted constitutes acceptance of the new Terms.</p>
+      <p>If changes are material, we will make reasonable efforts to notify users through App Store update notes.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <h2>Governing Law</h2>
+    </div>
+    <div class="section-body">
+      <p>These Terms are governed by and construed in accordance with applicable law. Any disputes arising from these Terms or your use of the App shall be resolved through good-faith negotiation. If resolution cannot be reached, disputes shall be submitted to the competent courts of the jurisdiction in which the developer is based.</p>
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <h3>Questions about these Terms?</h3>
+    <p>If you have any questions or concerns about these Terms of Service, feel free to reach out.</p>
+    <a href="mailto:dtb4121988@gmail.com" class="contact-link">dtb4121988@gmail.com</a>
+  </div>
+
+</main>
+
+<footer>
+  <span>© 2026 DMClear. All rights reserved.</span>
+  <br style="display:none">
+  <a href="dm_clean_tos.html">Terms of Service</a>
+  <a href="dm_clean_privacy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>

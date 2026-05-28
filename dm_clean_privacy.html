@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMClear - Privacy Policy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ig-gradient: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --border: #dbdbdb;
+    --text-primary: #262626;
+    --text-secondary: #737373;
+    --text-muted: #a8a8a8;
+    --accent: #0095f6;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+
+  .header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--ig-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Hero */
+  .hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 56px 24px 48px;
+    text-align: center;
+  }
+
+  .hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f0f7ff;
+    border: 1px solid #c9e2ff;
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 420px;
+    margin: 0 auto 24px;
+  }
+
+  .hero-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* Highlight box */
+  .highlight-box {
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 0 24px;
+  }
+
+  .no-data-card {
+    background: linear-gradient(135deg, #f0fff4 0%, #e8f5e9 100%);
+    border: 1px solid #c3e6cb;
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .check-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2d9e5f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .check-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: white;
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .no-data-text h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a5c35;
+    margin-bottom: 6px;
+  }
+
+  .no-data-text p {
+    font-size: 14px;
+    color: #2d6a4f;
+    line-height: 1.6;
+  }
+
+  /* Content */
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section:nth-child(1) { animation-delay: 0.05s; }
+  .section:nth-child(2) { animation-delay: 0.1s; }
+  .section:nth-child(3) { animation-delay: 0.15s; }
+  .section:nth-child(4) { animation-delay: 0.2s; }
+  .section:nth-child(5) { animation-delay: 0.25s; }
+  .section:nth-child(6) { animation-delay: 0.3s; }
+
+  .section-header {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fdfdfd;
+  }
+
+  .section-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ig-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .section-header h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .section-body {
+    padding: 24px 28px;
+  }
+
+  .section-body p {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+  }
+
+  .section-body p:last-child { margin-bottom: 0; }
+
+  .section-body strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .item-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .item-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14.5px;
+    color: var(--text-secondary);
+  }
+
+  .item-list li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ig-gradient);
+    margin-top: 8px;
+    flex-shrink: 0;
+    background: #dc2743;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+  }
+
+  /* Contact card */
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    text-align: center;
+  }
+
+  .contact-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .contact-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+
+  .contact-link {
+    display: inline-block;
+    background: var(--text-primary);
+    color: white;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+
+  .contact-link:hover { opacity: 0.8; }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 8px;
+  }
+
+  footer a:hover { color: var(--text-secondary); }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 28px; }
+    .section-header { padding: 16px 20px; }
+    .section-body { padding: 20px; }
+    .no-data-card { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <span class="logo-text">DMClear</span>
+    </a>
+    <span class="badge">Privacy Policy</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-pill">
+    <span class="hero-pill-dot"></span>
+    No data collected
+  </div>
+  <h1>Privacy Policy</h1>
+  <p class="hero-sub">We built DMClear with a simple principle: your data belongs to you, and only you.</p>
+  <span class="hero-date">Last updated: May 28, 2026</span>
+</section>
+
+<div class="highlight-box">
+  <div class="no-data-card">
+    <div class="check-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <div class="no-data-text">
+      <h3>DMClear does not collect, store, or transmit any personal data.</h3>
+      <p>Your Instagram credentials, messages, and account information never leave your device. Everything processed by DMClear stays entirely local — the developer has zero access to your data.</p>
+    </div>
+  </div>
+</div>
+
+<main class="content">
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Overview</h2>
+    </div>
+    <div class="section-body">
+      <p>DMClear ("the App") is a utility application that helps you manage your Instagram direct messages on your personal device. This Privacy Policy explains how DMClear handles information when you use the App.</p>
+      <p>The short version: <strong>we do not collect anything.</strong> No accounts, no analytics, no tracking, no servers receiving your data.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Information We Do Not Collect</h2>
+    </div>
+    <div class="section-body">
+      <p>DMClear does not collect, access, store, transmit, or share any of the following:</p>
+      <ul class="item-list">
+        <li>Your Instagram username, password, or login credentials</li>
+        <li>Your Instagram access tokens or session data</li>
+        <li>The content of your direct messages or conversations</li>
+        <li>Your Instagram follower or following lists</li>
+        <li>Your name, email address, or any personally identifiable information</li>
+        <li>Device identifiers, IP addresses, or location data</li>
+        <li>Usage analytics, crash reports, or behavioral data</li>
+        <li>Any files or exports you create within the App</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>How DMClear Works</h2>
+    </div>
+    <div class="section-body">
+      <p>DMClear operates entirely on your device. When you log in, your credentials are submitted directly to Instagram through Instagram's own interface — DMClear does not intercept, read, or store them at any point.</p>
+      <p>All processing — including unsending messages, deleting conversations, exporting chat history, and unfollowing accounts — happens locally on your device using Instagram's own built-in features. No data is routed through DMClear's servers because <strong>DMClear has no servers.</strong></p>
+      <p>Any exported files (HTML or text) are saved directly to your device's local storage and are never uploaded anywhere.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <div class="section-body">
+      <p>DMClear does not integrate with any third-party analytics platforms, advertising networks, or data brokers.</p>
+      <p>DMClear interacts with Instagram solely through Instagram's own interface on your device. This interaction is governed by <strong>Instagram's Terms of Use and Privacy Policy</strong>, which you can review at instagram.com. DMClear is not affiliated with, endorsed by, or connected to Instagram or Meta Platforms, Inc.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <div class="section-body">
+      <p>DMClear does not knowingly collect any information from users of any age. Since no data is collected at all, there is no risk of collecting information from children under 13.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <div class="section-body">
+      <p>If this Privacy Policy is updated, the new version will be published at this URL with an updated effective date. Because DMClear does not collect user contact information, we cannot notify you directly — please check this page periodically if you wish to stay informed.</p>
+      <p>Continued use of the App after any changes constitutes acceptance of the updated Policy.</p>
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <h3>Questions?</h3>
+    <p>If you have any questions about this Privacy Policy, you can reach us at:</p>
+    <a href="mailto:dtb4121988@gmail.com" class="contact-link">dtb4121988@gmail.com</a>
+  </div>
+
+</main>
+
+<footer>
+  <span>© 2026 DMClear. All rights reserved.</span>
+  <br style="display:none">
+  <a href="dm_clean_tos.html">Terms of Service</a>
+  <a href="dm_clean_privacy.html">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
