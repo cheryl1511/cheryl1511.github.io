@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — CleanCord</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f14;
+    --surface: #16181f;
+    --border: #2a2d38;
+    --accent: #5b6cf9;
+    --accent-soft: rgba(91,108,249,0.12);
+    --text: #e8e9f0;
+    --muted: #7a7d8e;
+    --heading-font: 'DM Serif Display', serif;
+    --body-font: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 300;
+    min-height: 100vh;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(14,15,20,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo { font-family: var(--heading-font); font-size: 1.3rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.875rem; font-weight: 400; transition: color .2s; }
+  .nav-links a:hover { color: var(--text); }
+
+  .page-wrap {
+    max-width: 580px;
+    margin: 0 auto;
+    padding: 72px 48px 96px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: var(--heading-font);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 48px;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    text-decoration: none;
+    transition: border-color .2s, transform .15s;
+  }
+  .contact-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card-icon {
+    width: 44px; height: 44px;
+    background: var(--accent-soft);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .card-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .card-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .card-value {
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .info-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .response-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  .dot {
+    width: 8px; height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(74,222,128,0.5);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 580px; margin: 0 auto;
+    color: var(--muted); font-size: 0.8rem;
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 600px) {
+    nav, .page-wrap { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">Clean<span>Cord</span></a>
+  <div class="nav-links">
+    <a href="cleancord_privacy.html">Privacy</a>
+    <a href="cleancord_tos.html">Terms</a>
+    <a href="cleancord_contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="badge">Get in Touch</div>
+  <h1>We're here to help.</h1>
+  <p class="subtitle">Have a question, found a bug, or need support? Tap the email below to reach us directly.</p>
+
+  <a class="contact-card" href="mailto:dtb4121988@gmail.com">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+    </div>
+    <div>
+      <div class="card-label">Email Support</div>
+      <div class="card-value">dtb4121988@gmail.com</div>
+    </div>
+  </a>
+
+  <div class="info-card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    </div>
+    <div>
+      <div class="card-label">Support Hours</div>
+      <div class="card-value">Monday – Friday, 9 AM – 6 PM (GMT+7)</div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+    </div>
+    <div>
+      <div class="card-label">Platform</div>
+      <div class="card-value">CleanCord — iOS &amp; Android</div>
+    </div>
+  </div>
+
+  <div class="response-note">
+    <div class="dot"></div>
+    <span>We typically respond within 24–48 hours on business days.</span>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 CleanCord. All rights reserved.</span>
+  <span><a href="cleancord_privacy.html">Privacy</a> · <a href="cleancord_tos.html">Terms</a></span>
+</footer>
+
+</body>
+</html>

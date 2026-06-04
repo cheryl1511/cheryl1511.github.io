@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — CleanCord</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f14;
+    --surface: #16181f;
+    --border: #2a2d38;
+    --accent: #5b6cf9;
+    --accent-soft: rgba(91,108,249,0.12);
+    --text: #e8e9f0;
+    --muted: #7a7d8e;
+    --heading-font: 'DM Serif Display', serif;
+    --body-font: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body-font);
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(14,15,20,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo { font-family: var(--heading-font); font-size: 1.3rem; color: var(--text); text-decoration: none; letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  nav a { color: var(--muted); text-decoration: none; font-size: 0.875rem; font-weight: 400; transition: color .2s; }
+  nav a:hover { color: var(--text); }
+  .nav-links { display: flex; gap: 32px; }
+
+  /* HERO BAND */
+  .page-hero {
+    padding: 72px 48px 48px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .page-hero h1 {
+    font-family: var(--heading-font);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  .page-hero p {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  /* CONTENT */
+  .content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 48px 96px;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+  section { margin-bottom: 48px; }
+  section h2 {
+    font-family: var(--heading-font);
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  section h2::before {
+    content: counter(section-counter, decimal-leading-zero) ". ";
+    counter-increment: section-counter;
+    color: var(--accent);
+    font-family: var(--body-font);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-right: 4px;
+  }
+  .content { counter-reset: section-counter; }
+  p { color: var(--muted); margin-bottom: 12px; }
+  p strong { color: var(--text); font-weight: 500; }
+  ul { color: var(--muted); padding-left: 20px; margin-bottom: 12px; }
+  ul li { margin-bottom: 8px; }
+
+  .highlight-box {
+    background: var(--accent-soft);
+    border: 1px solid rgba(91,108,249,0.25);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+  .highlight-box p { color: var(--text); margin: 0; font-weight: 400; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 760px; margin: 0 auto;
+    color: var(--muted); font-size: 0.8rem;
+  }
+
+  @media (max-width: 600px) {
+    nav, .page-hero, .content { padding-left: 24px; padding-right: 24px; }
+    footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">Clean<span>Cord</span></a>
+  <div class="nav-links">
+    <a href="cleancord_privacy.html">Privacy</a>
+    <a href="cleancord_tos.html">Terms</a>
+    <a href="cleancord_contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="badge">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p>Last updated: June 4, 2026</p>
+</div>
+
+<div class="content">
+  <div class="highlight-box">
+    <p>CleanCord runs entirely on your device. We do not collect, store, or transmit your Discord credentials or message content to any external server.</p>
+  </div>
+
+  <hr class="divider">
+
+  <section>
+    <h2>Overview</h2>
+    <p>CleanCord ("we", "our", or "the app") is a mobile application for iOS and Android that allows users to manage their own Discord messages — including bulk deletion and message export. This Privacy Policy explains how CleanCord handles your information.</p>
+    <p>By using CleanCord, you agree to the practices described in this policy.</p>
+  </section>
+
+  <section>
+    <h2>Information We Do Not Collect</h2>
+    <p>CleanCord does <strong>not</strong> collect, store, or transmit:</p>
+    <ul>
+      <li>Your Discord login credentials or tokens</li>
+      <li>The content of your Discord messages</li>
+      <li>Your Discord account details or profile information</li>
+      <li>Any exported message data</li>
+    </ul>
+    <p>All authentication and data processing happens locally on your personal device. Nothing is sent to CleanCord servers.</p>
+  </section>
+
+  <section>
+    <h2>Information We May Collect</h2>
+    <p>CleanCord may collect limited, non-personal analytics data to improve app performance:</p>
+    <ul>
+      <li><strong>Crash reports:</strong> Anonymous diagnostic data to identify and fix bugs</li>
+      <li><strong>Usage data:</strong> Anonymous interaction data (e.g., which features are used most), not linked to your identity</li>
+    </ul>
+    <p>This data cannot be used to identify you personally and is never sold or shared with third parties.</p>
+  </section>
+
+  <section>
+    <h2>Local Data Storage</h2>
+    <p>Any credentials or session data needed to operate the app are stored locally on your device using secure, encrypted storage. This data is cleared when you log out or uninstall the app.</p>
+    <p>CleanCord does not have access to data stored on your device.</p>
+  </section>
+
+  <section>
+    <h2>Third-Party Services</h2>
+    <p>CleanCord interacts with <strong>Discord's platform</strong> on your behalf, using your own credentials to perform actions you explicitly request (deleting or exporting your own messages). CleanCord is not affiliated with, endorsed by, or officially connected to Discord Inc.</p>
+    <p>Your use of Discord remains subject to <a href="https://discord.com/terms" target="_blank">Discord's Terms of Service</a> and <a href="https://discord.com/privacy" target="_blank">Privacy Policy</a>.</p>
+  </section>
+
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>CleanCord is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through the app, please contact us so we can take appropriate action.</p>
+  </section>
+
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:dtb4121988@gmail.com">dtb4121988@gmail.com</a> or visit our <a href="cleancord_contact.html">contact page</a>.</p>
+  </section>
+</div>
+
+<footer>
+  <span>© 2026 CleanCord. All rights reserved.</span>
+  <span><a href="cleancord_tos.html">Terms of Service</a> · <a href="cleancord_contact.html">Contact</a></span>
+</footer>
+
+</body>
+</html>
