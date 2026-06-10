@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — LikeDrop</title>
+<style>
+  :root {
+    --bg: #0D0D1A;
+    --surface: #15152A;
+    --border: #2A2A45;
+    --pink: #FF2D55;
+    --cyan: #00F2EA;
+    --text: #E8E8F0;
+    --muted: #8888AA;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: #000;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; overflow: hidden;
+  }
+  .logo-name {
+    font-size: 20px; font-weight: 900; color: #fff;
+    font-family: "Arial Black", Arial, sans-serif;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+  .logo-name span { color: #FF1744; }
+  .logo-sub { font-size: 12px; color: var(--muted); }
+  nav { margin-left: auto; display: flex; gap: 20px; }
+  nav a { font-size: 14px; color: var(--muted); }
+  nav a:hover { color: var(--text); text-decoration: none; }
+  nav a.active { color: var(--cyan); }
+
+  .hero {
+    background: linear-gradient(180deg, #1A0A4A 0%, var(--bg) 100%);
+    padding: 56px 24px 48px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .pill {
+    display: inline-block;
+    background: rgba(0,242,234,0.12);
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .hero h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .hero p { color: var(--muted); font-size: 15px; }
+  .hero .updated { margin-top: 10px; font-size: 13px; color: var(--muted); }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .zero-data {
+    background: rgba(0,242,234,0.06);
+    border: 1px solid rgba(0,242,234,0.2);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .zero-data .icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .zero-data strong { font-size: 17px; color: var(--cyan); display: block; margin-bottom: 4px; }
+  .zero-data p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  section { margin-bottom: 40px; }
+  h2 {
+    font-size: 20px; font-weight: 700; color: #fff;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+  }
+  h2 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pink); flex-shrink: 0; }
+  p { color: var(--muted); margin-bottom: 12px; font-size: 15px; }
+  p:last-child { margin-bottom: 0; }
+  ul { list-style: none; padding: 0; }
+  ul li {
+    color: var(--muted);
+    font-size: 15px;
+    padding: 6px 0 6px 20px;
+    position: relative;
+  }
+  ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 15px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--border);
+  }
+
+  .table-wrap { overflow-x: auto; margin: 16px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th {
+    text-align: left; padding: 10px 14px;
+    background: var(--surface);
+    color: var(--muted); font-weight: 600; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--border);
+  }
+  td { padding: 10px 14px; color: var(--muted); border-bottom: 1px solid var(--border); }
+  tr:last-child td { border-bottom: none; }
+  .tag-no {
+    display: inline-block; background: rgba(0,242,234,0.1);
+    color: var(--cyan); font-size: 12px; font-weight: 600;
+    padding: 2px 10px; border-radius: 20px;
+  }
+
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 28px 24px;
+    text-align: center;
+  }
+  footer p { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  footer a { color: var(--cyan); }
+  .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 12px; }
+  .footer-links a { font-size: 13px; color: var(--muted); }
+  .footer-links a:hover { color: var(--text); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo-name">Like<span>Drop</span></div>
+    <div class="logo-sub">Bulk Like &amp; Favorite Remover</div>
+  </div>
+  <nav>
+    <a href="likedrop_privacy.html" class="active">Privacy</a>
+    <a href="likedrop_tos.html">Terms</a>
+    <a href="likedrop_support.html">Support</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="pill">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p>How LikeDrop handles your data</p>
+  <div class="updated">Last updated: June 10, 2025</div>
+</div>
+
+<div class="container">
+
+  <div class="zero-data">
+    <div class="icon">🛡️</div>
+    <div>
+      <strong>We collect zero data</strong>
+      <p>LikeDrop does not collect, store, transmit, or share any personal information. Everything happens entirely on your device.</p>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="dot"></span>Overview</h2>
+    <p>LikeDrop ("we", "our", or "the app") is a utility app that helps you manage and bulk remove liked videos and favorited content from your social media accounts. This Privacy Policy explains how we handle information when you use LikeDrop.</p>
+    <p>The short version: we don't collect anything. Your account credentials stay on your device. No data is sent to our servers — because we don't have any.</p>
+  </section>
+
+  <section>
+    <h2><span class="dot"></span>Information we do NOT collect</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Data type</th>
+            <th>Collected?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Name, email, phone number</td><td><span class="tag-no">Never</span></td></tr>
+          <tr><td>Social media account credentials</td><td><span class="tag-no">Never</span></td></tr>
+          <tr><td>List of liked or favorited videos</td><td><span class="tag-no">Never</span></td></tr>
+          <tr><td>Device identifiers or advertising ID</td><td><span class="tag-no">Never</span></td></tr>
+          <tr><td>Location data</td><td><span class="tag-no">Never</span></td></tr>
+          <tr><td>Usage analytics or crash reports</td><td><span class="tag-no">Never</span></td></tr>
+          <tr><td>Payment information</td><td><span class="tag-no">Never</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="dot"></span>How the app works</h2>
+    <p>LikeDrop operates entirely within your device using a local browser session (WebView). When you log in to your social media account inside the app, your session is handled directly between your device and that platform — just as it would be in a regular browser.</p>
+    <ul>
+      <li>Your login credentials are never intercepted or stored by LikeDrop</li>
+      <li>The list of your liked or favorited videos is only loaded locally to perform removal actions</li>
+      <li>No content or metadata from your social accounts is sent to any external server</li>
+      <li>All actions (unlike, unfavorite) are performed directly from your device</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="dot"></span>In-App Purchases</h2>
+    <p>LikeDrop offers optional subscriptions (Weekly, Monthly) and a one-time Lifetime purchase. All purchases are processed entirely through the Apple App Store or Google Play Store. We never see or handle your payment details. Purchase history is managed by Apple or Google according to their own privacy policies.</p>
+  </section>
+
+  <section>
+    <h2><span class="dot"></span>Third-party services</h2>
+    <p>LikeDrop uses <strong style="color: var(--text)">RevenueCat</strong> solely to manage in-app purchase state (e.g., whether your subscription is active). RevenueCat may collect a non-identifying device token for this purpose. Please review <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a> for details.</p>
+    <p>Beyond RevenueCat for purchase management, no other third-party SDKs, analytics tools, or advertising networks are used.</p>
+  </section>
+
+  <section>
+    <h2><span class="dot"></span>Children's privacy</h2>
+    <p>LikeDrop is not directed at children under the age of 13. We do not knowingly collect any information from children. Since we collect no information from any user, no special handling is required.</p>
+  </section>
+
+  <section>
+    <h2><span class="dot"></span>Changes to this policy</h2>
+    <p>If we ever change this policy in a material way, we will update the "Last updated" date at the top of this page and notify users through an in-app notice. Continued use of the app after any changes constitutes acceptance of the updated policy.</p>
+  </section>
+
+  <section>
+    <h2><span class="dot"></span>Contact</h2>
+    <p>Questions about this Privacy Policy? We're easy to reach:</p>
+    <p><a href="mailto:dtb4121988@gmail.com">dtb4121988@gmail.com</a></p>
+  </section>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 LikeDrop. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="likedrop_privacy.html">Privacy Policy</a>
+    <a href="likedrop_tos.html">Terms of Service</a>
+    <a href="likedrop_support.html">Support</a>
+    <a href="mailto:dtb4121988@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

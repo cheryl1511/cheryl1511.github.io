@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — LikeDrop</title>
+<style>
+  :root {
+    --bg: #0D0D1A;
+    --surface: #15152A;
+    --border: #2A2A45;
+    --pink: #FF2D55;
+    --cyan: #00F2EA;
+    --text: #E8E8F0;
+    --muted: #8888AA;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: #000;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; overflow: hidden;
+  }
+  .logo-name {
+    font-size: 20px; font-weight: 900; color: #fff;
+    font-family: "Arial Black", Arial, sans-serif;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+  .logo-name span { color: #FF1744; }
+  .logo-sub { font-size: 12px; color: var(--muted); }
+  nav { margin-left: auto; display: flex; gap: 20px; }
+  nav a { font-size: 14px; color: var(--muted); }
+  nav a:hover { color: var(--text); text-decoration: none; }
+  nav a.active { color: var(--cyan); }
+
+  .hero {
+    background: linear-gradient(180deg, #1A0A4A 0%, var(--bg) 100%);
+    padding: 56px 24px 48px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .pill {
+    display: inline-block;
+    background: rgba(0,242,234,0.12);
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .hero h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .hero p { color: var(--muted); font-size: 15px; }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  /* Contact card */
+  .contact-card {
+    background: linear-gradient(135deg, #1A0A4A, #0D0D2E);
+    border: 1px solid rgba(0,242,234,0.2);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .contact-card .email-icon { font-size: 36px; margin-bottom: 12px; }
+  .contact-card h3 { font-size: 18px; color: #fff; margin-bottom: 6px; }
+  .contact-card p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  .contact-btn {
+    display: inline-block;
+    background: var(--cyan);
+    color: #0A0A2E;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px 28px;
+    border-radius: 24px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+  .contact-btn:hover { opacity: 0.85; text-decoration: none; }
+
+  /* FAQ */
+  h2 {
+    font-size: 22px; font-weight: 700; color: #fff;
+    margin-bottom: 20px;
+  }
+  .faq-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 48px; }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .faq-q {
+    padding: 18px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
+  .faq-q:hover { background: rgba(255,255,255,0.03); }
+  .faq-q .arrow {
+    font-size: 18px;
+    color: var(--muted);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+  .faq-a {
+    display: none;
+    padding: 0 20px 18px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .arrow { transform: rotate(180deg); color: var(--cyan); }
+
+  /* Quick tips */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .tip-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .tip-card .tip-icon { font-size: 24px; margin-bottom: 10px; }
+  .tip-card h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .tip-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* Subscription management */
+  .steps { display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px; }
+  .step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+  }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,45,85,0.15);
+    color: var(--pink);
+    font-size: 13px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-body h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .step-body p { font-size: 13px; color: var(--muted); margin: 0; }
+
+  section { margin-bottom: 48px; }
+
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 28px 24px;
+    text-align: center;
+  }
+  footer p { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 12px; }
+  .footer-links a { font-size: 13px; color: var(--muted); }
+  .footer-links a:hover { color: var(--text); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo-name">Like<span>Drop</span></div>
+    <div class="logo-sub">Bulk Like &amp; Favorite Remover</div>
+  </div>
+  <nav>
+    <a href="likedrop_privacy.html">Privacy</a>
+    <a href="likedrop_tos.html">Terms</a>
+    <a href="likedrop_support.html" class="active">Support</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="pill">Help Center</div>
+  <h1>Support</h1>
+  <p>Answers to common questions &amp; how to get in touch</p>
+</div>
+
+<div class="container">
+
+  <div class="contact-card">
+    <div class="email-icon">✉️</div>
+    <h3>Need help? We respond quickly.</h3>
+    <p>Send us a message and we'll get back to you within 24 hours.</p>
+    <a href="mailto:dtb4121988@gmail.com" class="contact-btn">dtb4121988@gmail.com</a>
+  </div>
+
+  <!-- Quick tips -->
+  <section>
+    <h2>Quick tips</h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">⏳</div>
+        <h4>Daily quota resets</h4>
+        <p>Free credits refresh automatically every 24 hours. Come back tomorrow if you've hit the limit.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🛡️</div>
+        <h4>Built-in rate limits</h4>
+        <p>LikeDrop paces actions automatically to keep your account safe. Don't try to bypass them.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🔄</div>
+        <h4>App not loading?</h4>
+        <p>Force-quit and reopen the app. If the issue persists, log out and log back in.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📶</div>
+        <h4>Check your connection</h4>
+        <p>LikeDrop needs an active internet connection to load and process your content.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          How does LikeDrop work?
+          <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-a">
+          LikeDrop uses an in-app browser (WebView) to connect to your social media account. After you log in, the app finds your liked videos and favorited content, then removes them in batches with built-in delays to keep your account safe.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          Is my account safe to use with LikeDrop?
+          <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-a">
+          LikeDrop is designed with safety in mind and uses gradual, paced actions — not aggressive bulk automation. That said, any bulk action tool carries some risk depending on the platform's current policies. We recommend using the free quota first to test before subscribing.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          Does LikeDrop store my login credentials?
+          <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-a">
+          No. LikeDrop never stores, transmits, or accesses your password. Your login session happens entirely within your device's WebView, just like a regular browser. We have no server that receives any of your data.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          Why did LikeDrop stop in the middle of removing?
+          <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-a">
+          This usually happens for one of three reasons: (1) you've reached your daily quota limit — it resets in 24 hours; (2) your internet connection dropped; or (3) the platform temporarily throttled requests. Simply reopen the app and try again.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          Not all my likes/favorites were removed — why?
+          <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-a">
+          Some content may not be removable if the original video was deleted by its creator, if the platform returned an error, or if the platform's interface changed. For remaining items, try running the removal process again.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          How do I cancel my subscription?
+          <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-a">
+          Subscriptions are managed through the App Store (iOS) or Google Play (Android). You can cancel anytime through your device's subscription settings — we cannot process cancellations or refunds directly.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          I purchased Lifetime but features are locked — what do I do?
+          <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-a">
+          Go to the app's purchase screen and tap "Restore Purchases." This re-links your purchase to your account. If the issue persists after restoring, email us with your order receipt and we'll look into it.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggle(this)">
+          Does LikeDrop work for Instagram too?
+          <span class="arrow">⌄</span>
+        </div>
+        <div class="faq-a">
+          LikeDrop is primarily designed for TikTok (unlike and unfavorite). Support for other platforms may be added in future updates. Follow our updates for announcements.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cancel subscription steps -->
+  <section>
+    <h2>How to cancel your subscription</h2>
+    <p style="color: var(--muted); font-size: 14px; margin-bottom: 20px;">On iOS (App Store):</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>Open Settings</h4>
+          <p>Tap your Apple ID name at the top of the Settings app</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>Go to Subscriptions</h4>
+          <p>Tap "Subscriptions" to see all your active subscriptions</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>Select LikeDrop</h4>
+          <p>Tap the LikeDrop subscription entry</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>Cancel subscription</h4>
+          <p>Tap "Cancel Subscription" and confirm. You keep access until the end of your billing period.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 LikeDrop. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="likedrop_privacy.html">Privacy Policy</a>
+    <a href="likedrop_tos.html">Terms of Service</a>
+    <a href="likedrop_support.html">Support</a>
+    <a href="mailto:dtb4121988@gmail.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+function toggle(el) {
+  var item = el.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

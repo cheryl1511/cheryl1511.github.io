@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — LikeDrop</title>
+<style>
+  :root {
+    --bg: #0D0D1A;
+    --surface: #15152A;
+    --border: #2A2A45;
+    --pink: #FF2D55;
+    --cyan: #00F2EA;
+    --text: #E8E8F0;
+    --muted: #8888AA;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: #000;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; overflow: hidden;
+  }
+  .logo-name {
+    font-size: 20px; font-weight: 900; color: #fff;
+    font-family: "Arial Black", Arial, sans-serif;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+  .logo-name span { color: #FF1744; }
+  .logo-sub { font-size: 12px; color: var(--muted); }
+  nav { margin-left: auto; display: flex; gap: 20px; }
+  nav a { font-size: 14px; color: var(--muted); }
+  nav a:hover { color: var(--text); text-decoration: none; }
+  nav a.active { color: var(--cyan); }
+
+  .hero {
+    background: linear-gradient(180deg, #1A0A4A 0%, var(--bg) 100%);
+    padding: 56px 24px 48px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .pill {
+    display: inline-block;
+    background: rgba(255,45,85,0.12);
+    color: var(--pink);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .hero h1 { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .hero p { color: var(--muted); font-size: 15px; }
+  .hero .updated { margin-top: 10px; font-size: 13px; color: var(--muted); }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .notice {
+    background: rgba(255,45,85,0.06);
+    border: 1px solid rgba(255,45,85,0.2);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .notice strong { color: var(--pink); }
+
+  section { margin-bottom: 40px; }
+  h2 {
+    font-size: 20px; font-weight: 700; color: #fff;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+  }
+  h2 .num {
+    font-size: 13px; font-weight: 700;
+    color: var(--pink);
+    background: rgba(255,45,85,0.1);
+    border-radius: 6px;
+    padding: 2px 8px;
+    flex-shrink: 0;
+  }
+  p { color: var(--muted); margin-bottom: 12px; font-size: 15px; }
+  p:last-child { margin-bottom: 0; }
+  ul { list-style: none; padding: 0; margin-bottom: 12px; }
+  ul li {
+    color: var(--muted); font-size: 15px;
+    padding: 6px 0 6px 20px;
+    position: relative;
+  }
+  ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 15px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--border);
+  }
+  .highlight-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--pink);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .highlight-box p { font-size: 14px; margin: 0; }
+
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 28px 24px;
+    text-align: center;
+  }
+  footer p { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  footer a { color: var(--cyan); }
+  .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 12px; }
+  .footer-links a { font-size: 13px; color: var(--muted); }
+  .footer-links a:hover { color: var(--text); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo-name">Like<span>Drop</span></div>
+    <div class="logo-sub">Bulk Like &amp; Favorite Remover</div>
+  </div>
+  <nav>
+    <a href="likedrop_privacy.html">Privacy</a>
+    <a href="likedrop_tos.html" class="active">Terms</a>
+    <a href="likedrop_support.html">Support</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="pill">Legal</div>
+  <h1>Terms of Service</h1>
+  <p>Please read these terms before using LikeDrop</p>
+  <div class="updated">Last updated: June 10, 2025</div>
+</div>
+
+<div class="container">
+
+  <div class="notice">
+    <strong>Important:</strong> By downloading or using LikeDrop, you agree to these Terms of Service. If you do not agree, please do not use the app. These terms also incorporate Apple's Standard End User License Agreement (EULA) available at <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">apple.com/legal/internet-services/itunes/dev/stdeula</a>.
+  </div>
+
+  <section>
+    <h2><span class="num">01</span>About LikeDrop</h2>
+    <p>LikeDrop is a utility app that helps you manage and remove liked videos and favorited content from your social media accounts in bulk. The app is developed and maintained by an independent developer ("we", "us", or "our").</p>
+    <p>LikeDrop is not affiliated with, endorsed by, or in any way officially connected to TikTok, ByteDance, or any other social media platform.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Eligibility</h2>
+    <p>You must be at least 13 years old to use LikeDrop. By using the app, you confirm that you meet this age requirement and that you have the legal capacity to enter into these Terms.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Acceptable use</h2>
+    <p>You agree to use LikeDrop only for its intended purpose — managing your own liked and favorited content. You agree not to:</p>
+    <ul>
+      <li>Use the app to access accounts that do not belong to you</li>
+      <li>Attempt to reverse-engineer, modify, or redistribute the app</li>
+      <li>Use the app in any way that violates applicable laws or regulations</li>
+      <li>Use the app to harass, harm, or infringe on the rights of others</li>
+    </ul>
+    <div class="highlight-box">
+      <p>LikeDrop is designed with built-in rate limits to reduce the risk of your social media account being flagged. However, bulk automated actions may still violate the terms of service of third-party platforms. You use LikeDrop at your own discretion and risk.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>In-App Purchases &amp; Subscriptions</h2>
+    <p>LikeDrop offers optional paid features through in-app purchases:</p>
+    <ul>
+      <li><strong style="color: var(--text)">Weekly Plan</strong> — auto-renewable subscription, billed weekly</li>
+      <li><strong style="color: var(--text)">Monthly Plan</strong> — auto-renewable subscription, billed monthly</li>
+      <li><strong style="color: var(--text)">Lifetime Access</strong> — one-time non-consumable purchase</li>
+    </ul>
+    <p>All purchases are processed by Apple App Store or Google Play Store. Subscriptions automatically renew unless canceled at least 24 hours before the end of the current billing period. You can manage or cancel subscriptions at any time through your device's account settings.</p>
+    <p>We do not offer refunds directly — refund requests must be submitted through Apple or Google according to their respective refund policies.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">05</span>Disclaimer of warranties</h2>
+    <p>LikeDrop is provided "as is" without warranties of any kind, express or implied. We do not warrant that:</p>
+    <ul>
+      <li>The app will be error-free or uninterrupted</li>
+      <li>The app will remain compatible with future versions of third-party platforms</li>
+      <li>All likes or favorites will be successfully removed in every case</li>
+    </ul>
+    <p>Social media platforms may update their interfaces or policies at any time, which could affect how LikeDrop functions. We will make reasonable efforts to maintain compatibility but cannot guarantee it.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">06</span>Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of LikeDrop, including but not limited to account restrictions or bans imposed by third-party platforms.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">07</span>Intellectual property</h2>
+    <p>LikeDrop and all associated content, branding, and code are owned by us or our licensors. You are granted a limited, non-exclusive, non-transferable license to use the app on your personal device in accordance with these Terms.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">08</span>Changes to these terms</h2>
+    <p>We may update these Terms from time to time. When we do, we will update the "Last updated" date. Continued use of LikeDrop after changes are posted constitutes your acceptance of the revised Terms.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">09</span>Contact</h2>
+    <p>Questions about these Terms? Contact us at:</p>
+    <p><a href="mailto:dtb4121988@gmail.com">dtb4121988@gmail.com</a></p>
+  </section>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 LikeDrop. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="likedrop_privacy.html">Privacy Policy</a>
+    <a href="likedrop_tos.html">Terms of Service</a>
+    <a href="likedrop_support.html">Support</a>
+    <a href="mailto:dtb4121988@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
