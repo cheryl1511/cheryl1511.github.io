@@ -1,0 +1,14 @@
+{
+  "ios": {
+    "name": "Youtube Cleaner",
+    "description": "Hide ad, PiP, custom speed for Youtube",
+    "icon": "https://cheryl1511.github.io/tubecleaner.png",
+    "store_url": "https://apps.apple.com/vn/app/clean-tube/id6757726426"
+  },
+  "android": {
+    "name": "Youtube Cleaner",
+    "description": "Hide ad, PiP, custom speed for Youtube",
+    "icon": "https://cheryl1511.github.io/tubecleaner.png",
+    "store_url": "com.friendkit.messenger_message_manager"
+  }
+}
