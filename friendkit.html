@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FriendKit — Toolkit for your Facebook account</title>
-<meta name="description" content="30+ tools for Facebook: bulk downloads, anonymous story views, friend management, group automation, and cleanup — all from one app.">
+<title data-i18n="doc_title">FriendKit — Toolkit for your Facebook account</title>
+<meta name="description" data-i18n-attr="content" content="30+ tools for Facebook: bulk downloads, anonymous story views, friend management, group automation, and cleanup — all from one app.">
 <link rel="icon" href="images/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -57,7 +57,11 @@ nav{position:sticky;top:0;z-index:100;background:rgba(250,250,253,.85);backdrop-
 .brand .mark img{width:100%;height:100%;object-fit:cover;}
 .nav-links{display:flex;align-items:center;gap:28px;font-size:14.5px;font-weight:500;color:var(--ink-dim);}
 .nav-links a:hover{color:var(--ink);}
-.nav-cta{display:flex;gap:10px;}
+.nav-cta{display:flex;gap:10px;align-items:center;}
+.lang-switch{display:flex;gap:2px;background:var(--bg-soft);border:1.5px solid var(--line);border-radius:100px;padding:3px;}
+.lang-btn{font-family:var(--display);font-weight:700;font-size:12px;padding:6px 12px;border-radius:100px;color:var(--ink-dim);cursor:pointer;transition:.15s ease;background:transparent;border:none;}
+.lang-btn.active{background:var(--indigo);color:#fff;}
+.lang-btn:not(.active):hover{color:var(--ink);}
 .btn{font-family:var(--display);font-weight:700;font-size:14px;padding:11px 20px;border-radius:100px;transition:.15s ease;display:inline-flex;align-items:center;gap:8px;}
 .btn-primary{background:var(--indigo);color:#fff;box-shadow:0 8px 20px -6px rgba(84,87,229,.55);}
 .btn-primary:hover{background:var(--indigo-deep);transform:translateY(-1px);}
@@ -183,12 +187,16 @@ footer{padding:40px 0 60px;}
   <div class="wrap nav-inner">
     <div class="brand"><span class="mark"><img src="images/icon.png" alt="FriendKit icon"></span>FriendKit</div>
     <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#trust">Privacy</a>
-      <a href="https://t.me/friend_kit" target="_blank" rel="noopener">Telegram</a>
+      <a href="#features" data-i18n="nav_features">Features</a>
+      <a href="#trust" data-i18n="nav_privacy">Privacy</a>
+      <a href="https://t.me/friend_kit" target="_blank" rel="noopener" data-i18n="nav_telegram">Telegram</a>
     </div>
     <div class="nav-cta">
-      <a href="https://apps.apple.com/vn/app/friend-kit/id6787303577" target="_blank" rel="noopener" class="btn btn-primary">Get FriendKit</a>
+      <div class="lang-switch">
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="vi">VI</button>
+      </div>
+      <a href="https://apps.apple.com/vn/app/friend-kit/id6787303577" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="nav_cta">Get FriendKit</a>
     </div>
   </div>
 </nav>
@@ -197,33 +205,33 @@ footer{padding:40px 0 60px;}
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">📱 APP FOR FACEBOOK USERS</span>
-      <h1>Everything Facebook won't let you do — <span>in one app.</span></h1>
-      <p class="lead">FriendKit packs 30+ tools across 7 categories: download media, view stories anonymously, manage friends, automate groups, and clean up your account — all on your own logged-in session.</p>
+      <span class="eyebrow" data-i18n="hero_eyebrow">📱 APP FOR FACEBOOK USERS</span>
+      <h1 data-i18n-html="hero_h1">Everything Facebook won't let you do — <span>in one app.</span></h1>
+      <p class="lead" data-i18n="hero_lead">FriendKit packs 30+ tools across 7 categories: download media, view stories anonymously, manage friends, automate groups, and clean up your account — all on your own logged-in session.</p>
 
       <div class="cta-row">
-        <a href="#features" class="btn btn-primary">Explore features</a>
-        <a href="friendkit_privacy.html" class="btn btn-ghost">Privacy Policy</a>
+        <a href="#features" class="btn btn-primary" data-i18n="hero_cta_explore">Explore features</a>
+        <a href="friendkit_privacy.html" class="btn btn-ghost" data-i18n="hero_cta_privacy">Privacy Policy</a>
       </div>
 
       <div class="store-row">
         <a href="https://play.google.com/store/apps/details?id=com.friendkit.messenger_message_manager" target="_blank" rel="noopener" class="store-btn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.37.2.8.22 1.2.06L15.34 12 4.38.18C3.98.02 3.55.04 3.18.24 2.46.64 2 1.39 2 2.22v19.56c0 .83.46 1.58 1.18 1.98z"/><path d="M19.34 9.69l-2.67-1.54-3.17 3.17 3.17 3.17 2.7-1.56c.77-.44 1.24-1.22 1.24-2.08s-.5-1.72-1.27-2.16z"/><path d="M4.38.18l10.96 10.96L12.67 13.8 4.38.18z" opacity=".5"/><path d="M4.38 23.82l8.29-13.62-2.67-2.66L4.38 23.82z" opacity=".5"/></svg>
-          <span class="store-btn-text"><small>Get it on</small><strong>Google Play</strong></span>
+          <span class="store-btn-text"><small data-i18n="store_gplay_small">Get it on</small><strong>Google Play</strong></span>
         </a>
         <a href="https://apps.apple.com/vn/app/friend-kit/id6787303577" target="_blank" rel="noopener" class="store-btn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          <span class="store-btn-text"><small>Download on the</small><strong>App Store</strong></span>
+          <span class="store-btn-text"><small data-i18n="store_appstore_small">Download on the</small><strong>App Store</strong></span>
         </a>
       </div>
     </div>
 
     <div class="hero-art">
       <div class="float-phone"><img class="hero-shot" src="images/hero-dashboard.jpg" alt="FriendKit app home screen showing the full tool list"></div>
-      <div class="float-chip chip-1"><span class="ico">🔔</span> Unfriend alert</div>
-      <div class="float-chip chip-2"><span class="ico">📥</span> Bulk download</div>
-      <div class="float-chip chip-3"><span class="ico">👁️</span> Anon story view</div>
-      <div class="float-chip chip-4"><span class="ico">🤖</span> Group auto-post</div>
+      <div class="float-chip chip-1"><span class="ico">🔔</span> <span data-i18n="chip_unfriend">Unfriend alert</span></div>
+      <div class="float-chip chip-2"><span class="ico">📥</span> <span data-i18n="chip_download">Bulk download</span></div>
+      <div class="float-chip chip-3"><span class="ico">👁️</span> <span data-i18n="chip_story">Anon story view</span></div>
+      <div class="float-chip chip-4"><span class="ico">🤖</span> <span data-i18n="chip_group">Group auto-post</span></div>
     </div>
   </div>
 </header>
@@ -231,10 +239,10 @@ footer{padding:40px 0 60px;}
 <!-- STATS -->
 <section class="stats">
   <div class="wrap stats-row">
-    <div class="stat"><b>30+</b><span>Tools</span></div>
-    <div class="stat"><b>7</b><span>Categories</span></div>
-    <div class="stat"><b>1</b><span>Logged-in session</span></div>
-    <div class="stat"><b>0</b><span>Extra passwords stored</span></div>
+    <div class="stat"><b>30+</b><span data-i18n="stat_tools">Tools</span></div>
+    <div class="stat"><b>7</b><span data-i18n="stat_categories">Categories</span></div>
+    <div class="stat"><b>1</b><span data-i18n="stat_session">Logged-in session</span></div>
+    <div class="stat"><b>0</b><span data-i18n="stat_passwords">Extra passwords stored</span></div>
   </div>
 </section>
 
@@ -242,20 +250,20 @@ footer{padding:40px 0 60px;}
 <section class="section" id="features">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">TOP FEATURES</span>
-      <h2>Boost your Facebook profile</h2>
-      <p>Manage and clean up your friend list, track engagement, and take back control of your account.</p>
+      <span class="eyebrow" data-i18n="features_eyebrow">TOP FEATURES</span>
+      <h2 data-i18n="features_h2">Boost your Facebook profile</h2>
+      <p data-i18n="features_p">Manage and clean up your friend list, track engagement, and take back control of your account.</p>
     </div>
 
     <div class="feat-block reveal">
       <div class="feat-copy">
-        <span class="feat-tag">Top Feature</span>
-        <h3>Know who unfriended you</h3>
-        <p class="desc">Facebook hides this by design — FriendKit doesn't. Get notified the moment someone removes you, and rank the rest of your list by who actually engages back.</p>
+        <span class="feat-tag" data-i18n="top_feature_tag">Top Feature</span>
+        <h3 data-i18n="f1_h3">Know who unfriended you</h3>
+        <p class="desc" data-i18n="f1_desc">Facebook hides this by design — FriendKit doesn't. Get notified the moment someone removes you, and rank the rest of your list by who actually engages back.</p>
         <ul class="feat-list">
-          <li>Instant unfriend detection</li>
-          <li>Rank friends by real interaction</li>
-          <li>Bulk unfriend & clean up in one pass</li>
+          <li data-i18n="f1_li1">Instant unfriend detection</li>
+          <li data-i18n="f1_li2">Rank friends by real interaction</li>
+          <li data-i18n="f1_li3">Bulk unfriend & clean up in one pass</li>
         </ul>
       </div>
       <div class="feat-media shot-frame"><img src="images/feature-unfriend.png" alt="Friend History screen showing removed friends"></div>
@@ -263,13 +271,13 @@ footer{padding:40px 0 60px;}
 
     <div class="feat-block rev reveal">
       <div class="feat-copy">
-        <span class="feat-tag">Top Feature</span>
-        <h3>View stories anonymously</h3>
-        <p class="desc">Browse a live grid of stories from any account — Story Explorer lets you watch without ever appearing in the viewer list, zero trace left behind.</p>
+        <span class="feat-tag" data-i18n="top_feature_tag">Top Feature</span>
+        <h3 data-i18n="f2_h3">View stories anonymously</h3>
+        <p class="desc" data-i18n="f2_desc">Browse a live grid of stories from any account — Story Explorer lets you watch without ever appearing in the viewer list, zero trace left behind.</p>
         <ul class="feat-list">
-          <li>Anonymous story viewing</li>
-          <li>Browse stories from any account, not just friends</li>
-          <li>Refresh to explore what's new right now</li>
+          <li data-i18n="f2_li1">Anonymous story viewing</li>
+          <li data-i18n="f2_li2">Browse stories from any account, not just friends</li>
+          <li data-i18n="f2_li3">Refresh to explore what's new right now</li>
         </ul>
       </div>
       <div class="feat-media shot-frame"><img src="images/feature-story-explorer.jpg" alt="Story Explorer screen showing a grid of stories from different accounts"></div>
@@ -277,13 +285,13 @@ footer{padding:40px 0 60px;}
 
     <div class="feat-block reveal">
       <div class="feat-copy">
-        <span class="feat-tag">Top Feature</span>
-        <h3>Save story highlights before they disappear</h3>
-        <p class="desc">Curate the stories that matter into a highlight collection, so they never vanish after 24 hours like they do on Facebook.</p>
+        <span class="feat-tag" data-i18n="top_feature_tag">Top Feature</span>
+        <h3 data-i18n="f3_h3">Save story highlights before they disappear</h3>
+        <p class="desc" data-i18n="f3_desc">Curate the stories that matter into a highlight collection, so they never vanish after 24 hours like they do on Facebook.</p>
         <ul class="feat-list">
-          <li>Collect favorite stories from friends</li>
-          <li>Browse saved highlights as a grid</li>
-          <li>Keep them long after the original expires</li>
+          <li data-i18n="f3_li1">Collect favorite stories from friends</li>
+          <li data-i18n="f3_li2">Browse saved highlights as a grid</li>
+          <li data-i18n="f3_li3">Keep them long after the original expires</li>
         </ul>
       </div>
       <div class="feat-media shot-frame"><img src="images/feature-story-highlights.jpg" alt="Friend Highlight Story screen showing a saved grid of story highlights"></div>
@@ -295,14 +303,14 @@ footer{padding:40px 0 60px;}
 <section class="trust" id="trust">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">HOW IT'S BUILT</span>
-      <h2>Built with privacy in mind</h2>
-      <p>FriendKit runs through your own logged-in session — no separate credentials, no data games.</p>
+      <span class="eyebrow" data-i18n="trust_eyebrow">HOW IT'S BUILT</span>
+      <h2 data-i18n="trust_h2">Built with privacy in mind</h2>
+      <p data-i18n="trust_p">FriendKit runs through your own logged-in session — no separate credentials, no data games.</p>
     </div>
     <div class="trust-grid">
-      <div class="trust-card"><div class="ico">🔒</div><h4>Your session, your data</h4><p>FriendKit runs on your own logged-in Facebook session — we never ask for a separate password.</p></div>
-      <div class="trust-card"><div class="ico">⚡</div><h4>Actions run in real time</h4><p>Every bulk action is performed live through your account, not through a scraped copy.</p></div>
-      <div class="trust-card"><div class="ico">📄</div><h4>Transparent policies</h4><p>Read exactly what FriendKit touches and what it never collects in our privacy policy.</p></div>
+      <div class="trust-card"><div class="ico">🔒</div><h4 data-i18n="trust1_h4">Your session, your data</h4><p data-i18n="trust1_p">FriendKit runs on your own logged-in Facebook session — we never ask for a separate password.</p></div>
+      <div class="trust-card"><div class="ico">⚡</div><h4 data-i18n="trust2_h4">Actions run in real time</h4><p data-i18n="trust2_p">Every bulk action is performed live through your account, not through a scraped copy.</p></div>
+      <div class="trust-card"><div class="ico">📄</div><h4 data-i18n="trust3_h4">Transparent policies</h4><p data-i18n="trust3_p">Read exactly what FriendKit touches and what it never collects in our privacy policy.</p></div>
     </div>
   </div>
 </section>
@@ -311,20 +319,20 @@ footer{padding:40px 0 60px;}
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">MORE FEATURES</span>
-      <h2>We've got you covered</h2>
-      <p>30+ tools across every corner of Facebook — new ones added every week.</p>
+      <span class="eyebrow" data-i18n="more_eyebrow">MORE FEATURES</span>
+      <h2 data-i18n="more_h2">We've got you covered</h2>
+      <p data-i18n="more_p">30+ tools across every corner of Facebook — new ones added every week.</p>
     </div>
     <div class="more-grid">
-      <div class="more-card"><span class="cat">Friends</span><h4>Manage friend requests</h4><p>Accept, decline, or withdraw dozens of requests in one action.</p></div>
-      <div class="more-card"><span class="cat">Friends</span><h4>Auto add friends & poke</h4><p>Automatically send friend requests or pokes to lists of users.</p></div>
-      <div class="more-card"><span class="cat">Posts</span><h4>Bulk privacy & delete</h4><p>Update privacy settings or delete dozens of old posts at once.</p></div>
-      <div class="more-card"><span class="cat">Posts</span><h4>Reaction & comment boom</h4><p>Flood a post with reactions or comments automatically.</p></div>
-      <div class="more-card"><span class="cat">Group</span><h4>Auto post to groups</h4><p>Post with images and links to multiple groups automatically.</p></div>
-      <div class="more-card"><span class="cat">Group</span><h4>Auto comment & join</h4><p>Comment on group posts or join multiple groups in one run.</p></div>
-      <div class="more-card"><span class="cat">Messages</span><h4>Manage conversations</h4><p>Browse and act across all Messenger conversations from one view.</p></div>
-      <div class="more-card"><span class="cat">Messages</span><h4>Bulk delete & download</h4><p>Clear out chats at once or save full message history to your device.</p></div>
-      <div class="more-card"><span class="cat">Cleanup</span><h4>Unfollow, unlike & leave</h4><p>Unfollow people, unlike pages, and leave groups all at once.</p></div>
+      <div class="more-card"><span class="cat" data-i18n="cat_friends">Friends</span><h4 data-i18n="mc1_h4">Manage friend requests</h4><p data-i18n="mc1_p">Accept, decline, or withdraw dozens of requests in one action.</p></div>
+      <div class="more-card"><span class="cat" data-i18n="cat_friends">Friends</span><h4 data-i18n="mc2_h4">Auto add friends & poke</h4><p data-i18n="mc2_p">Automatically send friend requests or pokes to lists of users.</p></div>
+      <div class="more-card"><span class="cat" data-i18n="cat_posts">Posts</span><h4 data-i18n="mc3_h4">Bulk privacy & delete</h4><p data-i18n="mc3_p">Update privacy settings or delete dozens of old posts at once.</p></div>
+      <div class="more-card"><span class="cat" data-i18n="cat_posts">Posts</span><h4 data-i18n="mc4_h4">Reaction & comment boom</h4><p data-i18n="mc4_p">Flood a post with reactions or comments automatically.</p></div>
+      <div class="more-card"><span class="cat" data-i18n="cat_group">Group</span><h4 data-i18n="mc5_h4">Auto post to groups</h4><p data-i18n="mc5_p">Post with images and links to multiple groups automatically.</p></div>
+      <div class="more-card"><span class="cat" data-i18n="cat_group">Group</span><h4 data-i18n="mc6_h4">Auto comment & join</h4><p data-i18n="mc6_p">Comment on group posts or join multiple groups in one run.</p></div>
+      <div class="more-card"><span class="cat" data-i18n="cat_messages">Messages</span><h4 data-i18n="mc7_h4">Manage conversations</h4><p data-i18n="mc7_p">Browse and act across all Messenger conversations from one view.</p></div>
+      <div class="more-card"><span class="cat" data-i18n="cat_messages">Messages</span><h4 data-i18n="mc8_h4">Bulk delete & download</h4><p data-i18n="mc8_p">Clear out chats at once or save full message history to your device.</p></div>
+      <div class="more-card"><span class="cat" data-i18n="cat_cleanup">Cleanup</span><h4 data-i18n="mc9_h4">Unfollow, unlike & leave</h4><p data-i18n="mc9_p">Unfollow people, unlike pages, and leave groups all at once.</p></div>
     </div>
   </div>
 </section>
@@ -333,11 +341,11 @@ footer{padding:40px 0 60px;}
 <section class="final-cta">
   <div class="wrap">
     <div class="cta-box">
-      <h2>Ready to take control?</h2>
-      <p>Install FriendKit and unlock the full toolkit for your Facebook account.</p>
+      <h2 data-i18n="cta_h2">Ready to take control?</h2>
+      <p data-i18n="cta_p">Install FriendKit and unlock the full toolkit for your Facebook account.</p>
       <div class="cta-row">
-        <a href="https://apps.apple.com/vn/app/friend-kit/id6787303577" target="_blank" rel="noopener" class="btn btn-primary">Download on the App Store</a>
-        <a href="https://play.google.com/store/apps/details?id=com.friendkit.messenger_message_manager" target="_blank" rel="noopener" class="btn btn-ghost">Get it on Google Play</a>
+        <a href="https://apps.apple.com/vn/app/friend-kit/id6787303577" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="cta_btn1">Download on the App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.friendkit.messenger_message_manager" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="cta_btn2">Get it on Google Play</a>
       </div>
     </div>
   </div>
@@ -347,15 +355,193 @@ footer{padding:40px 0 60px;}
   <div class="wrap footer-inner">
     <div class="brand"><span class="mark"><img src="images/icon.png" alt="FriendKit icon"></span>FriendKit</div>
     <div class="footer-links">
-      <a href="https://t.me/friend_kit" target="_blank" rel="noopener">Telegram</a>
-      <a href="friendkit_privacy.html">Privacy</a>
-      <a href="friendkit_tos.html">Terms</a>
-      <a href="mailto:dtb4121988@gmail.com">Contact</a>
+      <a href="https://t.me/friend_kit" target="_blank" rel="noopener" data-i18n="nav_telegram">Telegram</a>
+      <a href="friendkit_privacy.html" data-i18n="footer_privacy">Privacy</a>
+      <a href="friendkit_tos.html" data-i18n="footer_terms">Terms</a>
+      <a href="mailto:dtb4121988@gmail.com" data-i18n="footer_contact">Contact</a>
     </div>
   </div>
 </footer>
 
 <script>
+const translations = {
+  en: {
+    doc_title: "FriendKit — Toolkit for your Facebook account",
+    meta_desc: "30+ tools for Facebook: bulk downloads, anonymous story views, friend management, group automation, and cleanup — all from one app.",
+    nav_features: "Features",
+    nav_privacy: "Privacy",
+    nav_telegram: "Telegram",
+    nav_cta: "Get FriendKit",
+    hero_eyebrow: "📱 APP FOR FACEBOOK USERS",
+    hero_h1: "Everything Facebook won't let you do — <span>in one app.</span>",
+    hero_lead: "FriendKit packs 30+ tools across 7 categories: download media, view stories anonymously, manage friends, automate groups, and clean up your account — all on your own logged-in session.",
+    hero_cta_explore: "Explore features",
+    hero_cta_privacy: "Privacy Policy",
+    store_gplay_small: "Get it on",
+    store_appstore_small: "Download on the",
+    chip_unfriend: "Unfriend alert",
+    chip_download: "Bulk download",
+    chip_story: "Anon story view",
+    chip_group: "Group auto-post",
+    stat_tools: "Tools",
+    stat_categories: "Categories",
+    stat_session: "Logged-in session",
+    stat_passwords: "Extra passwords stored",
+    features_eyebrow: "TOP FEATURES",
+    features_h2: "Boost your Facebook profile",
+    features_p: "Manage and clean up your friend list, track engagement, and take back control of your account.",
+    top_feature_tag: "Top Feature",
+    f1_h3: "Know who unfriended you",
+    f1_desc: "Facebook hides this by design — FriendKit doesn't. Get notified the moment someone removes you, and rank the rest of your list by who actually engages back.",
+    f1_li1: "Instant unfriend detection",
+    f1_li2: "Rank friends by real interaction",
+    f1_li3: "Bulk unfriend & clean up in one pass",
+    f2_h3: "View stories anonymously",
+    f2_desc: "Browse a live grid of stories from any account — Story Explorer lets you watch without ever appearing in the viewer list, zero trace left behind.",
+    f2_li1: "Anonymous story viewing",
+    f2_li2: "Browse stories from any account, not just friends",
+    f2_li3: "Refresh to explore what's new right now",
+    f3_h3: "Save story highlights before they disappear",
+    f3_desc: "Curate the stories that matter into a highlight collection, so they never vanish after 24 hours like they do on Facebook.",
+    f3_li1: "Collect favorite stories from friends",
+    f3_li2: "Browse saved highlights as a grid",
+    f3_li3: "Keep them long after the original expires",
+    trust_eyebrow: "HOW IT'S BUILT",
+    trust_h2: "Built with privacy in mind",
+    trust_p: "FriendKit runs through your own logged-in session — no separate credentials, no data games.",
+    trust1_h4: "Your session, your data",
+    trust1_p: "FriendKit runs on your own logged-in Facebook session — we never ask for a separate password.",
+    trust2_h4: "Actions run in real time",
+    trust2_p: "Every bulk action is performed live through your account, not through a scraped copy.",
+    trust3_h4: "Transparent policies",
+    trust3_p: "Read exactly what FriendKit touches and what it never collects in our privacy policy.",
+    more_eyebrow: "MORE FEATURES",
+    more_h2: "We've got you covered",
+    more_p: "30+ tools across every corner of Facebook — new ones added every week.",
+    cat_friends: "Friends", cat_posts: "Posts", cat_group: "Group", cat_messages: "Messages", cat_cleanup: "Cleanup",
+    mc1_h4: "Manage friend requests", mc1_p: "Accept, decline, or withdraw dozens of requests in one action.",
+    mc2_h4: "Auto add friends & poke", mc2_p: "Automatically send friend requests or pokes to lists of users.",
+    mc3_h4: "Bulk privacy & delete", mc3_p: "Update privacy settings or delete dozens of old posts at once.",
+    mc4_h4: "Reaction & comment boom", mc4_p: "Flood a post with reactions or comments automatically.",
+    mc5_h4: "Auto post to groups", mc5_p: "Post with images and links to multiple groups automatically.",
+    mc6_h4: "Auto comment & join", mc6_p: "Comment on group posts or join multiple groups in one run.",
+    mc7_h4: "Manage conversations", mc7_p: "Browse and act across all Messenger conversations from one view.",
+    mc8_h4: "Bulk delete & download", mc8_p: "Clear out chats at once or save full message history to your device.",
+    mc9_h4: "Unfollow, unlike & leave", mc9_p: "Unfollow people, unlike pages, and leave groups all at once.",
+    cta_h2: "Ready to take control?",
+    cta_p: "Install FriendKit and unlock the full toolkit for your Facebook account.",
+    cta_btn1: "Download on the App Store",
+    cta_btn2: "Get it on Google Play",
+    footer_privacy: "Privacy",
+    footer_terms: "Terms",
+    footer_contact: "Contact"
+  },
+  vi: {
+    doc_title: "FriendKit — Bộ công cụ cho tài khoản Facebook của bạn",
+    meta_desc: "30+ công cụ cho Facebook: tải hàng loạt, xem story ẩn danh, quản lý bạn bè, tự động hoá nhóm và dọn dẹp tài khoản — tất cả trong một app.",
+    nav_features: "Tính năng",
+    nav_privacy: "Quyền riêng tư",
+    nav_telegram: "Telegram",
+    nav_cta: "Tải FriendKit",
+    hero_eyebrow: "📱 APP CHO NGƯỜI DÙNG FACEBOOK",
+    hero_h1: "Mọi thứ Facebook không cho bạn làm — <span>gói gọn trong một app.</span>",
+    hero_lead: "FriendKit tích hợp 30+ công cụ trong 7 nhóm: tải media, xem story ẩn danh, quản lý bạn bè, tự động hoá nhóm và dọn dẹp tài khoản — tất cả chạy trên chính phiên đăng nhập của bạn.",
+    hero_cta_explore: "Khám phá tính năng",
+    hero_cta_privacy: "Chính sách bảo mật",
+    store_gplay_small: "Tải về từ",
+    store_appstore_small: "Tải xuống trên",
+    chip_unfriend: "Cảnh báo bị hủy kết bạn",
+    chip_download: "Tải hàng loạt",
+    chip_story: "Xem story ẩn danh",
+    chip_group: "Tự động đăng nhóm",
+    stat_tools: "Công cụ",
+    stat_categories: "Nhóm chức năng",
+    stat_session: "Phiên đăng nhập",
+    stat_passwords: "Mật khẩu phụ cần lưu",
+    features_eyebrow: "TÍNH NĂNG NỔI BẬT",
+    features_h2: "Nâng cấp trang cá nhân Facebook của bạn",
+    features_p: "Quản lý, dọn dẹp danh sách bạn bè, theo dõi mức độ tương tác và giành lại quyền kiểm soát tài khoản.",
+    top_feature_tag: "Tính năng nổi bật",
+    f1_h3: "Biết ai vừa hủy kết bạn với bạn",
+    f1_desc: "Facebook cố tình giấu điều này — FriendKit thì không. Nhận thông báo ngay khi ai đó xoá bạn khỏi danh sách, và xếp hạng bạn bè còn lại theo mức độ tương tác thật.",
+    f1_li1: "Phát hiện hủy kết bạn tức thì",
+    f1_li2: "Xếp hạng bạn bè theo tương tác thực tế",
+    f1_li3: "Hủy kết bạn hàng loạt & dọn dẹp trong một lần",
+    f2_h3: "Xem story ẩn danh",
+    f2_desc: "Duyệt lưới story trực tiếp từ mọi tài khoản — Story Explorer cho phép bạn xem mà không bao giờ xuất hiện trong danh sách người xem, không để lại dấu vết.",
+    f2_li1: "Xem story mà không để lại dấu vết",
+    f2_li2: "Duyệt story từ mọi tài khoản, không chỉ bạn bè",
+    f2_li3: "Làm mới để khám phá story mới nhất",
+    f3_h3: "Lưu lại story yêu thích trước khi biến mất",
+    f3_desc: "Gom những story quan trọng vào một bộ sưu tập highlight, để chúng không biến mất sau 24 giờ như trên Facebook.",
+    f3_li1: "Thu thập story yêu thích từ bạn bè",
+    f3_li2: "Duyệt các highlight đã lưu dưới dạng lưới ảnh",
+    f3_li3: "Giữ lại lâu dài sau khi story gốc hết hạn",
+    trust_eyebrow: "CÁCH VẬN HÀNH",
+    trust_h2: "Xây dựng với tiêu chí bảo mật lên hàng đầu",
+    trust_p: "FriendKit hoạt động qua chính phiên đăng nhập của bạn — không cần tài khoản riêng, không có trò chơi dữ liệu.",
+    trust1_h4: "Phiên của bạn, dữ liệu của bạn",
+    trust1_p: "FriendKit chạy trên phiên đăng nhập Facebook của chính bạn — chúng tôi không bao giờ yêu cầu mật khẩu riêng.",
+    trust2_h4: "Thao tác diễn ra tức thời",
+    trust2_p: "Mọi hành động hàng loạt được thực hiện trực tiếp qua tài khoản của bạn, không qua bản sao dữ liệu.",
+    trust3_h4: "Chính sách minh bạch",
+    trust3_p: "Đọc chính xác những gì FriendKit chạm vào và những gì nó không bao giờ thu thập trong chính sách bảo mật.",
+    more_eyebrow: "TÍNH NĂNG KHÁC",
+    more_h2: "Chúng tôi đã lo liệu hết cho bạn",
+    more_p: "30+ công cụ phủ khắp mọi ngóc ngách của Facebook — tính năng mới được thêm mỗi tuần.",
+    cat_friends: "Bạn bè", cat_posts: "Bài viết", cat_group: "Nhóm", cat_messages: "Tin nhắn", cat_cleanup: "Dọn dẹp",
+    mc1_h4: "Quản lý lời mời kết bạn", mc1_p: "Chấp nhận, từ chối hoặc thu hồi hàng chục lời mời chỉ trong một thao tác.",
+    mc2_h4: "Tự động kết bạn & chọc", mc2_p: "Tự động gửi lời mời kết bạn hoặc chọc đến danh sách người dùng.",
+    mc3_h4: "Đổi quyền riêng tư & xoá hàng loạt", mc3_p: "Cập nhật quyền riêng tư hoặc xoá hàng chục bài viết cũ cùng lúc.",
+    mc4_h4: "Thả cảm xúc & bình luận hàng loạt", mc4_p: "Thả cảm xúc hoặc bình luận ồ ạt vào một bài viết tự động.",
+    mc5_h4: "Tự động đăng bài lên nhóm", mc5_p: "Đăng bài kèm ảnh và link lên nhiều nhóm cùng lúc, tự động.",
+    mc6_h4: "Tự động bình luận & tham gia nhóm", mc6_p: "Tự động bình luận vào bài viết nhóm hoặc tham gia nhiều nhóm trong một lần chạy.",
+    mc7_h4: "Quản lý hội thoại", mc7_p: "Duyệt và thao tác trên toàn bộ hội thoại Messenger từ một màn hình duy nhất.",
+    mc8_h4: "Xoá & tải hàng loạt", mc8_p: "Xoá nhiều đoạn chat cùng lúc hoặc lưu toàn bộ lịch sử tin nhắn về máy.",
+    mc9_h4: "Bỏ theo dõi, bỏ thích & rời nhóm", mc9_p: "Bỏ theo dõi người dùng, bỏ thích trang và rời nhóm hàng loạt chỉ trong một lần.",
+    cta_h2: "Sẵn sàng giành lại quyền kiểm soát?",
+    cta_p: "Cài đặt FriendKit và mở khoá toàn bộ bộ công cụ cho tài khoản Facebook của bạn.",
+    cta_btn1: "Tải xuống trên App Store",
+    cta_btn2: "Tải về từ Google Play",
+    footer_privacy: "Bảo mật",
+    footer_terms: "Điều khoản",
+    footer_contact: "Liên hệ"
+  }
+};
+
+function applyLang(lang){
+  const dict = translations[lang];
+  if(!dict) return;
+  document.documentElement.lang = lang;
+  document.title = dict.doc_title;
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if(metaDesc) metaDesc.setAttribute('content', dict.meta_desc);
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(dict[key] !== undefined) el.textContent = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-html');
+    if(dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  try{ localStorage.setItem('fk_lang', lang); }catch(e){}
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=> applyLang(btn.dataset.lang));
+});
+
+let initialLang = 'en';
+try{
+  const saved = localStorage.getItem('fk_lang');
+  if(saved){ initialLang = saved; }
+  else if(navigator.language && navigator.language.toLowerCase().startsWith('vi')){ initialLang = 'vi'; }
+}catch(e){}
+applyLang(initialLang);
+
 const io = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
 },{threshold:.12});
