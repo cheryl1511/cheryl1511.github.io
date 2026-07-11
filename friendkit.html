@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FriendKit — Toolkit for your Facebook account</title>
+<meta name="description" content="30+ tools for Facebook: bulk downloads, anonymous story views, friend management, group automation, and cleanup — all from one app.">
+<link rel="icon" href="images/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAFAFD;
+  --bg-soft:#F1F1FA;
+  --card:#FFFFFF;
+  --line:#E7E7F3;
+  --ink:#1B1B2E;
+  --ink-dim:#66667F;
+  --ink-faint:#9797AC;
+  --indigo:#5457E5;
+  --indigo-deep:#3B3EC4;
+  --indigo-soft:#EEEEFC;
+  --gold:#FFB020;
+  --gold-soft:#FFF3DC;
+  --mint:#28C598;
+  --mint-soft:#E4F9F1;
+  --sans:'Inter',system-ui,sans-serif;
+  --display:'Plus Jakarta Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:var(--display);color:var(--ink);letter-spacing:-0.02em;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+img{max-width:100%;display:block;}
+
+/* placeholder image block — used only where no screenshot is set yet */
+.imgph{
+  background:repeating-linear-gradient(135deg, var(--indigo-soft), var(--indigo-soft) 10px, #E2E3FA 10px, #E2E3FA 20px);
+  border:1.5px dashed #C7C9F5;border-radius:20px;display:flex;align-items:center;justify-content:center;
+  color:var(--indigo-deep);font-family:var(--display);font-weight:600;font-size:13px;text-align:center;padding:20px;
+}
+/* real screenshot frames */
+.shot-frame{
+  background:var(--card);border:1.5px solid var(--line);border-radius:20px;overflow:hidden;
+  box-shadow:0 24px 50px -24px rgba(27,27,46,.22);
+}
+.shot-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-shot{width:100%;height:100%;object-fit:cover;border-radius:20px;display:block;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,253,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:18px;}
+.brand .mark{width:32px;height:32px;border-radius:10px;overflow:hidden;flex-shrink:0;}
+.brand .mark img{width:100%;height:100%;object-fit:cover;}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:14.5px;font-weight:500;color:var(--ink-dim);}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{display:flex;gap:10px;}
+.btn{font-family:var(--display);font-weight:700;font-size:14px;padding:11px 20px;border-radius:100px;transition:.15s ease;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary{background:var(--indigo);color:#fff;box-shadow:0 8px 20px -6px rgba(84,87,229,.55);}
+.btn-primary:hover{background:var(--indigo-deep);transform:translateY(-1px);}
+.btn-ghost{background:var(--card);color:var(--ink);border:1.5px solid var(--line);}
+.btn-ghost:hover{border-color:var(--indigo);}
+@media(max-width:760px){.nav-links{display:none;}}
+
+/* ── HERO ── */
+.hero{padding:76px 0 40px;position:relative;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;}}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;background:var(--indigo-soft);color:var(--indigo-deep);
+  font-family:var(--display);font-weight:700;font-size:12.5px;padding:7px 14px;border-radius:100px;
+}
+.hero h1{font-size:46px;line-height:1.1;font-weight:800;margin:20px 0 18px;}
+.hero h1 span{color:var(--indigo);}
+.hero p.lead{font-size:16.5px;line-height:1.65;color:var(--ink-dim);max-width:460px;margin-bottom:28px;}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;}
+.cta-row .btn{padding:13px 24px;font-size:15px;}
+
+.store-row{display:flex;gap:12px;flex-wrap:wrap;}
+.store-btn{display:flex;align-items:center;gap:10px;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:9px 16px;transition:.15s ease;}
+.store-btn:hover{border-color:var(--indigo);transform:translateY(-1px);}
+.store-btn svg{width:20px;height:20px;flex-shrink:0;color:var(--ink);}
+.store-btn-text small{display:block;font-size:9.5px;color:var(--ink-faint);line-height:1;}
+.store-btn-text strong{font-size:13.5px;font-family:var(--display);font-weight:700;}
+
+/* hero illustration */
+.hero-art{position:relative;height:420px;}
+.float-phone{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:220px;
+  background:var(--card);border:1.5px solid var(--line);border-radius:32px;padding:14px;
+  box-shadow:0 40px 70px -30px rgba(84,87,229,.4);
+}
+.float-phone .imgph{height:340px;border-radius:20px;font-size:12px;}
+.float-chip{
+  position:absolute;background:var(--card);border:1.5px solid var(--line);border-radius:16px;
+  padding:10px 14px;display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:13px;
+  box-shadow:0 16px 30px -12px rgba(27,27,46,.15);animation:float 4s ease-in-out infinite;
+}
+.float-chip span.ico{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;}
+.chip-1{top:6%;left:0;animation-delay:0s;}
+.chip-1 .ico{background:var(--mint-soft);}
+.chip-2{top:18%;right:2%;animation-delay:.6s;}
+.chip-2 .ico{background:var(--gold-soft);}
+.chip-3{bottom:12%;left:4%;animation-delay:1.2s;}
+.chip-3 .ico{background:var(--indigo-soft);}
+.chip-4{bottom:2%;right:6%;animation-delay:1.8s;}
+.chip-4 .ico{background:#FFE3E3;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+@media(prefers-reduced-motion:reduce){.float-chip{animation:none;}}
+@media(max-width:900px){.hero-art{height:340px;}.float-chip{display:none;}}
+
+/* stats */
+.stats{padding:26px 0 54px;}
+.stats-row{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;text-align:center;padding:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.stat b{display:block;font-family:var(--display);font-size:28px;font-weight:800;color:var(--indigo);}
+.stat span{font-size:13px;color:var(--ink-dim);}
+
+/* section heads */
+.section{padding:60px 0;}
+.section-head{max-width:600px;margin:0 auto 38px;text-align:center;}
+.section-head h2{font-size:30px;font-weight:800;margin-top:14px;}
+.section-head p{color:var(--ink-dim);margin-top:10px;font-size:15.5px;line-height:1.6;}
+
+/* top features (alternating) */
+.feat-block{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:44px 0;}
+.feat-block.rev .feat-copy{order:2;}
+.feat-block.rev .feat-media{order:1;}
+@media(max-width:860px){.feat-block,.feat-block.rev{grid-template-columns:1fr;}.feat-block.rev .feat-copy,.feat-block.rev .feat-media{order:0;}}
+.feat-tag{display:inline-block;background:var(--gold-soft);color:#B4791A;font-family:var(--display);font-weight:700;font-size:11.5px;padding:5px 12px;border-radius:100px;margin-bottom:14px;}
+.feat-copy h3{font-size:24px;font-weight:800;margin-bottom:12px;}
+.feat-copy p.desc{color:var(--ink-dim);font-size:15px;line-height:1.6;margin-bottom:18px;}
+.feat-list{list-style:none;}
+.feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--ink);padding:6px 0;}
+.feat-list li::before{content:'';width:18px;height:18px;border-radius:50%;background:var(--mint-soft);flex-shrink:0;margin-top:2px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 10l3 3 7-7' stroke='%2328C598' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;}
+.feat-media .imgph{aspect-ratio:4/3;}
+
+/* trust strip (replaces fake reviews) */
+.trust{background:var(--bg-soft);padding:54px 0;}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:760px){.trust-grid{grid-template-columns:1fr;}}
+.trust-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;}
+.trust-card .ico{width:40px;height:40px;border-radius:12px;background:var(--indigo-soft);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:14px;}
+.trust-card h4{font-size:16px;font-weight:700;margin-bottom:8px;}
+.trust-card p{font-size:13.5px;color:var(--ink-dim);line-height:1.55;}
+
+/* more features grid */
+.more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+@media(max-width:860px){.more-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.more-grid{grid-template-columns:1fr;}}
+.more-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;transition:.15s ease;}
+.more-card:hover{border-color:var(--indigo);transform:translateY(-2px);box-shadow:0 14px 30px -18px rgba(84,87,229,.4);}
+.more-card .cat{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.06em;color:var(--indigo);text-transform:uppercase;margin-bottom:8px;display:block;}
+.more-card h4{font-size:14.5px;font-weight:700;margin-bottom:6px;}
+.more-card p{font-size:13px;color:var(--ink-dim);line-height:1.5;}
+
+/* final cta */
+.final-cta{padding:70px 0;text-align:center;}
+.cta-box{background:linear-gradient(135deg,var(--indigo),#8082F0);border-radius:28px;padding:56px 30px;color:#fff;}
+.cta-box h2{color:#fff;font-size:30px;font-weight:800;margin-bottom:12px;}
+.cta-box p{color:rgba(255,255,255,.85);font-size:15.5px;margin-bottom:26px;}
+.cta-box .btn-primary{background:#fff;color:var(--indigo-deep);box-shadow:none;}
+.cta-box .btn-primary:hover{background:#F1F1FF;}
+.cta-box .btn-ghost{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff;}
+.cta-box .cta-row{justify-content:center;}
+
+footer{padding:40px 0 60px;}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-links{display:flex;gap:22px;font-size:14px;color:var(--ink-dim);flex-wrap:wrap;}
+.footer-links a:hover{color:var(--ink);}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease, transform .5s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <div class="brand"><span class="mark"><img src="images/icon.png" alt="FriendKit icon"></span>FriendKit</div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#trust">Privacy</a>
+      <a href="https://t.me/friend_kit" target="_blank" rel="noopener">Telegram</a>
+    </div>
+    <div class="nav-cta">
+      <a href="https://apps.apple.com/vn/app/friend-kit/id6787303577" target="_blank" rel="noopener" class="btn btn-primary">Get FriendKit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">📱 APP FOR FACEBOOK USERS</span>
+      <h1>Everything Facebook won't let you do — <span>in one app.</span></h1>
+      <p class="lead">FriendKit packs 30+ tools across 7 categories: download media, view stories anonymously, manage friends, automate groups, and clean up your account — all on your own logged-in session.</p>
+
+      <div class="cta-row">
+        <a href="#features" class="btn btn-primary">Explore features</a>
+        <a href="friendkit_privacy.html" class="btn btn-ghost">Privacy Policy</a>
+      </div>
+
+      <div class="store-row">
+        <a href="https://play.google.com/store/apps/details?id=com.friendkit.messenger_message_manager" target="_blank" rel="noopener" class="store-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.37.2.8.22 1.2.06L15.34 12 4.38.18C3.98.02 3.55.04 3.18.24 2.46.64 2 1.39 2 2.22v19.56c0 .83.46 1.58 1.18 1.98z"/><path d="M19.34 9.69l-2.67-1.54-3.17 3.17 3.17 3.17 2.7-1.56c.77-.44 1.24-1.22 1.24-2.08s-.5-1.72-1.27-2.16z"/><path d="M4.38.18l10.96 10.96L12.67 13.8 4.38.18z" opacity=".5"/><path d="M4.38 23.82l8.29-13.62-2.67-2.66L4.38 23.82z" opacity=".5"/></svg>
+          <span class="store-btn-text"><small>Get it on</small><strong>Google Play</strong></span>
+        </a>
+        <a href="https://apps.apple.com/vn/app/friend-kit/id6787303577" target="_blank" rel="noopener" class="store-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span class="store-btn-text"><small>Download on the</small><strong>App Store</strong></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="float-phone"><img class="hero-shot" src="images/hero-dashboard.jpg" alt="FriendKit app home screen showing the full tool list"></div>
+      <div class="float-chip chip-1"><span class="ico">🔔</span> Unfriend alert</div>
+      <div class="float-chip chip-2"><span class="ico">📥</span> Bulk download</div>
+      <div class="float-chip chip-3"><span class="ico">👁️</span> Anon story view</div>
+      <div class="float-chip chip-4"><span class="ico">🤖</span> Group auto-post</div>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap stats-row">
+    <div class="stat"><b>30+</b><span>Tools</span></div>
+    <div class="stat"><b>7</b><span>Categories</span></div>
+    <div class="stat"><b>1</b><span>Logged-in session</span></div>
+    <div class="stat"><b>0</b><span>Extra passwords stored</span></div>
+  </div>
+</section>
+
+<!-- TOP FEATURES -->
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">TOP FEATURES</span>
+      <h2>Boost your Facebook profile</h2>
+      <p>Manage and clean up your friend list, track engagement, and take back control of your account.</p>
+    </div>
+
+    <div class="feat-block reveal">
+      <div class="feat-copy">
+        <span class="feat-tag">Top Feature</span>
+        <h3>Know who unfriended you</h3>
+        <p class="desc">Facebook hides this by design — FriendKit doesn't. Get notified the moment someone removes you, and rank the rest of your list by who actually engages back.</p>
+        <ul class="feat-list">
+          <li>Instant unfriend detection</li>
+          <li>Rank friends by real interaction</li>
+          <li>Bulk unfriend & clean up in one pass</li>
+        </ul>
+      </div>
+      <div class="feat-media shot-frame"><img src="images/feature-unfriend.png" alt="Friend History screen showing removed friends"></div>
+    </div>
+
+    <div class="feat-block rev reveal">
+      <div class="feat-copy">
+        <span class="feat-tag">Top Feature</span>
+        <h3>View stories anonymously</h3>
+        <p class="desc">Browse a live grid of stories from any account — Story Explorer lets you watch without ever appearing in the viewer list, zero trace left behind.</p>
+        <ul class="feat-list">
+          <li>Anonymous story viewing</li>
+          <li>Browse stories from any account, not just friends</li>
+          <li>Refresh to explore what's new right now</li>
+        </ul>
+      </div>
+      <div class="feat-media shot-frame"><img src="images/feature-story-explorer.jpg" alt="Story Explorer screen showing a grid of stories from different accounts"></div>
+    </div>
+
+    <div class="feat-block reveal">
+      <div class="feat-copy">
+        <span class="feat-tag">Top Feature</span>
+        <h3>Save story highlights before they disappear</h3>
+        <p class="desc">Curate the stories that matter into a highlight collection, so they never vanish after 24 hours like they do on Facebook.</p>
+        <ul class="feat-list">
+          <li>Collect favorite stories from friends</li>
+          <li>Browse saved highlights as a grid</li>
+          <li>Keep them long after the original expires</li>
+        </ul>
+      </div>
+      <div class="feat-media shot-frame"><img src="images/feature-story-highlights.jpg" alt="Friend Highlight Story screen showing a saved grid of story highlights"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust" id="trust">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">HOW IT'S BUILT</span>
+      <h2>Built with privacy in mind</h2>
+      <p>FriendKit runs through your own logged-in session — no separate credentials, no data games.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card"><div class="ico">🔒</div><h4>Your session, your data</h4><p>FriendKit runs on your own logged-in Facebook session — we never ask for a separate password.</p></div>
+      <div class="trust-card"><div class="ico">⚡</div><h4>Actions run in real time</h4><p>Every bulk action is performed live through your account, not through a scraped copy.</p></div>
+      <div class="trust-card"><div class="ico">📄</div><h4>Transparent policies</h4><p>Read exactly what FriendKit touches and what it never collects in our privacy policy.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MORE FEATURES -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">MORE FEATURES</span>
+      <h2>We've got you covered</h2>
+      <p>30+ tools across every corner of Facebook — new ones added every week.</p>
+    </div>
+    <div class="more-grid">
+      <div class="more-card"><span class="cat">Friends</span><h4>Manage friend requests</h4><p>Accept, decline, or withdraw dozens of requests in one action.</p></div>
+      <div class="more-card"><span class="cat">Friends</span><h4>Auto add friends & poke</h4><p>Automatically send friend requests or pokes to lists of users.</p></div>
+      <div class="more-card"><span class="cat">Posts</span><h4>Bulk privacy & delete</h4><p>Update privacy settings or delete dozens of old posts at once.</p></div>
+      <div class="more-card"><span class="cat">Posts</span><h4>Reaction & comment boom</h4><p>Flood a post with reactions or comments automatically.</p></div>
+      <div class="more-card"><span class="cat">Group</span><h4>Auto post to groups</h4><p>Post with images and links to multiple groups automatically.</p></div>
+      <div class="more-card"><span class="cat">Group</span><h4>Auto comment & join</h4><p>Comment on group posts or join multiple groups in one run.</p></div>
+      <div class="more-card"><span class="cat">Messages</span><h4>Manage conversations</h4><p>Browse and act across all Messenger conversations from one view.</p></div>
+      <div class="more-card"><span class="cat">Messages</span><h4>Bulk delete & download</h4><p>Clear out chats at once or save full message history to your device.</p></div>
+      <div class="more-card"><span class="cat">Cleanup</span><h4>Unfollow, unlike & leave</h4><p>Unfollow people, unlike pages, and leave groups all at once.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>Ready to take control?</h2>
+      <p>Install FriendKit and unlock the full toolkit for your Facebook account.</p>
+      <div class="cta-row">
+        <a href="https://apps.apple.com/vn/app/friend-kit/id6787303577" target="_blank" rel="noopener" class="btn btn-primary">Download on the App Store</a>
+        <a href="https://play.google.com/store/apps/details?id=com.friendkit.messenger_message_manager" target="_blank" rel="noopener" class="btn btn-ghost">Get it on Google Play</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="brand"><span class="mark"><img src="images/icon.png" alt="FriendKit icon"></span>FriendKit</div>
+    <div class="footer-links">
+      <a href="https://t.me/friend_kit" target="_blank" rel="noopener">Telegram</a>
+      <a href="friendkit_privacy.html">Privacy</a>
+      <a href="friendkit_tos.html">Terms</a>
+      <a href="mailto:dtb4121988@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
