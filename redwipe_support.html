@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedWipe - Support & FAQ</title>
+    <meta name="description" content="Get support and view frequently asked questions for RedWipe - Reddit Bulk Cleaner.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF4500;
+            --primary-hover: #E03D00;
+            --bg-dark: #0B0F19;
+            --bg-card: #151D30;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border: #24324F;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Ambient background glow */
+        .ambient-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 69, 0, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: rgba(11, 15, 25, 0.8);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #FFF 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .lead {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .support-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.26);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .support-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 69, 0, 0.4);
+        }
+
+        .support-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+        }
+
+        .email-link:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(255, 69, 0, 0.6);
+        }
+
+        .faq-section {
+            margin-top: 4rem;
+        }
+
+        .faq-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 69, 0, 0.25);
+        }
+
+        .faq-question {
+            padding: 1.25rem 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 1.5rem;
+            color: var(--text-muted);
+            border-top: 0px solid var(--border);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.25rem 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 0.75rem;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-glow"></div>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Red<span>Wipe</span>
+            </a>
+            <nav class="nav-links">
+                <a href="redwipe_support.html" class="active" id="nav-support">Support</a>
+                <a href="redwipe_privacy.html" id="nav-privacy">Privacy</a>
+                <a href="redwipe_tos.html" id="nav-tos">Terms</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Support & Help Center</h1>
+        <p class="lead">Need assistance or have feedback? We are here to help you clear the clutter from your Reddit footprint.</p>
+
+        <section class="support-card" id="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Our dedicated support team is available to assist you with any questions or issues you might run into while using RedWipe.</p>
+            <a href="mailto:dtb4121988@gmail.com" class="email-link" id="email-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                dtb4121988@gmail.com
+            </a>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item" id="faq-data-safety">
+                <div class="faq-question">Is my Reddit account login information safe?</div>
+                <div class="faq-answer">
+                    Yes. RedWipe connects to Reddit using secure OAuth2 protocol. Your login credentials are entered directly on Reddit's official authorization page and are never seen, stored, or sent to our servers. The resulting local access token is stored safely using your device's native secure storage.
+                </div>
+            </div>
+
+            <div class="faq-item" id="faq-how-it-works">
+                <div class="faq-question">How does RedWipe delete my posts and comments?</div>
+                <div class="faq-answer">
+                    Reddit's API doesn't allow editing or deleting other users' contents without authorization. RedWipe uses your local authorization token to query your profile's list of posts and comments and performs edit/delete requests sequentially. To bypass Reddit's history archive, we also offer an option to overwrite your content with random text before deleting it.
+                </div>
+            </div>
+
+            <div class="faq-item" id="faq-gdpr">
+                <div class="faq-question">What is the GDPR Data Package Import option?</div>
+                <div class="faq-answer">
+                    Due to Reddit API limits, the standard profile API can only retrieve up to 1,000 of your most recent items. If you want to delete all posts or comments older than that, you can request your full GDPR data archive directly from Reddit, download it, and import the CSV data files into RedWipe to target all history records.
+                </div>
+            </div>
+
+            <div class="faq-item" id="faq-refunds">
+                <div class="faq-question">Who should I contact for billing or upgrade support?</div>
+                <div class="faq-answer">
+                    If you purchased premium features and have billing inquiries, please contact us directly at <a href="mailto:dtb4121988@gmail.com" style="color: var(--primary);">dtb4121988@gmail.com</a> with your receipt details. We will process your request as quickly as possible.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RedWipe. All rights reserved.</p>
+        <div style="margin-top: 0.5rem;">
+            <a href="redwipe_support.html">Support</a>
+            <a href="redwipe_privacy.html">Privacy Policy</a>
+            <a href="redwipe_tos.html">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple interactive FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

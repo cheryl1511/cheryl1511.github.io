@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedWipe - Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for RedWipe - Reddit Bulk Cleaner. Learn how we handle your data with zero collection.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF4500;
+            --primary-hover: #E03D00;
+            --bg-dark: #0B0F19;
+            --bg-card: #151D30;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border: #24324F;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Ambient background glow */
+        .ambient-glow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 69, 0, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: rgba(11, 15, 25, 0.8);
+        }
+
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #FFF 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .content-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.26);
+            margin-bottom: 3rem;
+        }
+
+        .policy-section {
+            margin-bottom: 2rem;
+        }
+
+        .policy-section h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary);
+            padding-left: 0.75rem;
+        }
+
+        .policy-section p, .policy-section ul {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .policy-section ul {
+            padding-left: 1.5rem;
+        }
+
+        .policy-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background-color: rgba(255, 69, 0, 0.1);
+            border: 1px dashed rgba(255, 69, 0, 0.3);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .highlight-box p {
+            color: var(--text-main);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 0.75rem;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-glow"></div>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Red<span>Wipe</span>
+            </a>
+            <nav class="nav-links">
+                <a href="redwipe_support.html" id="nav-support">Support</a>
+                <a href="redwipe_privacy.html" class="active" id="nav-privacy">Privacy</a>
+                <a href="redwipe_tos.html" id="nav-tos">Terms</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Privacy Policy</h1>
+        <div class="last-updated">Last Updated: July 15, 2026</div>
+
+        <div class="content-card" id="privacy-content">
+            <section class="policy-section">
+                <h2>1. Zero Data Collection</h2>
+                <p>We firmly believe in your right to privacy. RedWipe is designed with a strict zero-data-collection policy:</p>
+                <ul>
+                    <li>We do not collect, monitor, track, or upload any of your personal information.</li>
+                    <li>We do not run any remote web servers that log your usage or profile data.</li>
+                    <li>We do not integrate any advertising SDKs or analytical trackers that capture user behavior.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>2. Local Execution & Data Processing</h2>
+                <p>All operations of the app occur locally on your mobile device. Specifically:</p>
+                <ul>
+                    <li><strong>Content Processing:</strong> Any scan, edit, or delete action regarding your Reddit posts, comments, or messages is executed directly via requests made from your device to the official Reddit API.</li>
+                    <li><strong>GDPR Backups:</strong> If you use the GDPR import option, the CSV files you select are parsed locally. No CSV data is uploaded anywhere.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>3. Security of Credentials & Tokens</h2>
+                <p>To connect with your Reddit account, RedWipe uses Reddit's official OAuth2 system:</p>
+                <ul>
+                    <li>The login credentials page is served directly by Reddit. RedWipe never sees or has access to your Reddit password.</li>
+                    <li>The acquired OAuth2 access token is stored securely on your device using hardware-backed encryption (via Keychain on iOS or Keystore on Android). This prevents unauthorized applications from accessing your token.</li>
+                    <li>You can revoke the token and disconnect your account at any time either within the app settings or by logging into your Reddit account preferences web page.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>4. Third-Party Services</h2>
+                <p>RedWipe uses the following trusted platform services to function:</p>
+                <ul>
+                    <li><strong>Reddit API:</strong> Used to read and modify your posts and comments. All interactions comply with Reddit's API Rules.</li>
+                    <li><strong>RevenueCat:</strong> Used solely to process and validate premium subscription licenses. The purchase check is anonymous and relies on transaction IDs provided by Apple App Store or Google Play Store. No personal identity data is shared.</li>
+                </ul>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. Contact Us</h2>
+                <p>If you have any questions or concerns regarding our privacy practices, feel free to reach out to us at:</p>
+                <div class="highlight-box">
+                    <p>Support Email: <a href="mailto:dtb4121988@gmail.com" style="color: var(--primary); text-decoration: none;">dtb4121988@gmail.com</a></p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RedWipe. All rights reserved.</p>
+        <div style="margin-top: 0.5rem;">
+            <a href="redwipe_support.html">Support</a>
+            <a href="redwipe_privacy.html">Privacy Policy</a>
+            <a href="redwipe_tos.html">Terms of Service</a>
+        </div>
+    </footer>
+</body>
+</html>
