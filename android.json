@@ -1,0 +1,12 @@
+{
+  "title": "Notice",
+  "message": "We have just released a new version of Facebook Toolkit packed with many features. Would you like to try it out?\"",
+  "apps": [
+    {
+      "name": "Friend Kit",
+      "description": "Facebook Toolkit Manager",
+      "icon": "https://cheryl1511.github.io/friend_kit.png",
+      "store_url": "com.friendkit.messenger_message_manager"
+    }
+  ]
+}
