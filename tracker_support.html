@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Support - Followers &amp; Unfollowers Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" type="text/css">
+<style type="text/css">
+body { 
+  margin: 0; 
+  padding: 0; 
+  width: 100%; 
+  min-height: 100vh; 
+  background: #FFFFFF; 
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, Arial, sans-serif; 
+  font-size: 13px; 
+  line-height: 1.65; 
+  font-weight: 300; 
+  color: #1A1A1A; 
+  cursor: default; 
+}
+a { color: #007AFF; text-decoration: none; font-weight: 400; }
+a:hover { text-decoration: underline; }
+.middle { float: left; width: 100%; }
+.middle .center { 
+  display: block; 
+  padding: 40px 24px 60px 24px; 
+  margin: 0 auto; 
+  width: 100%; 
+  max-width: 860px; 
+  box-sizing: border-box; 
+}
+.middle .center h1 { 
+  font-size: 24px; 
+  font-weight: 700; 
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 6px 0;
+  color: #111111;
+}
+.middle .center h1 .app-icon { 
+  width: 44px; 
+  height: 44px; 
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.effective-date {
+  color: #6E6E73;
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0 0 24px 0;
+}
+.middle .center h2 { 
+  font-size: 16px; 
+  font-weight: 600; 
+  margin: 32px 0 12px 0; 
+  padding: 0; 
+  color: #111111;
+}
+.middle .center h3 { 
+  font-size: 14px; 
+  font-weight: 600; 
+  margin: 20px 0 6px 0; 
+  padding: 0; 
+  color: #222222;
+}
+.middle .center p {
+  margin: 10px 0;
+}
+.middle .center ul {
+  padding-left: 22px;
+  margin: 10px 0;
+}
+.middle .center li {
+  margin: 6px 0;
+}
+.middle .center hr { 
+  display: block; 
+  margin: 28px 0; 
+  width: 100%; 
+  height: 1px; 
+  border: 0; 
+  background: #E5E5EA; 
+}
+.contact-box {
+  background: #F2F2F7;
+  border-left: 4px solid #007AFF;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-weight: 400;
+  color: #1C1C1E;
+}
+.contact-box a.email-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 16px;
+  background: #007AFF;
+  color: #FFFFFF !important;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+.contact-box a.email-btn:hover {
+  background: #0062CC;
+}
+.faq-card {
+  background: #F9F9FB;
+  border: 1px solid #E5E5EA;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 14px 0;
+}
+.faq-card h3 {
+  margin-top: 0 !important;
+  color: #111111;
+}
+.faq-card p:last-child {
+  margin-bottom: 0;
+}
+.footer-links {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid #E5E5EA;
+  display: flex;
+  gap: 20px;
+  color: #6E6E73;
+}
+
+/* -- DARKMODE -- */
+@media (prefers-color-scheme: dark) {
+  body { background: #121212; color: #E5E5EA; }
+  body a { color: #0A84FF; }
+  .middle .center h1, .middle .center h2 { color: #FFFFFF; }
+  .middle .center h3 { color: #F2F2F7; }
+  .effective-date { color: #8E8E93; }
+  .middle .center hr { background: #2C2C2E; }
+  .contact-box { background: #1C1C1E; color: #F2F2F7; border-left-color: #0A84FF; }
+  .contact-box a.email-btn { background: #0A84FF; color: #FFFFFF !important; }
+  .contact-box a.email-btn:hover { background: #0070E0; }
+  .faq-card { background: #1C1C1E; border-color: #2C2C2E; }
+  .faq-card h3 { color: #FFFFFF; }
+  .footer-links { border-top-color: #2C2C2E; color: #8E8E93; }
+}
+body.darkmode { background: #121212; color: #E5E5EA; }
+body.darkmode a { color: #0A84FF; }
+body.darkmode .middle .center h1, 
+body.darkmode .middle .center h2 { color: #FFFFFF; }
+body.darkmode .middle .center h3 { color: #F2F2F7; }
+body.darkmode .effective-date { color: #8E8E93; }
+body.darkmode .middle .center hr { background: #2C2C2E; }
+body.darkmode .contact-box { background: #1C1C1E; color: #F2F2F7; border-left-color: #0A84FF; }
+body.darkmode .contact-box a.email-btn { background: #0A84FF; color: #FFFFFF !important; }
+body.darkmode .contact-box a.email-btn:hover { background: #0070E0; }
+body.darkmode .faq-card { background: #1C1C1E; border-color: #2C2C2E; }
+body.darkmode .faq-card h3 { color: #FFFFFF; }
+body.darkmode .footer-links { border-top-color: #2C2C2E; color: #8E8E93; }
+
+@media all and (max-width: 600px) {
+  .middle .center { padding: 24px 16px 40px 16px; }
+  .middle .center h1 { font-size: 20px; }
+  .middle .center h1 .app-icon { width: 36px; height: 36px; }
+}
+</style>
+</head>
+<body>
+<div class="middle">
+<div class="center">
+<h1>
+  <img class="app-icon" alt="App Logo" src="icon.png" onerror="this.style.display='none'">
+  SUPPORT &amp; HELP CENTER
+</h1>
+<p class="effective-date"><strong>Followers &amp; Unfollowers Tracker</strong> &bull; Developed by Vigo Global</p>
+
+<p>Welcome to the <strong>Followers &amp; Unfollowers Tracker</strong> Help &amp; Support Center. We are dedicated to providing you with reliable on-device analytics and a seamless user experience. If you encounter any technical issues, have questions regarding your subscription, or need help with the application, our support team is here to assist you.</p>
+
+<div class="contact-box">
+  <strong>Direct Contact Support:</strong><br>
+  For all inquiries, bug reports, subscription support, or feedback, please email our support team directly:<br>
+  <a class="email-btn" href="mailto:code.and.play.vn@gmail.com?subject=Followers%20%26%20Unfollowers%20Tracker%20Support">Contact Support: code.and.play.vn@gmail.com</a>
+  <br><br>
+  <small style="color: #6E6E73;">We typically respond to inquiries within 24 to 48 business hours.</small>
+</div>
+
+<hr>
+
+<h2>Frequently Asked Questions (FAQ)</h2>
+
+<div class="faq-card">
+  <h3>1. How does Followers &amp; Unfollowers Tracker work?</h3>
+  <p>Our app provides real-time insights into your follower relationships (e.g., who stopped following you, who is not following you back, and new followers). Unlike cloud services, calculations are computed <strong>locally on your physical device</strong> using standard public API responses without storing your personal data on external servers.</p>
+</div>
+
+<div class="faq-card">
+  <h3>2. Is my account and password safe?</h3>
+  <p><strong>Yes, absolutely.</strong> Followers &amp; Unfollowers Tracker is engineered with strict on-device privacy. We do not operate remote databases and do not collect, transmit, or monetize your login credentials or personal information. Your session tokens remain securely stored inside your device's isolated sandbox storage.</p>
+</div>
+
+<div class="faq-card">
+  <h3>3. Why aren't my follower numbers or analytics refreshing?</h3>
+  <p>If your stats are not updating or appear unchanged:</p>
+  <ul>
+    <li>Perform a <strong>Pull to Refresh</strong> on the main dashboard to fetch the latest data.</li>
+    <li>Ensure your device has an active, stable Internet connection.</li>
+    <li>If your session has expired, log out and log back in through the application to re-authenticate with the platform.</li>
+    <li>Third-party platform rate limits may temporarily delay updates if refreshed too frequently. Please allow a brief interval before refreshing again.</li>
+  </ul>
+</div>
+
+<div class="faq-card">
+  <h3>4. How do I restore my Pro / Premium subscription?</h3>
+  <p>If you reinstalled the app or switched to a new device, you can easily restore your previously purchased subscription:</p>
+  <ul>
+    <li>Open <strong>Followers &amp; Unfollowers Tracker</strong>.</li>
+    <li>Go to <strong>Settings</strong>.</li>
+    <li>Tap <strong>Restore Purchases</strong>.</li>
+    <li>Make sure you are logged into the same Apple ID or Google Play account used to make the original purchase.</li>
+  </ul>
+</div>
+
+<div class="faq-card">
+  <h3>5. How do I manage, cancel my subscription, or request a refund?</h3>
+  <p>All in-app purchases and subscriptions are processed directly and securely by Apple (App Store) or Google (Google Play Store). Developers cannot manually cancel subscriptions or process refunds directly on your behalf.</p>
+  <p><strong>To cancel or manage on iOS (App Store):</strong></p>
+  <ol>
+    <li>Open device <strong>Settings</strong> &gt; tap your <strong>Name / Apple ID</strong> at the top.</li>
+    <li>Tap <strong>Subscriptions</strong>.</li>
+    <li>Select <strong>Followers &amp; Unfollowers Tracker</strong> and choose <strong>Cancel Subscription</strong>.</li>
+  </ol>
+  <p>To request a refund from Apple, visit: <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">reportaproblem.apple.com</a>.</p>
+</div>
+
+<div class="faq-card">
+  <h3>6. How do I completely delete my data from the app?</h3>
+  <p>Because all data is stored strictly on your local hardware:</p>
+  <ul>
+    <li>Tap <strong>Log out</strong> in the app's Settings to instantly wipe all session cookies, profile caches, and local databases.</li>
+    <li>Uninstalling the application from your device permanently and irreversibly erases all local data associated with the app.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>Submitting a Bug Report or Feature Request</h2>
+<p>When contacting us via email at <a href="mailto:code.and.play.vn@gmail.com">code.and.play.vn@gmail.com</a>, please include the following details to help us investigate and resolve your issue as quickly as possible:</p>
+<ul>
+  <li><strong>Device Model:</strong> (e.g., iPhone 15 Pro, Samsung Galaxy S23)</li>
+  <li><strong>Operating System &amp; Version:</strong> (e.g., iOS 17.5, Android 14)</li>
+  <li><strong>App Version:</strong> (Can be found at the bottom of the Settings screen)</li>
+  <li><strong>Description of the Issue:</strong> What occurred, and the steps to reproduce it.</li>
+  <li><strong>Screenshots / Screen Recording:</strong> If applicable, attach a screenshot of any error message received.</li>
+</ul>
+
+<div class="footer-links">
+  <a href="tracker_privacy.html">Privacy Policy</a> &bull;
+  <a href="tracker_tos.html">Terms of Service</a>
+</div>
+
+</div>
+</div>
+</body>
+</html>
